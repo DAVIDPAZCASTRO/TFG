@@ -4,6 +4,7 @@ import './../assets/scss/main.scss';
 
 import {GLOBAL_CONFIG} from '../config/config.js';
 import * as I18n from '../vendors/I18n.js';
+import * as PQ from '../config/parseQuestions.js';
 import * as SAMPLES from '../config/samples.js';
 
 import SCORM from './SCORM.jsx';
@@ -15,6 +16,7 @@ export class App extends React.Component {
   constructor(props){
     super(props);
     I18n.init();
+    PQ.parseHistory();
   }
   render(){
     let appHeader = "";

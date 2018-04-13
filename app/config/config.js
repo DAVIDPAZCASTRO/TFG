@@ -26,6 +26,10 @@ export let GLOBAL_CONFIG = {
     },
     n:undefined,
   },
+  categories:{
+    number:4,
+    categoryNames:['history','sports','science','movies'],
+  },
 };
 
 let processConfig = (function(){
