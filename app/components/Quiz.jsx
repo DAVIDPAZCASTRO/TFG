@@ -6,6 +6,7 @@ import {addObjectives, resetObjectives, finishApp} from './../reducers/actions';
 
 import QuizHeader from './QuizHeader.jsx';
 import MCQuestion from './MCQuestion.jsx';
+import Board from './Board.jsx';
 
 export default class Quiz extends React.Component {
   constructor(props){
@@ -44,6 +45,18 @@ export default class Quiz extends React.Component {
     this.state = {
       quiz:quiz,
       current_question_index:1,
+      boxes: [
+        ['-','-','-','-','-','-','-','-','-'],
+        ['-','o','o','o','-','o','o','o','-'],
+        ['-','o','o','o','-','o','o','o','-'],
+        ['-','o','o','o','-','o','o','o','-'],
+        ['-','-','-','-','-','-','-','-','-'],
+        ['-','o','o','o','-','o','o','o','-'],
+        ['-','o','o','o','-','o','o','o','-'],
+        ['-','o','o','o','-','o','o','o','-'],
+        ['-','-','-','-','-','-','-','-','-'],
+      ],
+
     };
   }
   componentDidMount(){
@@ -87,6 +100,7 @@ export default class Quiz extends React.Component {
     return (
       <div className="quiz">
         <QuizHeader I18n={this.props.I18n} quiz={this.state.quiz} currentQuestionIndex={this.state.current_question_index}/>
+        <Board boxes={this.state.boxes}/>
         {currentQuestionRender}
       </div>
     );
