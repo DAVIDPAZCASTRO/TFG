@@ -8,8 +8,9 @@ function diceReducer(state = {}, action){
     case 'ROLL_DICE':
       newState = JSON.parse(JSON.stringify(state));
       console.log('SE TIRA EL DADO!!!!');
-      newState.dice_number = action.number;
-      return newState;
+      //newState.dice_number = action.number;
+      //return newState;
+      return action.number;
     default:
       return state;
   }
