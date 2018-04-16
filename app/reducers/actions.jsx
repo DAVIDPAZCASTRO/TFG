@@ -4,6 +4,18 @@ export function scormConnected(scorm){
     scorm:scorm,
   };
 }
+export function rollDice(number){
+  return {
+    type:'ROLL_DICE',
+    number: number,
+  };
+}
+
+export function resetDice(item){
+  return {
+    type:'RESET_DICE',
+  };
+}
 
 export function updateUserProfile(user_profile){
   return {

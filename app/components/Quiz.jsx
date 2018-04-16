@@ -7,6 +7,7 @@ import {addObjectives, resetObjectives, finishApp} from './../reducers/actions';
 import QuizHeader from './QuizHeader.jsx';
 import MCQuestion from './MCQuestion.jsx';
 import Board from './Board.jsx';
+import Dice from './Dice.jsx';
 
 export default class Quiz extends React.Component {
   constructor(props){
@@ -56,6 +57,7 @@ export default class Quiz extends React.Component {
         ['-','o','o','o','-','o','o','o','-'],
         ['-','-','-','-','-','-','-','-','-'],
       ],
+      dice_number:0,
 
     };
   }
@@ -101,6 +103,7 @@ export default class Quiz extends React.Component {
       <div className="quiz">
         <QuizHeader I18n={this.props.I18n} quiz={this.state.quiz} currentQuestionIndex={this.state.current_question_index}/>
         <Board boxes={this.state.boxes}/>
+        <Dice dispatch={this.props.dispatch} dice={this.props.dice} />
         {currentQuestionRender}
       </div>
     );
