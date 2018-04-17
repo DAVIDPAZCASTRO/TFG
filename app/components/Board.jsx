@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './../assets/scss/board.scss';
+
 import Box from './Box.jsx';
 
 export default class Board extends React.Component {

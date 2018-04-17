@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category">
+    <category>
+      <text>Moodle QUIZ XML export</text>
+    </category>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de deportes:</text>
+    </name>
+    <questiontext>
+      <text>¿En qué año se celebraron los JJOO en Barcelona?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>1996</text>
+    </answer>
+    <answer fraction="0">
+      <text>1992</text>
+    </answer>
+    <answer fraction="0">
+      <text>2000­</text>
+    </answer>
+    <answer fraction="100">
+      <text>1988</text>
+    </answer>
+  </question>
+</quiz>

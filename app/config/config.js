@@ -12,6 +12,20 @@ export let GLOBAL_CONFIG = {
       score_threshold:0.6,
     },
     n:3,
+    categories:[{
+        name:"history",
+        url:"./../assets/xmls/questionsXMLhistory.xml",
+      },{
+        name:"movies",
+        url:"./../assets/xmls/questionsXMLmovies.xml",
+      },{
+        name:"science",
+        url:"./../assets/xmls/questionsXMLscience.xml",
+      },{
+        name:"sports",
+        url:"./../assets/xmls/questionsXMLsports.xml",
+      },
+    ],
   },
   production:{
     debug:false,
@@ -25,10 +39,20 @@ export let GLOBAL_CONFIG = {
       score_threshold:0.6,
     },
     n:undefined,
-  },
-  categories:{
-    number:4,
-    categoryNames:['history','sports','science','movies'],
+    categories:[{
+        name:"history",
+        url:"./../assets/xmls/questionsXMLhistory.xml",
+      },{
+        name:"movies",
+        url:"./../assets/xmls/questionsXMLmovies.xml",
+      },{
+        name:"science",
+        url:"./../assets/xmls/questionsXMLscience.xml",
+      },{
+        name:"sports",
+        url:"./../assets/xmls/questionsXMLsports.xml",
+      },
+    ],
   },
 };
 
