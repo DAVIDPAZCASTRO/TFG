@@ -58,7 +58,7 @@ export default class Quiz extends React.Component {
         ['4','1','2','3','1','2','4','1','3'],
       ],
       dice_number:0,
-
+      player_position: [4,4],
     };
   }
   componentDidMount(){
@@ -102,7 +102,7 @@ export default class Quiz extends React.Component {
     return (
       <div className="quiz">
         <QuizHeader I18n={this.props.I18n} quiz={this.state.quiz} currentQuestionIndex={this.state.current_question_index}/>
-        <Board boxes={this.state.boxes}/>
+        <Board dispatch={this.props.dispatch} boxes={this.state.boxes} player={this.props.player}/>
         <Dice dispatch={this.props.dispatch} dice={this.props.dice} />
         {currentQuestionRender}
       </div>

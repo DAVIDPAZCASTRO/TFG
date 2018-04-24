@@ -13,4 +13,8 @@ export const INITIAL_STATE = {
   },
   wait_for_user_profile:false,
   dice:0,
+  player:{
+    position:[4,4],
+    playerIn:true,
+  },
 };

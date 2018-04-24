@@ -17,6 +17,13 @@ export function resetDice(item){
   };
 }
 
+export function setPosition(player){
+  return{
+    type:'SET_POSITION',
+    player:player,
+  };
+}
+
 export function updateUserProfile(user_profile){
   return {
     type:'UPDATE_USER_PROFILE',
