@@ -4,14 +4,10 @@ import {setPosition} from './../reducers/actions';
 
 export default class Box extends React.Component {
   onSetPosition(){
-    let p = this.props.player;
-    p.playerIn = true;
-    p.position = [this.props.rowIndex, this.props.columnIndex];
-    this.props.dispatch(setPosition(p));
-    console.log(this.props.player)
+    this.props.dispatch(setPosition(this.props.rowIndex, this.props.columnIndex));
+
   }
   render(){
-
     let category = "category";
     let text = "";
     if(this.props.box === "0" || this.props.box === "1" || this.props.box === "2" || this.props.box === "3" ||this.props.box === "4"){

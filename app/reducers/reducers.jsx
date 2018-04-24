@@ -4,7 +4,7 @@ import scormReducer from './scormReducer';
 import userProfileReducer from './userProfileReducer';
 import waitForUserProfileReducer from './waitForUserProfileReducer';
 import diceReducer from './diceReducer';
-import playerPositionReducer from './playerPositionReducer';
+import playerReducer from './playerReducer';
 
 const GlobalState = combineReducers({
   tracking:trackingReducer,
@@ -12,7 +12,7 @@ const GlobalState = combineReducers({
   user_profile:userProfileReducer,
   wait_for_user_profile:waitForUserProfileReducer,
   dice:diceReducer,
-  player:playerPositionReducer,
+  player:playerReducer,
 });
 
 export default GlobalState;

@@ -17,4 +17,5 @@ export const INITIAL_STATE = {
     position:[4,4],
     playerIn:true,
   },
+  //game:"BeforeRollDie",
 };

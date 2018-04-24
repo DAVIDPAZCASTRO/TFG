@@ -17,10 +17,11 @@ export function resetDice(item){
   };
 }
 
-export function setPosition(player){
+export function setPosition(x,y){
   return{
     type:'SET_POSITION',
-    player:player,
+    x:x,
+    y:y,
   };
 }
 
