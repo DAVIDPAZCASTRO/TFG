@@ -6,15 +6,50 @@ import Box from './Box.jsx';
 
 export default class Board extends React.Component {
 
-
-  var getBoxesForDistance = function(box, previousBox=undefined, d){
-
-
-    if([0,4,8].indexOf(box[0])){
-      return "ERROR"
+  isDifferentBox(box1,box2){
+    console.log("comparamos cajas")
+    if(typeof box1 == "undefined"){
+      console.log("box1 es undefined")
     }
-    var boxes = [];
+    if(typeof box2 == "undefined"){
+      console.log("box2 es undefined")
+    }
+    if((typeof box1 !== "undefined") && (typeof box2 !== "undefined")){
+      console.log("las dos cajas son distintas a undefined")
+      if((box1[0]!=box2[0])||(box1[1]!=box2[1])){
+        console.log("las cajas son diferentes")
+        return true
+      }
+    }
+    console.log("las cajas son iguales o una de ellas es undefined, pasamos a otra cosa")
+    return false
+  }
 
+  isInBoard(box){
+    if(box[0]>8||box[0]<0||box[1]>8||box[1]<0){
+      console.log("La caja ["+box+"] no valida, se sale del tablero")
+      console.log("---------------------------")
+      return false
+    } else if (([0,4,8].indexOf(box[0])!=-1)||([0,4,8].indexOf(box[1])!=-1)) {
+      console.log("Caja ["+box+"] valida")
+      return true
+    } else {
+      console.log("La caja ["+box+"] no es válida")
+      console.log("---------------------------")
+      return false
+    }
+  }
+  getBoxesForDistance(box, previousBox=undefined, d){
+
+    console.log("comienza el método, faltan " + d +" iteraciones")
+    /*
+    if(!this.isInBoard(box)){
+      return
+    }
+    */
+    var boxes = [];
+    console.log("estamos en "+box)
+    console.log("La caja anterior era ["+previousBox+"]")
 
   	if(d > 0) {
 
@@ -22,32 +57,46 @@ export default class Board extends React.Component {
       let downBox = [box[0]+1,box[1]];
       let leftBox = [box[0],box[1]-1];
       let rightBox = [box[0],box[1]+1];
-
+      console.log("arriba = ["+upBox+"]")
+      console.log("abajo = ["+downBox+"]")
+      console.log("izquierda = ["+leftBox+"]")
+      console.log("derecha = ["+rightBox+"]")
 
   		//check if upsquare exists ([0,4,8].indexOf(square[0])!=-1 //si true => square[0] vale 0,4 u 8)
-  		//Check if upsquare is different than previousSquare
-      if((previousBox[0]!=box[0])&&(previousBox[1]!=box[1])){
+  		//Check if upsquare is different than previousBox
+
+      if((typeof previousBox == "undefined")||(this.isDifferentBox(previousBox,box))){
+        //console.log("La caja es diferente a la anterior")
         //Up
-        if(([0,4,8].indexOf(upBox[0])!=-1)){
-    			boxes += getBoxesForDistance(upBox,box,d-1)
+        if(this.isInBoard(upBox)&&((typeof previousBox == "undefined")||(this.isDifferentBox(upBox,previousBox)))){
+          console.log("vamos pa arriba " + upBox)
+    			boxes += this.getBoxesForDistance(upBox,box,d-1)
+          //console.log(boxes)
     		}
 
         //Down
-        if([0,4,8].indexOf(downBox[0])!=-1){
-    			boxes += getBoxesForDistance(downBox,box,d-1)
+        if(this.isInBoard(downBox)&&((typeof previousBox == "undefined")||(this.isDifferentBox(downBox,previousBox)))){
+          console.log("vamos pa abajo "+ downBox)
+    			boxes += this.getBoxesForDistance(downBox,box,d-1)
+          //console.log(boxes)
     		}
 
     		//Left
-        if([0,4,8].indexOf(leftBox[0])!=-1){
-    			boxes += getBoxesForDistance(leftBox,box,d-1)
+        if(this.isInBoard(leftBox)&&((typeof previousBox == "undefined")||(this.isDifferentBox(leftBox,previousBox)))){
+          console.log("vamos pa la izquierda "+ leftBox)
+    			boxes += this.getBoxesForDistance(leftBox,box,d-1)
+          //console.log(boxes)
     		}
 
     		//Right
-        if([0,4,8].indexOf(rightBox[0])!=-1){
-    			boxes += getBoxesForDistance(rightBox,box,d-1)
+        if(this.isInBoard(rightBox)&&((typeof previousBox == "undefined")||(this.isDifferentBox(rightBox,previousBox)))){
+          console.log("vamos pa la derecha "+ rightBox)
+    			boxes += this.getBoxesForDistance(rightBox,box,d-1)
+          //console.log(boxes)
     		}
       }
   		//Filter array
+      //boxes +=box
 
   		return boxes;
   	} else {
@@ -57,8 +106,8 @@ export default class Board extends React.Component {
   }
 
   render(){
-    let x=this.getBoxesForDistance([0,0],{},3);
-    console.log(x)
+
+    console.log(this.getBoxesForDistance([8,4],undefined,0))
     let board = this.props.boxes.map((rowBoxes, rowIndex) => {
       let row = rowBoxes.map((box, columnIndex) => {
         let key = "" + rowIndex + columnIndex;
