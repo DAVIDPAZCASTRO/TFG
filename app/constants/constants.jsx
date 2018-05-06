@@ -17,5 +17,11 @@ export const INITIAL_STATE = {
     position:[4,4],
     playerIn:true,
   },
+  movement:{
+    possible_movements:[
+      [4,4],
+    ],
+    number:0,
+  }
   //game:"BeforeRollDie",
 };

@@ -25,6 +25,13 @@ export function setPosition(x,y){
   };
 }
 
+export function setPossibleMovements(array){
+  return{
+    type:'SET_POSSIBLE_MOVEMENTS',
+    array:array,
+  };
+}
+
 export function updateUserProfile(user_profile){
   return {
     type:'UPDATE_USER_PROFILE',

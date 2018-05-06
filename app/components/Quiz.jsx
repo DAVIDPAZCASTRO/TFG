@@ -102,8 +102,8 @@ export default class Quiz extends React.Component {
     return (
       <div className="quiz">
         <QuizHeader I18n={this.props.I18n} quiz={this.state.quiz} currentQuestionIndex={this.state.current_question_index}/>
-        <Board dispatch={this.props.dispatch} boxes={this.state.boxes} player={this.props.player}/>
-        <Dice dispatch={this.props.dispatch} dice={this.props.dice} />
+        <Board dispatch={this.props.dispatch} boxes={this.state.boxes} player={this.props.player} movement={this.props.movement} dice={this.props.dice}/>
+        <Dice dispatch={this.props.dispatch} dice={this.props.dice}/>
         {currentQuestionRender}
       </div>
     );
