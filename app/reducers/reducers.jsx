@@ -6,6 +6,7 @@ import waitForUserProfileReducer from './waitForUserProfileReducer';
 import diceReducer from './diceReducer';
 import playerReducer from './playerReducer';
 import movementReducer from './movementReducer';
+import gameStatusReducer from './gameStatusReducer';
 
 const GlobalState = combineReducers({
   tracking:trackingReducer,
@@ -15,6 +16,7 @@ const GlobalState = combineReducers({
   dice:diceReducer,
   player:playerReducer,
   movement:movementReducer,
+  game_status:gameStatusReducer,
 });
 
 export default GlobalState;

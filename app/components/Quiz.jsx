@@ -57,8 +57,6 @@ export default class Quiz extends React.Component {
         ['2','o','o','o','4','o','o','o','4'],
         ['4','1','2','3','1','2','4','1','3'],
       ],
-      dice_number:0,
-      player_position: [4,4],
     };
   }
   componentDidMount(){

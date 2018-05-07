@@ -116,7 +116,7 @@ export default class Board extends React.Component {
   }
 
   render(){
-    let pm = this.getBoxesForDistance(this.props.player.position, undefined, this.props.dice)
+    let pm = this.getBoxesForDistance(this.props.player.position, undefined, this.props.dice.number)
     console.log(pm)
     let board = this.props.boxes.map((rowBoxes, rowIndex) => {
       let row = rowBoxes.map((box, columnIndex) => {

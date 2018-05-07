@@ -12,7 +12,10 @@ export const INITIAL_STATE = {
     learner_preference:{},
   },
   wait_for_user_profile:false,
-  dice:0,
+  dice:{
+    number:0,
+    disabled:true,
+  },
   player:{
     position:[4,4],
     playerIn:true,
@@ -22,6 +25,6 @@ export const INITIAL_STATE = {
       [4,4],
     ],
     number:0,
-  }
-  //game:"BeforeRollDie",
+  },
+  game_status:"BeforeRollDie",
 };

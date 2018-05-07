@@ -16,7 +16,7 @@ export default class Dice extends React.Component {
     return(
       <div>
         <button onClick={this.onRollDice.bind(this)}>Tirar el dado</button>
-        Valor del dado: {this.props.dice}
+        Valor del dado: {this.props.dice.number}
       </div>
     );
   }
