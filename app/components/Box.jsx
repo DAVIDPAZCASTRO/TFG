@@ -19,20 +19,19 @@ export default class Box extends React.Component {
   }
 
   isBoxInArray(array, box){
-    array.forEach(function(element) {
-      //console.log(element, box)
-      if((element[0] === box[0]) && (element[1] === box[1])){
-        console.log(true)
+    let x;
+    for (x=0;x<array.length;x++){
+      if((array[x][0] === box[0]) && (array[x][1] === box[1])){
+        //console.log(true)
         return true
       }
-    });
+    }
     return false
   }
 
   render(){
     let category = "category";
     let text = "";
-    console.log(this.isBoxInArray(this.props.pm, [this.props.rowIndex, this.props.columnIndex]))
     if(this.props.box === "0" || this.props.box === "1" || this.props.box === "2" || this.props.box === "3" ||this.props.box === "4"){
       category += this.props.box;
     }else{
@@ -40,7 +39,9 @@ export default class Box extends React.Component {
     }
     if((this.props.player.playerIn === true) && (this.props.player.position[0] === this.props.rowIndex) && (this.props.player.position[1] === this.props.columnIndex)){
       text = "player"
+      console.log(this.props.pm)
     } else if (this.isBoxInArray(this.props.pm, [this.props.rowIndex, this.props.columnIndex])) {
+      console.log("En la casilla ["+this.props.rowIndex+","+this.props.columnIndex+"] debería poner MOVE")
       text = "MOVE"
     } else {
       text = this.props.box;

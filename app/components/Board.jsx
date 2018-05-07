@@ -45,7 +45,7 @@ export default class Board extends React.Component {
     //console.log("comienza el método, faltan " + d +" iteraciones")
     var boxes = [];
     //console.log("estamos en "+box)
-    console.log("La caja anterior era ["+previousBox+"]")
+    //console.log("La caja anterior era ["+previousBox+"]")
 
     if(d > 0) {
 
