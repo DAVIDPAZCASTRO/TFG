@@ -28,7 +28,7 @@ export class App extends React.Component {
       );
       if(this.props.wait_for_user_profile !== true){
         appContent = (
-          <Quiz dispatch={this.props.dispatch} user_profile={this.props.user_profile} tracking={this.props.tracking} dice={this.props.dice} player={this.props.player} movement={this.props.movement} quiz={SAMPLES.quiz_example} config={GLOBAL_CONFIG} I18n={I18n}/>
+          <Quiz dispatch={this.props.dispatch} user_profile={this.props.user_profile} tracking={this.props.tracking} dice={this.props.dice} player={this.props.player} movement={this.props.movement} quiz={SAMPLES.quiz_example} game_status={this.props.game_status} config={GLOBAL_CONFIG} I18n={I18n}/>
         );
       }
     } else {

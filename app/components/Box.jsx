@@ -1,13 +1,15 @@
 import React from 'react';
-import {setPosition, setPossibleMovements} from './../reducers/actions';
+import {setPosition, setPossibleMovements, setGameStatus} from './../reducers/actions';
 
 
 export default class Box extends React.Component {
 
   onClickBox(){
-    this.onSetPosition();
-    this.onSetPossibleMovements(this.props.pm);
-
+    if(this.isBoxInArray(this.props.pm, [this.props.rowIndex, this.props.columnIndex])){
+      this.onSetPosition();
+      this.onSetPossibleMovements(this.props.pm);
+      this.props.dispatch(setGameStatus("A"))
+    }
   }
 
   onSetPosition(){
@@ -40,7 +42,7 @@ export default class Box extends React.Component {
     if((this.props.player.playerIn === true) && (this.props.player.position[0] === this.props.rowIndex) && (this.props.player.position[1] === this.props.columnIndex)){
       text = "player"
       console.log(this.props.pm)
-    } else if (this.isBoxInArray(this.props.pm, [this.props.rowIndex, this.props.columnIndex])) {
+    } else if ((this.props.game_status === "B") && (this.isBoxInArray(this.props.pm, [this.props.rowIndex, this.props.columnIndex]))) {
       console.log("En la casilla ["+this.props.rowIndex+","+this.props.columnIndex+"] debería poner MOVE")
       text = "MOVE"
     } else {

@@ -122,7 +122,7 @@ export default class Board extends React.Component {
       let row = rowBoxes.map((box, columnIndex) => {
         let key = "" + rowIndex + columnIndex;
         return(
-          <Box dispatch={this.props.dispatch} box={box} key={key} rowIndex={rowIndex} columnIndex={columnIndex} player={this.props.player} movement={this.props.movement} dice={this.props.dice} pm={pm}/>
+          <Box dispatch={this.props.dispatch} box={box} key={key} rowIndex={rowIndex} columnIndex={columnIndex} player={this.props.player} movement={this.props.movement} dice={this.props.dice} pm={pm} game_status={this.props.game_status}/>
         );
       });
       return(

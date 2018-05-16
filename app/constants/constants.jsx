@@ -26,5 +26,5 @@ export const INITIAL_STATE = {
     ],
     number:0,
   },
-  game_status:"BeforeRollDie",
+  game_status:"A",
 };
