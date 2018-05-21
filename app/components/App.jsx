@@ -10,7 +10,9 @@ import * as SAMPLES from '../config/samples.js';
 import SCORM from './SCORM.jsx';
 import Header from './Header.jsx';
 import FinishScreen from './FinishScreen.jsx';
+import HomeScreen from './HomeScreen.jsx';
 import Quiz from './Quiz.jsx';
+import Trivial from './Trivial.jsx';
 
 export class App extends React.Component {
   constructor(props){
@@ -21,6 +23,8 @@ export class App extends React.Component {
   render(){
     let appHeader = "";
     let appContent = "";
+    let all = "";
+    console.log(this.props.game_status);
 
     if((this.props.tracking.finished !== true) || (GLOBAL_CONFIG.finish_screen === false)){
       appHeader = (
@@ -28,7 +32,10 @@ export class App extends React.Component {
       );
       if(this.props.wait_for_user_profile !== true){
         appContent = (
-          <Quiz dispatch={this.props.dispatch} user_profile={this.props.user_profile} tracking={this.props.tracking} dice={this.props.dice} player={this.props.player} movement={this.props.movement} quiz={SAMPLES.quiz_example} game_status={this.props.game_status} config={GLOBAL_CONFIG} I18n={I18n}/>
+
+          //<Quiz dispatch={this.props.dispatch} user_profile={this.props.user_profile} tracking={this.props.tracking} dice={this.props.dice} player={this.props.player} movement={this.props.movement} quiz={SAMPLES.quiz_example} game_status={this.props.game_status} config={GLOBAL_CONFIG} I18n={I18n}/>
+          <Trivial dispatch={this.props.dispatch} dice={this.props.dice} player={this.props.player} movement={this.props.movement} trivial={SAMPLES.quiz_example} game_status={this.props.game_status} config={GLOBAL_CONFIG} I18n={I18n}/>
+
         );
       }
     } else {
@@ -37,11 +44,24 @@ export class App extends React.Component {
       );
     }
 
+    if(this.props.game_status === "A"){
+      all = (
+        <HomeScreen dispatch={this.props.dispatch}/>
+      );
+    }
+    else {
+      all = (
+        <div>
+          {appHeader}
+          {appContent}
+        </div>
+      );
+    }
+
     return (
       <div id="container">
         <SCORM dispatch={this.props.dispatch} tracking={this.props.tracking} config={GLOBAL_CONFIG}/>
-        {appHeader}
-        {appContent}
+        {all}
       </div>
     );
   }

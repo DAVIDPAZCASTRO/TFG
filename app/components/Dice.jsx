@@ -2,13 +2,14 @@ import React from 'react';
 import {rollDice, resetDice, setGameStatus} from './../reducers/actions';
 
 export default class Dice extends React.Component {
+
   constructor(props){
     super(props);
   }
 
   onClickDie(){
     this.onRollDice();
-    this.props.dispatch(setGameStatus("B"));
+    this.props.dispatch(setGameStatus("C"));
   }
 
   onRollDice(){
@@ -19,7 +20,7 @@ export default class Dice extends React.Component {
 
   render(){
     let die = "";
-    if (this.props.game_status === "A"){
+    if (this.props.game_status === "B"){
       die = (
         <button onClick={this.onClickDie.bind(this)}>Tirar el dado</button>
       );

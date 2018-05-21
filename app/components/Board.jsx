@@ -5,7 +5,9 @@ import './../assets/scss/board.scss';
 import Box from './Box.jsx';
 
 export default class Board extends React.Component {
-
+  constructor(props){
+    super(props);
+  }
   isDifferentBox(box1,box2){
     //console.log("comparamos cajas")
     if(typeof box1 == "undefined"){
