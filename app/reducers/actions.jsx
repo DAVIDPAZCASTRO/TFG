@@ -29,6 +29,32 @@ export function resetDice(item){
   };
 }
 
+export function setLives(lives){
+  return {
+    type:'SET_LIVES',
+    lives:lives,
+  };
+}
+
+export function resetLives(item){
+  return {
+    type:'RESET_LIVES',
+  };
+}
+
+export function setCrowns(crowns){
+  return {
+    type:'SET_CROWNS',
+    crowns:crowns,
+  };
+}
+
+export function resetCrowns(item){
+  return {
+    type:'RESET_CROWNS',
+  };
+}
+
 export function setPosition(x,y){
   return{
     type:'SET_POSITION',

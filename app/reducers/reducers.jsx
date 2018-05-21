@@ -7,6 +7,8 @@ import diceReducer from './diceReducer';
 import playerReducer from './playerReducer';
 import movementReducer from './movementReducer';
 import gameStatusReducer from './gameStatusReducer';
+import livesReducer from './livesReducer';
+import crownsReducer from './crownsReducer';
 
 const GlobalState = combineReducers({
   tracking:trackingReducer,
@@ -17,6 +19,8 @@ const GlobalState = combineReducers({
   player:playerReducer,
   movement:movementReducer,
   game_status:gameStatusReducer,
+  lives:livesReducer,
+  crowns:crownsReducer,
 });
 
 export default GlobalState;

@@ -27,4 +27,6 @@ export const INITIAL_STATE = {
     number:0,
   },
   game_status:"A",
+  lives:5,
+  crowns:0,
 };
