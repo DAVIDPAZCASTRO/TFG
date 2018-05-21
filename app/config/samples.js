@@ -15,8 +15,8 @@ export const quiz_example = {
           "answer":false,
         }, {
           "id":"3",
-          "value":"París es la capital de Francia.",
-          "answer":true,
+          "value":"París es la capital de Indonesia.",
+          "answer":false,
         }, {
           "id":"4",
           "value":"Manchester es la capital de Inglaterra.",
@@ -42,8 +42,8 @@ export const quiz_example = {
           "answer":true,
         }, {
           "id":"4",
-          "value":"Ankara es la capital de Turquía.",
-          "answer":true,
+          "value":"Ankara es la capital de Hungría.",
+          "answer":false,
         },
       ],
       "difficulty":5,
@@ -57,8 +57,8 @@ export const quiz_example = {
           "answer":false,
         }, {
           "id":"2",
-          "value":"Timbu es la capital de Bután.",
-          "answer":true,
+          "value":"Brasilia es la capital de Bután.",
+          "answer":false,
         }, {
           "id":"3",
           "value":"Ragga es la capital de Afganistán.",

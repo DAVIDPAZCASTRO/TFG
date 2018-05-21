@@ -48,19 +48,23 @@ export default class Trivial extends React.Component {
     let onResetTrivial = this.onResetTrivial.bind(this);
     let currentQuestionRender = "";
 
-    if(currentQuestion.type === "multiple_choice"){
+    if(currentQuestion.type !== "multiple_choice"){
+      console.log(currentQuestion.choices.length)
       currentQuestionRender = "Tipo de pregunta no soportada: solo se soportan las preguntas del tipo 'multiple_choice'";
+    }else{
       let counter = 0;
-      for (let i; i<currentQuestion.choices.length; i++){
-        if(currentQuestion.choices[i].answer = true){
+      for (let i=0; i<currentQuestion.choices.length; i++){
+        console.log("La respuesta a la eleccion"+i+"es"+currentQuestion.choices[i].answer)
+        if(currentQuestion.choices[i].answer === true){
           counter++
         }
       }
+      console.log("El valor del contador es "+counter)
       if (counter != 1){
         currentQuestionRender = "Tipo de pregunta no soportada: las preguntas deben tener una única respuesta"
-      }
-    } else {
+      } else {
       currentQuestionRender = (<MCQuestion question={currentQuestion} dispatch={this.props.dispatch} I18n={this.props.I18n} objective={objective} onNextQuestion={onNextQuestion} onResetTrivial={onResetTrivial} isLastQuestion={isLastQuestion}/>);
+      }
     }
     return(
       <div className="trivial">

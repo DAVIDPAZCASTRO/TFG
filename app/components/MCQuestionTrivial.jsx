@@ -1,3 +1,5 @@
+import React from 'react';
+
 import * as Utils from '../vendors/Utils.js';
 import {objectiveAccomplished, objectiveAccomplishedThunk} from './../reducers/actions';
 
