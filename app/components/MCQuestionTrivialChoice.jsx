@@ -9,7 +9,7 @@ export default class MCQuestionChoice extends React.Component {
     return (
       <div>
         <div className="questionC1">
-          <input type="checkbox" checked={this.props.checked} onChange={() => this.props.handleChange(this.props.choice)} disabled={showCorrection}/>
+          <input type="checkbox" checked={this.props.clickedAnswer} onChange={() => this.props.handleChange(this.props.choice)}/>
         </div>
         <div className="questionC2">
           <p>{this.props.choice.value}</p>
