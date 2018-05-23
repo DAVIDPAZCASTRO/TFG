@@ -7,6 +7,7 @@ import {addObjectives, resetDice, finishApp} from './../reducers/actions';
 import QuizHeader from './QuizHeader.jsx';
 import Board from './Board.jsx';
 import Dice from './Dice.jsx';
+import Scoreboard from './Scoreboard.jsx';
 import MCQuestionTrivial from './MCQuestionTrivial.jsx';
 
 export default class Trivial extends React.Component {
@@ -63,11 +64,12 @@ export default class Trivial extends React.Component {
       if (counter != 1){
         currentQuestionRender = "Tipo de pregunta no soportada: las preguntas deben tener una única respuesta"
       } else {
-      currentQuestionRender = (<MCQuestion question={currentQuestion} dispatch={this.props.dispatch} I18n={this.props.I18n} objective={objective} onNextQuestion={onNextQuestion} onResetTrivial={onResetTrivial} isLastQuestion={isLastQuestion}/>);
+      currentQuestionRender = (<MCQuestionTrivial question={currentQuestion} dispatch={this.props.dispatch} I18n={this.props.I18n} onNextQuestion={onNextQuestion} onResetTrivial={onResetTrivial} isLastQuestion={isLastQuestion}/>);
       }
     }
     return(
       <div className="trivial">
+        <Scoreboard dispatch={this.props.dispatch} lives={this.props.lives} crowns={this.props.crowns} game_status={this.props.game_status}/>
         <Board dispatch={this.props.dispatch} boxes={this.state.boxes} player={this.props.player} movement={this.props.movement} dice={this.props.dice} game_status={this.props.game_status}/>
         <Dice dispatch={this.props.dispatch} dice={this.props.dice} game_status={this.props.game_status}/>
         {currentQuestionRender}
