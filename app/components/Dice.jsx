@@ -22,7 +22,7 @@ export default class Dice extends React.Component {
     let die = "";
     if (this.props.game_status === "B"){
       die = (
-        <button onClick={this.onClickDie}>Tirar el dado</button>
+        <button onClick={this.onClickDie.bind(this)}>Tirar el dado</button>
       );
     }
     return(
