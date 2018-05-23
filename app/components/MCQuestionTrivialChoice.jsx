@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class MCQuestionChoice extends React.Component {
+export default class MCQuestionTrivialChoice extends React.Component {
   constructor(props){
     super(props);
   }
