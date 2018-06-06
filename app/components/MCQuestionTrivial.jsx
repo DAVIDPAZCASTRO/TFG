@@ -4,7 +4,7 @@ import * as Utils from '../vendors/Utils.js';
 import {setLives, objectiveAccomplishedThunk} from './../reducers/actions';
 
 import MCQuestionTrivialChoice from './MCQuestionTrivialChoice.jsx';
-import QuestionButtons from './QuestionButtons.jsx';
+import QuestionTrivialButtons from './QuestionTrivialButtons.jsx';
 
 export default class MCQuestionTrivial extends React.Component {
 
@@ -16,38 +16,42 @@ export default class MCQuestionTrivial extends React.Component {
     };
   }
 
-  handleChoiceChange(choice){
-    if(choice.id !== this.state.selected_choice_id){
-      this.setState({selected_choice_id:choice});
+  handleChoiceChange(choice_id){
+    if(choice_id !== this.state.selected_choice_id){
+      this.setState({selected_choice_id:choice_id});
     }
   }
 
   onAnswerQuestion(){
-    let nChoices = this.props.question.choices.length;
     let correctAnswer = false;
+    if(this.state.selected_choice_id !== -1){
+      let selectedChoice = this.props.question.choices[this.state.selected_choice_id];
+      correctAnswer = (selectedChoice.answer === true);
+    }else{
+      //Blank answer, do nothing
+    }
 
-    for(let i = 0; i< nChoices; i++){
-      let choice = this.props.question.choices[i];
-      if((choice.answer === true) && (choice.id === this.state.selected_choice_id)){
-        correctAnswer = true;
-      }
-    }
-    if(!correctAnswer){
-      this.props.dispatch(setLives(this.props.lives - 1));
-    }
     this.setState({answered:true});
+    if(!correctAnswer){
+      this.props.dispatch(setLives(this.props.lives -1));
+    }
+  }
+
+  onNextQuestion(){
+    this.props.onNextQuestion();
   }
 
   render(){
     let choices = [];
     let clickedAnswer = (this.state.selected_choice_id !== -1)
     for(let i = 0; i < this.props.question.choices.length; i++){
-      choices.push(<MCQuestionTrivialChoice key={"MyQuestion_" + "question_choice_" + i} choice={this.props.question.choices[i]}  clickedAnswer={clickedAnswer} handleChange={this.handleChoiceChange.bind(this)} questionAnswered={this.state.answered}/>);
+      choices.push(<MCQuestionTrivialChoice key={"MyQuestion_" + "question_choice_" + i} choice={this.props.question.choices[i]} choice_id={i}  clickedAnswer={clickedAnswer} handleChange={this.handleChoiceChange.bind(this)} answered={this.state.answered}/>);
     }
     return(
       <div>
         <h1>{this.props.question.value}</h1>
         {choices}
+        <QuestionTrivialButtons I18n={this.props.I18n} onAnswerQuestion={this.onAnswerQuestion.bind(this)} onNextQuestion={this.onNextQuestion.bind(this)} answered={this.state.answered} />
       </div>
     );
   }

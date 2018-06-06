@@ -30,12 +30,14 @@ export default class Trivial extends React.Component {
         ['4','1','2','3','1','2','4','1','3'],
       ],
     };
-
+    trivial.questions = Utils.shuffleArray(trivial.questions);
   }
   onNextQuestion(){
     let isLastQuestion = (this.state.current_question_index === this.state.trivial.questions.length);
     if (isLastQuestion === false){
       this.setState({current_question_index:(this.state.current_question_index + 1)});
+    } else {
+      this.setState({current_question_index: 1});
     }
   }
   onResetTrivial(){
@@ -55,7 +57,7 @@ export default class Trivial extends React.Component {
     }else{
       let counter = 0;
       for (let i=0; i<currentQuestion.choices.length; i++){
-        console.log("La respuesta a la eleccion"+i+"es"+currentQuestion.choices[i].answer)
+        console.log("La respuesta a la eleccion "+i+" es "+currentQuestion.choices[i].answer)
         if(currentQuestion.choices[i].answer === true){
           counter++
         }
@@ -64,7 +66,7 @@ export default class Trivial extends React.Component {
       if (counter != 1){
         currentQuestionRender = "Tipo de pregunta no soportada: las preguntas deben tener una única respuesta"
       } else {
-      currentQuestionRender = (<MCQuestionTrivial question={currentQuestion} dispatch={this.props.dispatch} I18n={this.props.I18n} onNextQuestion={onNextQuestion} onResetTrivial={onResetTrivial} isLastQuestion={isLastQuestion}/>);
+      currentQuestionRender = (<MCQuestionTrivial question={currentQuestion} dispatch={this.props.dispatch} I18n={this.props.I18n} onNextQuestion={onNextQuestion} onResetTrivial={onResetTrivial} isLastQuestion={isLastQuestion} lives={this.props.lives} crowns={this.props.crowns}/>);
       }
     }
     return(
