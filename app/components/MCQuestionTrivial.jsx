@@ -16,7 +16,15 @@ export default class MCQuestionTrivial extends React.Component {
     };
   }
 
+  componentWillUpdate(prevProps, prevState){
+    if(prevProps.question !== this.props.question){
+      this.setState({selected_choice_id: -1, answered:false});
+      console.log("CHOICE_ID = " +this.state.selected_choice_id)
+    }
+  }
+
   handleChoiceChange(choice_id){
+    let newSelectedChoiceId = Object.assign([], this.state.selected_choice_id);
     if(choice_id !== this.state.selected_choice_id){
       this.setState({selected_choice_id:choice_id});
     }

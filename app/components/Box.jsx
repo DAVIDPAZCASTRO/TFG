@@ -10,7 +10,8 @@ export default class Box extends React.Component {
     if(this.isBoxInArray(this.props.pm, [this.props.rowIndex, this.props.columnIndex])){
       this.onSetPosition();
       this.onSetPossibleMovements(this.props.pm);
-      this.props.dispatch(setGameStatus("B"))
+      this.props.dispatch(setGameStatus("B"));
+
     }
   }
 
@@ -42,11 +43,15 @@ export default class Box extends React.Component {
       category += "_blank"
     }
     if((this.props.player.playerIn === true) && (this.props.player.position[0] === this.props.rowIndex) && (this.props.player.position[1] === this.props.columnIndex)){
-      text = "player"
+      text = (
+        <img className="playerImage" src="assets/images/player.png"/>
+      );
       console.log(this.props.pm)
     } else if ((this.props.game_status === "C") && (this.isBoxInArray(this.props.pm, [this.props.rowIndex, this.props.columnIndex]))) {
       console.log("En la casilla ["+this.props.rowIndex+","+this.props.columnIndex+"] debería poner MOVE")
-      text = "MOVE"
+      text = (
+        <img className="playerImage" src="assets/images/movements.png"/>
+      );
     } else {
       text = this.props.box;
     }

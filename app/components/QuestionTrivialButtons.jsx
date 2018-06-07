@@ -25,7 +25,7 @@ export default class QuestionTrivialButtons extends React.Component {
     return (
       <div className="questionTrivialButtonsWrapper">
         <button className="answerQuestion" onClick={this.onClickAnswer.bind(this)} disabled={disable_answer}>{this.props.I18n.getTrans("i.answer")}</button>
-        <button className="continueTrivial" onClick={this.onClickContinue.bind(this)} disabled={disable_continue}>{this.props.I18n.getTrans("i.next")}</button>
+        <button className="continueTrivial" onClick={this.onClickContinue.bind(this)} disabled={disable_continue}>{this.props.I18n.getTrans("i.continue")}</button>
         {resetQuiz}
       </div>
     );

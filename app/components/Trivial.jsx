@@ -50,9 +50,10 @@ export default class Trivial extends React.Component {
     let onNextQuestion = this.onNextQuestion.bind(this);
     let onResetTrivial = this.onResetTrivial.bind(this);
     let currentQuestionRender = "";
+    let dieOrQuestionRender = "";
 
     if(currentQuestion.type !== "multiple_choice"){
-      console.log(currentQuestion.choices.length)
+      //console.log(currentQuestion.choices.length)
       currentQuestionRender = "Tipo de pregunta no soportada: solo se soportan las preguntas del tipo 'multiple_choice'";
     }else{
       let counter = 0;
@@ -62,13 +63,18 @@ export default class Trivial extends React.Component {
           counter++
         }
       }
-      console.log("El valor del contador es "+counter)
+      //console.log("El valor del contador es "+counter)
       if (counter != 1){
         currentQuestionRender = "Tipo de pregunta no soportada: las preguntas deben tener una única respuesta"
       } else {
-      currentQuestionRender = (<MCQuestionTrivial question={currentQuestion} dispatch={this.props.dispatch} I18n={this.props.I18n} onNextQuestion={onNextQuestion} onResetTrivial={onResetTrivial} isLastQuestion={isLastQuestion} lives={this.props.lives} crowns={this.props.crowns}/>);
+      currentQuestionRender = (
+        <div>
+          <MCQuestionTrivial question={currentQuestion} dispatch={this.props.dispatch} I18n={this.props.I18n} onNextQuestion={onNextQuestion} onResetTrivial={onResetTrivial} isLastQuestion={isLastQuestion} lives={this.props.lives} crowns={this.props.crowns}/>
+        </div>
+        );
       }
     }
+
     return(
       <div className="trivial">
         <Scoreboard dispatch={this.props.dispatch} lives={this.props.lives} crowns={this.props.crowns} game_status={this.props.game_status}/>
