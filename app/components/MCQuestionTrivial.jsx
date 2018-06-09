@@ -59,7 +59,7 @@ export default class MCQuestionTrivial extends React.Component {
       <div>
         <h1>{this.props.question.value}</h1>
         {choices}
-        <QuestionTrivialButtons I18n={this.props.I18n} onAnswerQuestion={this.onAnswerQuestion.bind(this)} onNextQuestion={this.onNextQuestion.bind(this)} answered={this.state.answered} />
+        <QuestionTrivialButtons dispatch={this.props.dispatch} I18n={this.props.I18n} onAnswerQuestion={this.onAnswerQuestion.bind(this)} onNextQuestion={this.onNextQuestion.bind(this)} answered={this.state.answered} />
       </div>
     );
   }

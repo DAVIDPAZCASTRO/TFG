@@ -10,7 +10,7 @@ export default class Box extends React.Component {
     if((this.props.game_status=== "C") && (this.isBoxInArray(this.props.pm, [this.props.rowIndex, this.props.columnIndex]))){
       this.onSetPosition();
       this.onSetPossibleMovements(this.props.pm);
-      this.props.dispatch(setGameStatus("B"));
+      this.props.dispatch(setGameStatus("D"));
 
     }
   }

@@ -1,4 +1,5 @@
 import React from 'react';
+import {setGameStatus} from './../reducers/actions';
 
 export default class QuestionTrivialButtons extends React.Component {
   constructor(props){
@@ -7,11 +8,14 @@ export default class QuestionTrivialButtons extends React.Component {
 
   onClickAnswer(){
     this.props.onAnswerQuestion();
+
   }
 
   onClickContinue(){
     console.log("ENTRAAAA")
     this.props.onNextQuestion();
+    //Hacer que el juego termine si se ha contestado todo bien o si se acaban las vidas
+    this.props.dispatch(setGameStatus("B"));
   }
 
   render(){

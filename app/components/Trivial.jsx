@@ -66,7 +66,7 @@ export default class Trivial extends React.Component {
       //console.log("El valor del contador es "+counter)
       if (counter != 1){
         currentQuestionRender = "Tipo de pregunta no soportada: las preguntas deben tener una única respuesta"
-      } else {
+      } else if(this.props.game_status === "D") {
       currentQuestionRender = (
         <div>
           <MCQuestionTrivial question={currentQuestion} dispatch={this.props.dispatch} I18n={this.props.I18n} onNextQuestion={onNextQuestion} onResetTrivial={onResetTrivial} isLastQuestion={isLastQuestion} lives={this.props.lives} crowns={this.props.crowns}/>
