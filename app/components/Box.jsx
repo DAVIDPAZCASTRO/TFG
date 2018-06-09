@@ -27,7 +27,6 @@ export default class Box extends React.Component {
     let x;
     for (x=0;x<array.length;x++){
       if((array[x][0] === box[0]) && (array[x][1] === box[1])){
-        //console.log(true)
         return true
       }
     }
@@ -35,12 +34,13 @@ export default class Box extends React.Component {
   }
 
   render(){
-    let category = "category";
+    let category = "category category";
     let text = "";
+
     if(this.props.box === "0" || this.props.box === "1" || this.props.box === "2" || this.props.box === "3" ||this.props.box === "4"){
       category += this.props.box;
     }else{
-      category += "_blank"
+      category += "_blank";
     }
     if((this.props.player.playerIn === true) && (this.props.player.position[0] === this.props.rowIndex) && (this.props.player.position[1] === this.props.columnIndex)){
       text = (
@@ -49,8 +49,13 @@ export default class Box extends React.Component {
       console.log(this.props.pm)
     } else if ((this.props.game_status === "C") && (this.isBoxInArray(this.props.pm, [this.props.rowIndex, this.props.columnIndex]))) {
       console.log("En la casilla ["+this.props.rowIndex+","+this.props.columnIndex+"] debería poner MOVE")
+      category += " clickable";
       text = (
         <img className="playerImage" src="assets/images/movements.png"/>
+      );
+    } else if(((this.props.rowIndex === this.props.crowns.crown_history.position[0]) && (this.props.columnIndex === this.props.crowns.crown_history.position[1])) || ((this.props.rowIndex === this.props.crowns.crown_movies.position[0]) && (this.props.columnIndex === this.props.crowns.crown_movies.position[1])) || ((this.props.rowIndex === this.props.crowns.crown_science.position[0]) && (this.props.columnIndex === this.props.crowns.crown_science.position[1])) || ((this.props.rowIndex === this.props.crowns.crown_sports.position[0]) && (this.props.columnIndex === this.props.crowns.crown_sports.position[1]))) {
+      text = (
+        <img className="playerImage" src="assets/images/crown.png"/>
       );
     } else {
       text = this.props.box;

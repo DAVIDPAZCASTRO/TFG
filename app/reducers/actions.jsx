@@ -42,10 +42,31 @@ export function resetLives(item){
   };
 }
 
-export function setCrowns(crowns){
+export function setCrownHistory(onBoard){
   return {
-    type:'SET_CROWNS',
-    crowns:crowns,
+    type:'SET_CROWN_HISTORY',
+    onBoard:onBoard,
+  };
+}
+
+export function setCrownMovies(onBoard){
+  return {
+    type:'SET_CROWN_MOVIES',
+    onBoard:onBoard,
+  };
+}
+
+export function setCrownScience(onBoard){
+  return {
+    type:'SET_CROWN_SCIENCE',
+    onBoard:onBoard,
+  };
+}
+
+export function setCrownSports(onBoard){
+  return {
+    type:'SET_CROWN_SPORTS',
+    onBoard:onBoard,
   };
 }
 

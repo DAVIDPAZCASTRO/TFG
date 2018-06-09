@@ -28,5 +28,22 @@ export const INITIAL_STATE = {
   },
   game_status:"A",
   lives:5,
-  crowns:0,
+  crowns:{
+    crown_history:{
+      onBoard:true,
+      position:[8,8],
+    },
+    crown_movies:{
+      onBoard:true,
+      position:[0,0],
+    },
+    crown_science:{
+      onBoard:true,
+      position:[8,0],
+    },
+    crown_sports:{
+      onBoard:true,
+      position:[0,8],
+    },
+  },
 };
