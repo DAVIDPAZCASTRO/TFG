@@ -15,18 +15,24 @@ button.category_blank {
 button.category0 {
 
   border-radius: 8px;
-  background-color: white;
-  border: 2px solid #4CAF50;
-  display: inline-block;
+  background-color: #cccccc;
+  border: 6px solid #cccccc;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
   cursor: pointer;
+}
+
+button.clickable:hover{
+  background-color: white;
 }
 
 button.category1 {
 
   border-radius: 8px;
   background-color: #0e9ad1;
-  border: 2px solid #4CAF50;
-  display: inline-block;
+  border: 5px solid #0e9ad1;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
   cursor: pointer;
 }
 
@@ -34,7 +40,8 @@ button.category2 {
 
   border-radius: 8px;
   background-color: #d10e0e;
-  border: 2px solid #d10e0e;
+  border: 5px solid #d10e0e;
+  transition-duration: 0.4s;
   cursor: pointer;
 }
 
@@ -42,8 +49,8 @@ button.category3 {
 
   border-radius: 8px;
   background-color: #f4f07a;
-  border: 2px solid #f4f07a;
-  display: inline-block;
+  border: 5px solid #f4f07a;
+  transition-duration: 0.4s;
   cursor: pointer;
 }
 
@@ -51,7 +58,7 @@ button.category4 {
 
   border-radius: 8px;
   background-color: #8abc0d;
-  border: 2px solid #4CAF50;
-  display: inline-block;
+  border: 5px solid #8abc0d;
+  transition-duration: 0.4s;
   cursor: pointer;
 }
