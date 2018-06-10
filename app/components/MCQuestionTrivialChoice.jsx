@@ -6,8 +6,21 @@ export default class MCQuestionTrivialChoice extends React.Component {
   }
 
   render(){
+    let questionClassName = "question_choice";
+    let showCorrection = (this.props.answered);
+    if(showCorrection){
+      if(this.props.clickedAnswer && this.props.choice_id === this.props.selectedChoiceId){
+        if(this.props.choice.answer === true){
+          questionClassName += " question_choice_correct";
+        } else {
+          questionClassName += " question_choice_incorrect";
+        }
+      } else if (this.props.choice.answer === true){
+        questionClassName += " question_choice_correct";
+      }
+    }
     return (
-      <div>
+      <div className={questionClassName}>
         <div className="questionC1">
           <input type="radio" name="trivial_choices" checked={this.props.checked} onChange={() => this.props.handleChange(this.props.choice_id)} disabled={this.props.answered}/>
         </div>
