@@ -78,3 +78,9 @@ div.question div.questionButtonsWrapper button[disabled]{
   border: 2px solid gray;
   cursor: default;
 }
+
+div.hearts {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}

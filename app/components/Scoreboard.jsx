@@ -23,21 +23,33 @@ export default class Scoreboard extends React.Component {
     return count;
   }
 
-  render(){
-    let info = "";
-    let hearts = "";
-    var i;
-    for(i = 0; i < this.props.lives; i++){
-      hearts += (
-        <img src="assets/images/heart_red.png"/>
+  heartsRender(){
+    let hearts = [];
+
+    for (let i = 0; i< this.props.lives; i++) {
+      hearts.push(
+        <div className="hearts">
+          <img src="assets/images/heart_red.png"/>
+        </div>
       );
     }
+    return hearts
+  }
+
+  render(){
+    let info = "";
+
+
+    // var i;
+    // for(i = 0; i < ; i++){
+    //   heart += " <img src="assets/images/heart_red.png"/>"
+    //
+    // }
     let crownsNumber = this.countCrownsInPossession();
-    console.log(hearts)
     return(
       <div>
         <div>Coronas conseguidas: {crownsNumber}</div>
-        <div>{hearts}</div>
+        <div className="heartImages">Vidas: {this.heartsRender()}</div>
       </div>
     );
   }

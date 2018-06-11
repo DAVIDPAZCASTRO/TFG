@@ -53,6 +53,7 @@ export class App extends React.Component {
       all = (
         <div>
           {appHeader}
+          <hr/>
           {appContent}
         </div>
       );
