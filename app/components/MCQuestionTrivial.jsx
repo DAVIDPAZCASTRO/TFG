@@ -53,10 +53,10 @@ export default class MCQuestionTrivial extends React.Component {
     let choices = [];
     let clickedAnswer = (this.state.selected_choice_id !== -1)
     for(let i = 0; i < this.props.question.choices.length; i++){
-      choices.push(<MCQuestionTrivialChoice key={"MyQuestion_" + "question_choice_" + i} choice={this.props.question.choices[i]} choice_id={i}  clickedAnswer={clickedAnswer} handleChange={this.handleChoiceChange.bind(this)} answered={this.state.answered}/>);
+      choices.push(<MCQuestionTrivialChoice key={"MyQuestion_" + "question_choice_" + i} choice={this.props.question.choices[i]} choice_id={i} selectedChoiceId={this.state.selected_choice_id}  clickedAnswer={clickedAnswer} handleChange={this.handleChoiceChange.bind(this)} answered={this.state.answered}/>);
     }
     return(
-      <div>
+      <div className="question">
         <h1>{this.props.question.value}</h1>
         {choices}
         <QuestionTrivialButtons dispatch={this.props.dispatch} I18n={this.props.I18n} onAnswerQuestion={this.onAnswerQuestion.bind(this)} onNextQuestion={this.onNextQuestion.bind(this)} answered={this.state.answered} />

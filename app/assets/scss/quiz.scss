@@ -29,13 +29,13 @@ div.question div.question_choice div.questionC2{
   margin: 12px 8px 12px 8px;
 }
 
-div.question div.question_choice input[type="checkbox"] {
+div.question div.question_choice input[type="radio"] {
   width: 23px;
   height: 23px;
   cursor: pointer;
 }
 
-div.question div.question_choice input[type="checkbox"][disabled]{
+div.question div.question_choice input[type="radio"][disabled]{
   cursor: default;
 }
 
