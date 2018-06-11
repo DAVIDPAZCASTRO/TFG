@@ -14,9 +14,9 @@ button.category_blank {
 
 button.category0 {
 
-  border-radius: 8px;
+  border-radius: 20px;
   background-color: #cccccc;
-  border: 6px solid #cccccc;
+  border: 5px solid #cccccc;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;
@@ -28,7 +28,7 @@ button.clickable:hover{
 
 button.category1 {
 
-  border-radius: 8px;
+  border-radius: 20px;
   background-color: #0e9ad1;
   border: 5px solid #0e9ad1;
   -webkit-transition-duration: 0.4s; /* Safari */
@@ -38,27 +38,30 @@ button.category1 {
 
 button.category2 {
 
-  border-radius: 8px;
+  border-radius: 20px;
   background-color: #d10e0e;
   border: 5px solid #d10e0e;
+  -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;
 }
 
 button.category3 {
 
-  border-radius: 8px;
+  border-radius: 20px;
   background-color: #f4f07a;
   border: 5px solid #f4f07a;
+  -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;
 }
 
 button.category4 {
 
-  border-radius: 8px;
+  border-radius: 20px;
   background-color: #8abc0d;
   border: 5px solid #8abc0d;
+  -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;
 }
