@@ -53,7 +53,7 @@ export default class Box extends React.Component {
       text = (
         <img className="playerImage" src="assets/images/movements.png"/>
       );
-    } else if(((this.props.rowIndex === this.props.crowns.crown_history.position[0]) && (this.props.columnIndex === this.props.crowns.crown_history.position[1])) || ((this.props.rowIndex === this.props.crowns.crown_movies.position[0]) && (this.props.columnIndex === this.props.crowns.crown_movies.position[1])) || ((this.props.rowIndex === this.props.crowns.crown_science.position[0]) && (this.props.columnIndex === this.props.crowns.crown_science.position[1])) || ((this.props.rowIndex === this.props.crowns.crown_sports.position[0]) && (this.props.columnIndex === this.props.crowns.crown_sports.position[1]))) {
+    } else if(((this.props.rowIndex === this.props.crowns.crown_history.position[0]) && (this.props.columnIndex === this.props.crowns.crown_history.position[1]) && (this.props.crowns.crown_history.onBoard === true)) || ((this.props.rowIndex === this.props.crowns.crown_movies.position[0]) && (this.props.columnIndex === this.props.crowns.crown_movies.position[1]) && (this.props.crowns.crown_movies.onBoard === true)) || ((this.props.rowIndex === this.props.crowns.crown_science.position[0]) && (this.props.columnIndex === this.props.crowns.crown_science.position[1]) && (this.props.crowns.crown_science.onBoard === true)) || ((this.props.rowIndex === this.props.crowns.crown_sports.position[0]) && (this.props.columnIndex === this.props.crowns.crown_sports.position[1]) && (this.props.crowns.crown_sports.onBoard === true))) {
       text = (
         <img className="playerImage" src="assets/images/crown.png"/>
       );

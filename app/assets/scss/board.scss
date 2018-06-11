@@ -1,15 +1,17 @@
 
 div.board{
-  //TODO
+  display: table;
+  margin: 0 auto;
 }
+
 
 img {
   height:75%;
   vertical-align:middle;
 }
 button.category {
-  width: 6vw;
-  height: 6vw;
+  width: 80px;
+  height: 80px;
 }
 button.category_blank {
 

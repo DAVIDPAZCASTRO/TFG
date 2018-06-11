@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as Utils from '../vendors/Utils.js';
-import {setLives, objectiveAccomplishedThunk} from './../reducers/actions';
+import {setLives, setCrownHistory, setCrownMovies, setCrownScience, setCrownSports, objectiveAccomplishedThunk} from './../reducers/actions';
 
 import MCQuestionTrivialChoice from './MCQuestionTrivialChoice.jsx';
 import QuestionTrivialButtons from './QuestionTrivialButtons.jsx';
@@ -40,7 +40,20 @@ export default class MCQuestionTrivial extends React.Component {
     }
 
     this.setState({answered:true});
-    if(!correctAnswer){
+    if(correctAnswer){
+      if(this.props.crowns.crown_history.position[0] === this.props.player.position[0] && this.props.crowns.crown_history.position[1] === this.props.player.position[1] && this.props.crowns.crown_history.onBoard === true){
+        this.props.dispatch(setCrownHistory(false));
+      }
+      if(this.props.crowns.crown_movies.position[0] === this.props.player.position[0] && this.props.crowns.crown_movies.position[1] === this.props.player.position[1] && this.props.crowns.crown_movies.onBoard === true){
+        this.props.dispatch(setCrownMovies(false));
+      }
+      if(this.props.crowns.crown_science.position[0] === this.props.player.position[0] && this.props.crowns.crown_science.position[1] === this.props.player.position[1] && this.props.crowns.crown_science.onBoard === true){
+        this.props.dispatch(setCrownScience(false));
+      }
+      if(this.props.crowns.crown_sports.position[0] === this.props.player.position[0] && this.props.crowns.crown_sports.position[1] === this.props.player.position[1] && this.props.crowns.crown_sports.onBoard === true){
+        this.props.dispatch(setCrownSports(false));
+      }
+    } else {
       this.props.dispatch(setLives(this.props.lives -1));
     }
   }

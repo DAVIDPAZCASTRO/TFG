@@ -6,21 +6,8 @@ export default class Scoreboard extends React.Component {
     super(props);
   }
 
-  countCrownsInPossession(){
-    let count = 0;
-    if(!this.props.crowns.crown_history.onBoard){
-      count++;
-    }
-    if(!this.props.crowns.crown_movies.onBoard){
-      count++;
-    }
-    if(!this.props.crowns.crown_science.onBoard){
-      count++;
-    }
-    if(!this.props.crowns.crown_sports.onBoard){
-      count++;
-    }
-    return count;
+  countCrowns(){
+    this.props.countCrowns();
   }
 
   heartsRender(){
@@ -33,7 +20,21 @@ export default class Scoreboard extends React.Component {
         </div>
       );
     }
-    return hearts
+    return hearts;
+  }
+
+  crownsRender(){
+    let crowns = [];
+    let numberCrowns = this.countCrowns.bind(this);
+    console.log("Coronas en posesion "+ numberCrowns)
+    for (let i = 0; i< numberCrowns; i++) {
+      crowns.push(
+        <div className="crowns">
+          <img src="assets/images/crown.png"/>
+        </div>
+      );
+    }
+    return crowns;
   }
 
   render(){
@@ -45,10 +46,9 @@ export default class Scoreboard extends React.Component {
     //   heart += " <img src="assets/images/heart_red.png"/>"
     //
     // }
-    let crownsNumber = this.countCrownsInPossession();
     return(
-      <div>
-        <div>Coronas conseguidas: {crownsNumber}</div>
+      <div className="scoreboard">
+        <div>Coronas conseguidas: {this.crownsRender()}</div>
         <div className="heartImages">Vidas: {this.heartsRender()}</div>
       </div>
     );

@@ -53,7 +53,7 @@ export default class Dice extends React.Component {
 
     if(imageUrlDie !== ""){
       imageDie = (
-        <div className="imageDie">
+        <div>
           <img src={imageUrlDie}/>
         </div>
       );
@@ -61,24 +61,24 @@ export default class Dice extends React.Component {
 
     if (this.props.game_status === "B"){
       die = (
-        <div>
-          <button onClick={this.onClickDie.bind(this)}>Tirar el dado</button>
-          <div className="imageDie">
+        <div className="imageDie">
+          <div>
             <img src="assets/images/die0.png"/>
           </div>
+          <button className="dieButton" onClick={this.onClickDie.bind(this)}>Tirar el dado</button>
         </div>
       );
     }
     if (this.props.game_status === "C") {
       die = (
-        <div>
+        <div className="imageDie">
           <div>Valor del dado: {this.props.dice.number}</div>
           {imageDie}
         </div>
       );
     }
     return(
-      <div>
+      <div className="die">
         {die}
       </div>
     );

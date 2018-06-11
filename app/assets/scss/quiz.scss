@@ -1,3 +1,16 @@
+div.die, div.scoreboard, div.question{
+  display: table;
+  margin: 0 auto;
+}
+div.imageDie img{
+  height: 200px;
+  width: 200px;
+  padding: 20px;
+}
+button.dieButton{
+  display: table;
+  margin: 0 auto;
+}
 div.quizHeader p {
   font-size: 20px;
   margin-top: 25px;
@@ -79,7 +92,7 @@ div.question div.questionButtonsWrapper button[disabled]{
   cursor: default;
 }
 
-div.hearts {
+div.hearts, div.crowns {
   display: inline-block;
   width: 50px;
   height: 50px;
