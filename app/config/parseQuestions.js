@@ -35,7 +35,31 @@ export function parseHistory(){
             console.log("XML in JSON")
             console.dir(myJSON);
             //Generar nuevo objeto JSON a partir del recibido
-            var myJSON = {};
+            var auxJSON = {
+              "title":"Preguntas de Historia",
+              "questions":[],
+            };
+            let questions = myJSON.quiz.question;
+            console.log(questions.length)
+            let array = [];
+            let q = {
+              "type":"multiple_choice",
+              "value":"",
+              "choices":[],
+            }
+            let answ = {
+              "id":"",
+              "value":"",
+              "answer":"",
+            }
+            for(let i=1; i<questions.length; i++){
+              q.type = "multiple_choice";
+              q.value = questions[i].questiontext[0].text[0];
+
+              let newQ = Object.assign({}, q);
+              array.push(Q)
+            }
+            console.dir(array)
             //...
             //Guardar el objeto JSON generado en el estado utilizando Redux
         });

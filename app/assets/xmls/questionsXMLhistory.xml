@@ -32,21 +32,21 @@
       <text>Pregunta de historia:</text>
     </name>
     <questiontext>
-      <text>¿En qué año se descubrió América?</text>
+      <text>¿En qué año se produjo la Revolución Francesa?</text>
     </questiontext>
     <shuffleanswers>0</shuffleanswers>
     <single>true</single>
     <answer fraction="0">
-      <text>1493</text>
+      <text>1788</text>
     </answer>
     <answer fraction="0">
-      <text>1495­</text>
+      <text>1878­</text>
     </answer>
     <answer fraction="0">
-      <text>1494­</text>
+      <text>1879</text>
     </answer>
     <answer fraction="100">
-      <text>1492</text>
+      <text>1789</text>
     </answer>
   </question>
 </quiz>
