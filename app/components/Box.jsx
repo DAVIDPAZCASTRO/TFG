@@ -10,8 +10,12 @@ export default class Box extends React.Component {
     if((this.props.game_status=== "C") && (this.isBoxInArray(this.props.pm, [this.props.rowIndex, this.props.columnIndex]))){
       this.onSetPosition();
       this.onSetPossibleMovements(this.props.pm);
-      this.props.dispatch(setGameStatus("D"));
-
+      if(this.props.rowIndex === 4 && this.props.columnIndex === 4){
+        //Cae en la casilla central, los lados se vuelven a lanzar
+        this.props.dispatch(setGameStatus("B"));
+      } else {
+        this.props.dispatch(setGameStatus("D"));
+      }
     }
   }
 

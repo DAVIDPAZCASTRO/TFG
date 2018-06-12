@@ -6,6 +6,8 @@ import {addObjectives, resetDice, finishApp} from './../reducers/actions';
 
 import QuizHeader from './QuizHeader.jsx';
 import Board from './Board.jsx';
+import Legend from './Legend.jsx';
+
 import Dice from './Dice.jsx';
 import Scoreboard from './Scoreboard.jsx';
 import MCQuestionTrivial from './MCQuestionTrivial.jsx';
@@ -88,7 +90,7 @@ export default class Trivial extends React.Component {
       } else if(this.props.game_status === "D") {
       currentQuestionRender = (
         <div>
-          <MCQuestionTrivial question={currentQuestion} dispatch={this.props.dispatch} I18n={this.props.I18n} onNextQuestion={onNextQuestion} onResetTrivial={onResetTrivial} isLastQuestion={isLastQuestion} lives={this.props.lives} crowns={this.props.crowns} player={this.props.player}/>
+          <MCQuestionTrivial question={currentQuestion} dispatch={this.props.dispatch} I18n={this.props.I18n} onNextQuestion={onNextQuestion} onResetTrivial={onResetTrivial} isLastQuestion={isLastQuestion} lives={this.props.lives} crowns={this.props.crowns} countCrowns={this.countCrownsInPossession.bind(this)} player={this.props.player}/>
         </div>
         );
       }
@@ -96,7 +98,12 @@ export default class Trivial extends React.Component {
 
     return(
       <div className="trivial">
-        <Scoreboard dispatch={this.props.dispatch} lives={this.props.lives} crowns={this.props.crowns} game_status={this.props.game_status} countCrowns={this.countCrownsInPossession.bind(this)}/>
+        <div className="scoreboardpluslegend1">
+          <div className="scoreboardpluslegend2">
+            <Scoreboard dispatch={this.props.dispatch} lives={this.props.lives} crowns={this.props.crowns} game_status={this.props.game_status} countCrowns={this.countCrownsInPossession.bind(this)}/>
+            <Legend/>
+          </div>
+        </div>
         <Board dispatch={this.props.dispatch} boxes={this.state.boxes} player={this.props.player} movement={this.props.movement} dice={this.props.dice} game_status={this.props.game_status} crowns={this.props.crowns}/>
         <Dice dispatch={this.props.dispatch} dice={this.props.dice} game_status={this.props.game_status}/>
         {currentQuestionRender}

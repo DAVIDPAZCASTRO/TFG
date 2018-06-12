@@ -43,23 +43,32 @@ export default class MCQuestionTrivial extends React.Component {
     if(correctAnswer){
       if(this.props.crowns.crown_history.position[0] === this.props.player.position[0] && this.props.crowns.crown_history.position[1] === this.props.player.position[1] && this.props.crowns.crown_history.onBoard === true){
         this.props.dispatch(setCrownHistory(false));
+        alert("¡Enhorabuena!¡Has conseguido la corona de Historia!");
       }
       if(this.props.crowns.crown_movies.position[0] === this.props.player.position[0] && this.props.crowns.crown_movies.position[1] === this.props.player.position[1] && this.props.crowns.crown_movies.onBoard === true){
         this.props.dispatch(setCrownMovies(false));
+        alert("¡Enhorabuena!¡Has conseguido la corona de Cine!");
       }
       if(this.props.crowns.crown_science.position[0] === this.props.player.position[0] && this.props.crowns.crown_science.position[1] === this.props.player.position[1] && this.props.crowns.crown_science.onBoard === true){
         this.props.dispatch(setCrownScience(false));
+        alert("¡Enhorabuena!¡Has conseguido la corona de Ciencia!");
       }
       if(this.props.crowns.crown_sports.position[0] === this.props.player.position[0] && this.props.crowns.crown_sports.position[1] === this.props.player.position[1] && this.props.crowns.crown_sports.onBoard === true){
         this.props.dispatch(setCrownSports(false));
+        alert("¡Enhorabuena!¡Has conseguido la corona de Deporte!");
       }
     } else {
       this.props.dispatch(setLives(this.props.lives -1));
+      alert("Oh, has fallado la pregunta, pierdes una vida");
     }
   }
 
   onNextQuestion(){
     this.props.onNextQuestion();
+  }
+
+  countCrowns(){
+    this.props.countCrowns();
   }
 
   render(){
@@ -72,7 +81,7 @@ export default class MCQuestionTrivial extends React.Component {
       <div className="question">
         <h1>{this.props.question.value}</h1>
         {choices}
-        <QuestionTrivialButtons dispatch={this.props.dispatch} I18n={this.props.I18n} onAnswerQuestion={this.onAnswerQuestion.bind(this)} onNextQuestion={this.onNextQuestion.bind(this)} answered={this.state.answered} />
+        <QuestionTrivialButtons dispatch={this.props.dispatch} I18n={this.props.I18n} onAnswerQuestion={this.onAnswerQuestion.bind(this)} onNextQuestion={this.onNextQuestion.bind(this)} answered={this.state.answered} countCrowns={this.countCrowns.bind(this)}/>
       </div>
     );
   }

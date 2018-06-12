@@ -10,16 +10,20 @@ img {
   vertical-align:middle;
 }
 button.category {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
 }
+
+button.clickable:hover{
+  background-color: white;
+}
+
 button.category_blank {
 
   visibility: hidden;
 }
 
 button.category0 {
-
   border-radius: 20px;
   background-color: #cccccc;
   border: 5px solid #cccccc;
@@ -28,12 +32,15 @@ button.category0 {
   cursor: pointer;
 }
 
-button.clickable:hover{
-  background-color: white;
+button.category0Legend {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background-color: #cccccc;
+  border: 5px solid #cccccc;
 }
 
 button.category1 {
-
   border-radius: 20px;
   background-color: #0e9ad1;
   border: 5px solid #0e9ad1;
@@ -42,8 +49,15 @@ button.category1 {
   cursor: pointer;
 }
 
-button.category2 {
+button.category1Legend {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background-color: #0e9ad1;
+  border: 5px solid #0e9ad1;
+}
 
+button.category2 {
   border-radius: 20px;
   background-color: #d10e0e;
   border: 5px solid #d10e0e;
@@ -52,8 +66,16 @@ button.category2 {
   cursor: pointer;
 }
 
-button.category3 {
+button.category2Legend {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background-color: #d10e0e;
+  border: 5px solid #d10e0e;
+}
 
+
+button.category3 {
   border-radius: 20px;
   background-color: #f4f07a;
   border: 5px solid #f4f07a;
@@ -62,12 +84,27 @@ button.category3 {
   cursor: pointer;
 }
 
-button.category4 {
+button.category3Legend {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background-color: #f4f07a;
+  border: 5px solid #f4f07a;
+}
 
+button.category4 {
   border-radius: 20px;
   background-color: #8abc0d;
   border: 5px solid #8abc0d;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;
+}
+
+button.category4Legend {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background-color: #8abc0d;
+  border: 5px solid #8abc0d;
 }

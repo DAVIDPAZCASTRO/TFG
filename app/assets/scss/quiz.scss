@@ -1,6 +1,32 @@
-div.die, div.scoreboard, div.question{
+div.question{
   display: table;
   margin: 0 auto;
+  padding: 20px;
+}
+
+div.die {
+  display: table;
+  margin: 0 auto;
+}
+
+div.legend {
+  display: inline-block;
+  padding-left: 40px;
+}
+
+div.scoreboardpluslegend1{
+  display: table;
+  margin: 0 auto;
+}
+
+div.scoreboardpluslegend2{
+  display: inline-flex;
+  padding:30px;
+}
+
+div.legendText{
+    display: inline-block;
+    padding-left: 10px;
 }
 div.imageDie img{
   height: 200px;
@@ -75,7 +101,7 @@ div.question div.questionButtonsWrapper {
   padding: 10px;
 }
 
-div.question div.questionButtonsWrapper button.answerQuestion, div.question div.questionButtonsWrapper button.resetQuestion, div.question div.questionButtonsWrapper button.resetQuiz, div.question div.questionButtonsWrapper button.nextQuestion {
+div.question div.questionButtonsWrapper button.answerQuestion, div.question div.questionButtonsWrapper button.continueTrivial, button.dieButton {
   padding: 10px;
   margin-left: 10px;
   color: black;
