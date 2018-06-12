@@ -20,18 +20,26 @@ export function parseHistory(){
 
 export function parseHistory(){
 
-  //var fs = require('fs');
-  //var XMLH = require('./questionsXMLhistory')
-  var xml2js = require('xml2js');
-  var XMLH = '<?xml version="1.0" encoding="UTF-8"?><quiz><question type="category"><category><text>Moodle QUIZ XML export</text></category></question><question type="multichoice"><name><text>Pregunta de historia:</text></name><questiontext><text>¿En qué año se descubrió América?</text></questiontext><shuffleanswers>0</shuffleanswers><single>true</single><answer fraction="0"><text>1493</text></answer><answer fraction="0"><text>1495­</text></answer><answer fraction="0"><text>1494­</text></answer><answer fraction="100"><text>1492</text></answer></question></quiz>';
-  var parser = new xml2js.Parser();
-  //fs.readFile('./questionsXMLhistory.xml', function(err, data) {
-
-      parser.parseString(XMLH, function (err, result) {
-      console.dir(result);
-      console.log('Done');
-    //});
 
 
-  });
+  //Load Moodle XML file
+      fetch('assets/xmls/questionsXMLhistory.xml')
+      .then(function(response) {
+        return response.text();
+      })
+      .then(function(myXML) {
+        console.log("myXML")
+        console.log(myXML);
+        var parseString = require('xml2js').parseString;
+        parseString(myXML, function (err, myJSON) {
+            console.log("XML in JSON")
+            console.dir(myJSON);
+            //Generar nuevo objeto JSON a partir del recibido
+            var myJSON = {};
+            //...
+            //Guardar el objeto JSON generado en el estado utilizando Redux
+        });
+      })
+
+
 }

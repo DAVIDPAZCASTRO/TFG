@@ -24,7 +24,7 @@ export class App extends React.Component {
     let appHeader = "";
     let appContent = "";
     let all = "";
-    console.log(this.props.game_status);
+    //console.log(this.props.game_status);
 
     if((this.props.tracking.finished !== true) || (GLOBAL_CONFIG.finish_screen === false)){
       appHeader = (

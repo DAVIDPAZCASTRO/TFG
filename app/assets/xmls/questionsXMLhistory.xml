@@ -27,4 +27,26 @@
       <text>1492</text>
     </answer>
   </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de historia:</text>
+    </name>
+    <questiontext>
+      <text>¿En qué año se descubrió América?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>1493</text>
+    </answer>
+    <answer fraction="0">
+      <text>1495­</text>
+    </answer>
+    <answer fraction="0">
+      <text>1494­</text>
+    </answer>
+    <answer fraction="100">
+      <text>1492</text>
+    </answer>
+  </question>
 </quiz>
