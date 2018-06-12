@@ -57,7 +57,7 @@ export function parseHistory(){
               q.value = questions[i].questiontext[0].text[0];
 
               let newQ = Object.assign({}, q);
-              array.push(Q)
+              array.push(newQ)
             }
             console.dir(array)
             //...
