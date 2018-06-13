@@ -49,4 +49,26 @@
       <text>1789</text>
     </answer>
   </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de historia:</text>
+    </name>
+    <questiontext>
+      <text>¿Quien pintó las Meninas?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>El Greco</text>
+    </answer>
+    <answer fraction="100">
+      <text>Velázquez­</text>
+    </answer>
+    <answer fraction="0">
+      <text>Murillo</text>
+    </answer>
+    <answer fraction="0">
+      <text>Goya</text>
+    </answer>
+  </question>
 </quiz>
