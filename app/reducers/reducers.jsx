@@ -9,6 +9,7 @@ import movementReducer from './movementReducer';
 import gameStatusReducer from './gameStatusReducer';
 import livesReducer from './livesReducer';
 import crownsReducer from './crownsReducer';
+import jsonReducer from './jsonReducer';
 
 const GlobalState = combineReducers({
   tracking:trackingReducer,
@@ -21,6 +22,7 @@ const GlobalState = combineReducers({
   game_status:gameStatusReducer,
   lives:livesReducer,
   crowns:crownsReducer,
+  jsons:jsonReducer,
 });
 
 export default GlobalState;

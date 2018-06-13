@@ -15,7 +15,7 @@ export default class Dice extends React.Component {
 
   onRollDice(){
     let number = Math.floor(Math.random()*6)+1;
-    console.log(number);
+    //console.log(number);
     this.props.dispatch(rollDice(number));
   }
 

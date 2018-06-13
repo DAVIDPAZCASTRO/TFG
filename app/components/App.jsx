@@ -4,6 +4,9 @@ import './../assets/scss/main.scss';
 
 import {GLOBAL_CONFIG} from '../config/config.js';
 import * as I18n from '../vendors/I18n.js';
+
+import {setJsonMovies, setJsonSports, setJsonHistory, setJsonScience} from './../reducers/actions';
+
 import * as PQ from '../config/parseQuestions.js';
 import * as SAMPLES from '../config/samples.js';
 
@@ -18,13 +21,15 @@ export class App extends React.Component {
   constructor(props){
     super(props);
     I18n.init();
-    PQ.parseHistory();
+    console.log(PQ.parseHistory())
+    this.props.dispatch(setJsonHistory(PQ.parseHistory()));
+    console.log(this.props.jsons.jsonHistory)
   }
   render(){
     let appHeader = "";
     let appContent = "";
     let all = "";
-    console.log(this.props.game_status);
+    //console.log(this.props.game_status);
 
     if((this.props.tracking.finished !== true) || (GLOBAL_CONFIG.finish_screen === false)){
       appHeader = (

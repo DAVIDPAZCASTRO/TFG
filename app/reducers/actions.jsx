@@ -76,6 +76,35 @@ export function resetCrowns(item){
   };
 }
 
+export function setJsonHistory(json){
+  console.log("entraaa")
+  return {
+    type:'SET_JSON_HISTORY',
+    json:json,
+  };
+}
+
+export function setJsonSports(json){
+  return {
+    type:'SET_JSON_SPORTS',
+    json:json,
+  };
+}
+
+export function setJsonScience(json){
+  return {
+    type:'SET_JSON_SCIENCE',
+    json:json,
+  };
+}
+
+export function setJsonMovies(json){
+  return {
+    type:'SET_JSON_MOVIES',
+    json:json,
+  };
+}
+
 export function setPosition(x,y){
   return{
     type:'SET_POSITION',

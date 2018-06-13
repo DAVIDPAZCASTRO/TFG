@@ -1,37 +1,84 @@
-/*var xmlDoc;
+
+function constructMyJSON(categoryJSON){
+  var auxJSON = {
+    "title":"Preguntas de Historia",
+    "questions":[],
+  };
+  let questions = categoryJSON.quiz.question;
+
+  //console.log(questions.length)
+  let arrayQuestions = [];
+
+  let q = {
+    "type":"multiple_choice",
+    "value":"",
+    "choices":[],
+  }
+
+  for(let i=1; i<questions.length; i++){
+    let arrayChoices = [];
+    let choices = questions[i].answer;
+    let choi = {
+      "id":"",
+      "value":"",
+      "answer":"",
+    }
+    q.type = "multiple_choice";
+    q.value = questions[i].questiontext[0].text[0];
+    for(let j=0; j<choices.length; j++){
+      choi.id = j+1;
+      choi.value = choices[j].text[0];
+      //console.log(choices[j].$.fraction)
+      if(choices[j].$.fraction === "100"){
+        choi.answer = true;
+      } else{
+        choi.answer = false;
+      }
+      let newChoi = Object.assign({}, choi);
+      arrayChoices.push(newChoi)
+    }
+    //console.log("CHOICES")
+    //console.dir(arrayChoices)
+    q.choices = arrayChoices;
+    let newQ = Object.assign({}, q);
+    arrayQuestions.push(newQ)
+  }
+
+  auxJSON.questions = arrayQuestions;
+  //console.dir(auxJSON)
+  return auxJSON;
+}
+
 export function parseHistory(){
 
-  var moz = (typeof document.implementation != 'undefined') && (typeof document.implementation.createDocument != 'undefined');
-  var ie = (typeof window.ActiveXObject != 'undefined');
+  let promise = new Promise((resolve,reject) => {
 
-  if (moz) {
-    xmlDoc = document.implementation.createDocument("", "", null);
-    xmlDoc.async=false;
-    xmlDoc.load("./questionsXMLhistory.xml");
-  }
-  else if (ie)
-  {
-	  xmlDoc = new ActiveXObject("MSXML2.DOMDocument");
-	  xmlDoc.async = false;
-	  while(xmlDoc.readyState != 4) {};
-	  xmlDoc.load("./questionsXMLhistory.xml");
-  }
-*/
+    //Load Moodle XML file
+    fetch('assets/xmls/questionsXMLhistory.xml')
+    .then(function(response) {
+      console.log(response)
+      return response.text();
+    })
+    .then(function(myXML) {
+      //console.log("myXML")
+      //console.log(myXML);
+      var parseString = require('xml2js').parseString;
+      let a = parseString(myXML, function (err, myJSON) {
+          //console.log("XML in JSON")
+          //console.dir(myJSON);
+          //Generar nuevo objeto JSON a partir del recibido
+          let newjson = Object.assign({}, myJSON);
+          resolve(constructMyJSON(newjson));
 
-export function parseHistory(){
+          //El valor de historyJSON es el esperado, el problema es guardar el objeto (sacarlo de fetch)
+          //return historyJSON
+          //Guardar el objeto JSON generado en el estado utilizando Redux
+      });
+      //console.log(myXML)
 
-  //var fs = require('fs');
-  //var XMLH = require('./questionsXMLhistory')
-  var xml2js = require('xml2js');
-  var XMLH = '<?xml version="1.0" encoding="UTF-8"?><quiz><question type="category"><category><text>Moodle QUIZ XML export</text></category></question><question type="multichoice"><name><text>Pregunta de historia:</text></name><questiontext><text>¿En qué año se descubrió América?</text></questiontext><shuffleanswers>0</shuffleanswers><single>true</single><answer fraction="0"><text>1493</text></answer><answer fraction="0"><text>1495­</text></answer><answer fraction="0"><text>1494­</text></answer><answer fraction="100"><text>1492</text></answer></question></quiz>';
-  var parser = new xml2js.Parser();
-  //fs.readFile('./questionsXMLhistory.xml', function(err, data) {
-
-      parser.parseString(XMLH, function (err, result) {
-      console.dir(result);
-      console.log('Done');
-    //});
-
-
+    })
   });
+
+  return promise;
+
 }

@@ -50,9 +50,9 @@ export default class Box extends React.Component {
       text = (
         <img className="playerImage" src="assets/images/player.png"/>
       );
-      console.log(this.props.pm)
+      //console.log(this.props.pm)
     } else if ((this.props.game_status === "C") && (this.isBoxInArray(this.props.pm, [this.props.rowIndex, this.props.columnIndex]))) {
-      console.log("En la casilla ["+this.props.rowIndex+","+this.props.columnIndex+"] debería poner MOVE")
+      //console.log("En la casilla ["+this.props.rowIndex+","+this.props.columnIndex+"] debería poner MOVE")
       category += " clickable";
       text = (
         <img className="playerImage" src="assets/images/movements.png"/>

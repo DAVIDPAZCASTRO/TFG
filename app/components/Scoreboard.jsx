@@ -23,7 +23,7 @@ export default class Scoreboard extends React.Component {
   crownsRender(){
     let crowns = [];
     let numberCrowns = this.props.countCrowns();
-    console.log("Coronas en posesion "+ numberCrowns)
+    //console.log("Coronas en posesion "+ numberCrowns)
     for (let i = 0; i< numberCrowns; i++) {
       crowns.push(
         <div key={i} className="crowns">
@@ -37,15 +37,9 @@ export default class Scoreboard extends React.Component {
   render(){
     let info = "";
 
-
-    // var i;
-    // for(i = 0; i < ; i++){
-    //   heart += " <img src="assets/images/heart_red.png"/>"
-    //
-    // }
     return(
       <div className="scoreboard">
-        <div className="heartImages">Vidas: {this.heartsRender()}</div>
+        <div>Vidas: {this.heartsRender()}</div>
         <div>Coronas conseguidas: {this.crownsRender()}</div>
       </div>
     );
