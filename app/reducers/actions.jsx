@@ -77,7 +77,6 @@ export function resetCrowns(item){
 }
 
 export function setJsonHistory(json){
-  console.log("entraaa")
   return {
     type:'SET_JSON_HISTORY',
     json:json,

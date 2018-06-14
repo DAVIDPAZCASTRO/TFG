@@ -21,9 +21,22 @@ export class App extends React.Component {
   constructor(props){
     super(props);
     I18n.init();
-    console.log(PQ.parseHistory())
-    this.props.dispatch(setJsonHistory(PQ.parseHistory()));
-    console.log(this.props.jsons.jsonHistory)
+
+    // console.dir(promisePQ)
+    // const { foo, bar } = promisePQ.then(result => result.data);
+    // console.log(foo);
+    // console.log(bar);
+    // this.props.dispatch(setJsonHistory(PQ.parseHistory()));
+    // console.log(this.props.jsons.jsonHistory)
+  }
+  componentDidMount(){
+    let promise = PQ.parseHistory();
+    console.log(promise)
+
+    // let object = promise.then(function(result){
+    //   this.props.dispatch(setJsonHistory(result));
+    // });
+    //console.log(object)
   }
   render(){
     let appHeader = "";
@@ -31,7 +44,7 @@ export class App extends React.Component {
     let all = "";
     //console.log(this.props.game_status);
 
-    if((this.props.tracking.finished !== true) || (GLOBAL_CONFIG.finish_screen === false)){
+    if((this.props.tracking.finished !== true) || ((this.props.game_status !==  "E") || (this.props.game_status !==  "F")){
       appHeader = (
         <Header user_profile={this.props.user_profile} tracking={this.props.tracking} config={GLOBAL_CONFIG} I18n={I18n}/>
       );

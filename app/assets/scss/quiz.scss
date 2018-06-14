@@ -53,6 +53,7 @@ div.question div.question_choice {
   background: white;
   margin: 10px;
   padding: 2px;
+    border-radius: 25px;
 }
 
 div.question div.question_choice div.questionC1{
@@ -60,6 +61,7 @@ div.question div.question_choice div.questionC1{
   width: 35px;
   margin-top: 9px;
   margin-left: 10px;
+
 }
 
 div.question div.question_choice div.questionC2{
@@ -99,6 +101,7 @@ div.question div.question_choice_correct, div.question div.question_choice_incor
 
 div.question div.questionButtonsWrapper {
   padding: 10px;
+
 }
 
 div.question div.questionButtonsWrapper button.answerQuestion, div.question div.questionButtonsWrapper button.continueTrivial, button.dieButton {

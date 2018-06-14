@@ -11,10 +11,14 @@ export default class HomeScreen extends React.Component {
 
   render(){
     return (
-      <div className="home_screen">
-          <h1 id="home_title">TRIVIAL</h1>
-          <a>¿Te atreves a jugar una partida al Trivial? Hay cuatro categorías distintas: historia, cine, deportes y ciencia. Consigue las 4 coronas de cada categoría situadas en las esquinas para ganar. Tienes 5 vidas, cada vez que falles, pierdes una, y si te quedas sin ninguna, pierdes.</a>
-          <div><button onClick={() => {this.props.dispatch(setGameStatus("B"))}}>JUGAR</button></div>
+      <div>
+          <div className="center_screen home_screen">
+            <h1 className="home_title">TRIVIAL</h1>
+          </div>
+          <div className="center_screen textHome">
+            <p className="center_screen">¿Te atreves a jugar una partida al Trivial?</p> <li>Hay cuatro categorías distintas: <a className="historia">HISTORIA</a>, <a className="cine">CINE</a>, <a className="deportes">DEPORTES</a> y <a className="ciencia">CIENCIA</a>.</li><li> Consigue la corona de cada una de las categorías para ganar.</li><li>Tienes 5 vidas. Cada vez que falles perderás una. Si te quedas sin vidas, pierdes.</li>
+          </div>
+          <div className="buttonHome"><button onClick={() => {this.props.dispatch(setGameStatus("B"))}}>JUGAR</button></div>
       </div>
     );
   }

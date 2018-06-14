@@ -50,34 +50,41 @@ function constructMyJSON(categoryJSON){
 }
 
 export function parseHistory(){
-
+  let result = [{
+    hola:[],
+  }];
+  console.log([1,2,3,1])
   let promise = new Promise((resolve,reject) => {
 
     //Load Moodle XML file
     fetch('assets/xmls/questionsXMLhistory.xml')
     .then(function(response) {
-      console.log(response)
+      //console.log(response)
       return response.text();
     })
     .then(function(myXML) {
       //console.log("myXML")
       //console.log(myXML);
       var parseString = require('xml2js').parseString;
-      let a = parseString(myXML, function (err, myJSON) {
+      parseString(myXML, function (err, myJSON) {
           //console.log("XML in JSON")
           //console.dir(myJSON);
           //Generar nuevo objeto JSON a partir del recibido
           let newjson = Object.assign({}, myJSON);
+
+          var myJSON =  constructMyJSON(newjson) //construyo mi json correcto
+
+          //aqui no puedo llamar a this.props dispatch
+          //los metodos no
           resolve(constructMyJSON(newjson));
 
-          //El valor de historyJSON es el esperado, el problema es guardar el objeto (sacarlo de fetch)
-          //return historyJSON
           //Guardar el objeto JSON generado en el estado utilizando Redux
       });
-      //console.log(myXML)
+
 
     })
-  });
+  })
+  console.dir(promise)
 
   return promise;
 
