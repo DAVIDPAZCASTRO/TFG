@@ -1,24 +1,107 @@
 body {
-  background-color: white;
+  background-color: #ebebe0;
+  //background-color: #f9f9f9;
+  font-family: Arial;
   //background-image: url("assets/images/paper_texture.jpg");
 }
+.center_screen{
+  display: table;
+  margin: 0 auto;
+}
 
-div.header_wrapper img {
-  width: 71px;
-  height: 50px;
+h1.pregunta{
+  font-size: 130%;
+}
+
+
+
+a.historia{
+  font-weight: bolder;
+  color: #f6cd20;
+  text-shadow: 1px 1px #000000;
+}
+
+a.cine{
+  font-weight: bolder;
+  color: #0e9ad1;
+  text-shadow: 1px 1px #000000;
+}
+
+a.deportes{
+  font-weight: bolder;
+  color: #d10e0e;
+  text-shadow: 1px 1px #000000;
+}
+
+a.ciencia{
+  font-weight: bolder;
+  color: #8abc0d;
+  text-shadow: 1px 1px #000000;
+}
+
+div.home_screen h1{
+  font-family: verdana;
+  font-size: 600%;
+}
+
+div.textHome{
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 50px;
+}
+
+div.textHome p{
+  font-size:200%;
+  padding-bottom: 50px;
+}
+
+div.textHome li{
+  font-size:150%;
+
+}
+
+div.buttonHome{
+  display: table;
+  margin: 0 auto;
+}
+
+div.buttonHome button {
+  padding: 10px;
+  margin-left: 10px;
+  color: black;
+  background: white;
+  border: 2px solid black;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+div.header_wrapper div.imgsleft img {
+  width: 100px;
+  height: 100px;
   float: left;
   margin-top: 8px;
+  margin-right: 8px;
+}
+
+div.header_wrapper div.imgsright img {
+  width: 100px;
+  height: 100px;
+  float: right;
+  margin-top: 8px;
+  margin-left: 8px;
 }
 
 #heading {
-  font-size: 30px;
-  margin: 8px;
+  font-size: 70px;
+  margin-bottom: 0px;
+  margin-top: 8px;
 }
 
 #tracking{
   font-size: 18px;
   color: black;
-  margin: 8px;
+  //margin: 8px;
 }
 
 #tracking span {

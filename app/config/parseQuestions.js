@@ -1,69 +1,84 @@
-/*var xmlDoc;
+
+function constructMyJSON(categoryJSON){
+  var auxJSON = {
+    "title":"Preguntas de Historia",
+    "questions":[],
+  };
+  let questions = categoryJSON.quiz.question;
+
+  //console.log(questions.length)
+  let arrayQuestions = [];
+
+  let q = {
+    "type":"multiple_choice",
+    "value":"",
+    "choices":[],
+  }
+
+  for(let i=1; i<questions.length; i++){
+    let arrayChoices = [];
+    let choices = questions[i].answer;
+    let choi = {
+      "id":"",
+      "value":"",
+      "answer":"",
+    }
+    q.type = "multiple_choice";
+    q.value = questions[i].questiontext[0].text[0];
+    for(let j=0; j<choices.length; j++){
+      choi.id = j+1;
+      choi.value = choices[j].text[0];
+      //console.log(choices[j].$.fraction)
+      if(choices[j].$.fraction === "100"){
+        choi.answer = true;
+      } else{
+        choi.answer = false;
+      }
+      let newChoi = Object.assign({}, choi);
+      arrayChoices.push(newChoi)
+    }
+    //console.log("CHOICES")
+    //console.dir(arrayChoices)
+    q.choices = arrayChoices;
+    let newQ = Object.assign({}, q);
+    arrayQuestions.push(newQ)
+  }
+
+  auxJSON.questions = arrayQuestions;
+  //console.dir(auxJSON)
+  return auxJSON;
+}
+
 export function parseHistory(){
 
-  var moz = (typeof document.implementation != 'undefined') && (typeof document.implementation.createDocument != 'undefined');
-  var ie = (typeof window.ActiveXObject != 'undefined');
+  let promise = new Promise((resolve,reject) => {
 
-  if (moz) {
-    xmlDoc = document.implementation.createDocument("", "", null);
-    xmlDoc.async=false;
-    xmlDoc.load("./questionsXMLhistory.xml");
-  }
-  else if (ie)
-  {
-	  xmlDoc = new ActiveXObject("MSXML2.DOMDocument");
-	  xmlDoc.async = false;
-	  while(xmlDoc.readyState != 4) {};
-	  xmlDoc.load("./questionsXMLhistory.xml");
-  }
-*/
+    //Load Moodle XML file
+    fetch('assets/xmls/questionsXMLhistory.xml')
+    .then(function(response) {
+      console.log(response)
+      return response.text();
+    })
+    .then(function(myXML) {
+      //console.log("myXML")
+      //console.log(myXML);
+      var parseString = require('xml2js').parseString;
+      let a = parseString(myXML, function (err, myJSON) {
+          //console.log("XML in JSON")
+          //console.dir(myJSON);
+          //Generar nuevo objeto JSON a partir del recibido
+          let newjson = Object.assign({}, myJSON);
+          resolve(constructMyJSON(newjson));
 
-export function parseHistory(){
+          //El valor de historyJSON es el esperado, el problema es guardar el objeto (sacarlo de fetch)
+          //return historyJSON
+          //Guardar el objeto JSON generado en el estado utilizando Redux
+      });
+      //console.log(myXML)
 
+    })
+  });
 
-
-  //Load Moodle XML file
-      fetch('assets/xmls/questionsXMLhistory.xml')
-      .then(function(response) {
-        return response.text();
-      })
-      .then(function(myXML) {
-        console.log("myXML")
-        console.log(myXML);
-        var parseString = require('xml2js').parseString;
-        parseString(myXML, function (err, myJSON) {
-            console.log("XML in JSON")
-            console.dir(myJSON);
-            //Generar nuevo objeto JSON a partir del recibido
-            var auxJSON = {
-              "title":"Preguntas de Historia",
-              "questions":[],
-            };
-            let questions = myJSON.quiz.question;
-            console.log(questions.length)
-            let array = [];
-            let q = {
-              "type":"multiple_choice",
-              "value":"",
-              "choices":[],
-            }
-            let answ = {
-              "id":"",
-              "value":"",
-              "answer":"",
-            }
-            for(let i=1; i<questions.length; i++){
-              q.type = "multiple_choice";
-              q.value = questions[i].questiontext[0].text[0];
-
-              let newQ = Object.assign({}, q);
-              array.push(newQ)
-            }
-            console.dir(array)
-            //...
-            //Guardar el objeto JSON generado en el estado utilizando Redux
-        });
-      })
-
+  return promise;
 
 }

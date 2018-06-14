@@ -46,4 +46,10 @@ export const INITIAL_STATE = {
       position:[0,8],
     },
   },
+  jsons:{
+    jsonHistory:0,
+    jsonSports:0,
+    jsonMovies:0,
+    jsonScience:0,
+  },
 };

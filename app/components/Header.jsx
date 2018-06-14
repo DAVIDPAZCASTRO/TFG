@@ -22,16 +22,16 @@ export default class Header extends React.Component {
       if((typeof this.props.user_profile.name === "string")){
         loggedText = (this.props.I18n.getTrans("i.logged_as") + " " + this.props.user_profile.name);
       }
-      if(typeof this.props.user_profile.learner_preference === "object"){
-        if(typeof this.props.user_profile.learner_preference.difficulty === "number"){
-          trackingTexts.push(this.props.I18n.getTrans("i.difficulty") + ": " + this.props.user_profile.learner_preference.difficulty);
-        }
-      }
+      // if(typeof this.props.user_profile.learner_preference === "object"){
+      //   if(typeof this.props.user_profile.learner_preference.difficulty === "number"){
+      //     trackingTexts.push(this.props.I18n.getTrans("i.difficulty") + ": " + this.props.user_profile.learner_preference.difficulty);
+      //   }
+      // }
     }
 
     let loggedEl = null;
     if(typeof loggedText === "string"){
-      loggedEl = <p id="logged_user">{loggedText}</p>;
+      loggedEl = <p className="center_screen" id="logged_user">{loggedText}</p>;
     }
     let trackingEls = trackingTexts.map(function(text, index){
       return <span key={index}>{text}</span>;
@@ -39,10 +39,11 @@ export default class Header extends React.Component {
 
     return (
       <div className="header_wrapper">
-        <a target="_blank" href="https://github.com/agordillo/RESCORM"><img src="assets/images/react_logo.png"/></a>
-        <h1 id="heading">{this.props.I18n.getTrans("i.title")}</h1>
-        <p id="tracking">{trackingEls}</p>
-        {loggedEl}
+        <div className="imgsright"><a target="_blank" href="https://github.com/agordillo/RESCORM"><img src="assets/images/crown.png"/><img src="assets/images/crown.png"/></a></div>
+        <div className="imgsleft"><a target="_blank" href="https://github.com/agordillo/RESCORM"><img src="assets/images/crown.png"/><img src="assets/images/crown.png"/></a></div>
+        <div className="center_screen"><h1 id="heading">{this.props.I18n.getTrans("i.title")}</h1></div>
+        <div className="center_screen"><p id="tracking">{trackingEls}</p></div>
+        <div className="center_screen">{loggedEl}</div>
       </div>
     );
   }

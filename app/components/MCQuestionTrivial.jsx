@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as Utils from '../vendors/Utils.js';
-import {setLives, setCrownHistory, setCrownMovies, setCrownScience, setCrownSports, objectiveAccomplishedThunk} from './../reducers/actions';
+import {objectiveAccomplished, objectiveAccomplishedThunk, setLives, setCrownHistory, setCrownMovies, setCrownScience, setCrownSports} from './../reducers/actions';
 
 import MCQuestionTrivialChoice from './MCQuestionTrivialChoice.jsx';
 import QuestionTrivialButtons from './QuestionTrivialButtons.jsx';
@@ -19,7 +19,7 @@ export default class MCQuestionTrivial extends React.Component {
   componentWillUpdate(prevProps, prevState){
     if(prevProps.question !== this.props.question){
       this.setState({selected_choice_id: -1, answered:false});
-      console.log("CHOICE_ID = " +this.state.selected_choice_id)
+      //console.log("CHOICE_ID = " +this.state.selected_choice_id)
     }
   }
 
@@ -32,6 +32,10 @@ export default class MCQuestionTrivial extends React.Component {
 
   onAnswerQuestion(){
     let correctAnswer = false;
+    let objectiveHistory = this.props.objectiveHistory;
+    let objectiveMovies = this.props.objectiveMovies;
+    let objectiveSports = this.props.objectiveSports;
+    let objectiveScience = this.props.objectiveScience;
     if(this.state.selected_choice_id !== -1){
       let selectedChoice = this.props.question.choices[this.state.selected_choice_id];
       correctAnswer = (selectedChoice.answer === true);
@@ -43,19 +47,27 @@ export default class MCQuestionTrivial extends React.Component {
     if(correctAnswer){
       if(this.props.crowns.crown_history.position[0] === this.props.player.position[0] && this.props.crowns.crown_history.position[1] === this.props.player.position[1] && this.props.crowns.crown_history.onBoard === true){
         this.props.dispatch(setCrownHistory(false));
-        alert("¡Enhorabuena!¡Has conseguido la corona de Historia!");
+        this.props.dispatch(objectiveAccomplished(objectiveHistory.id, objectiveHistory.score));
+
+        alert("¡Enhorabuena!¡Has conseguido la corona de HISTORIA!");
       }
       if(this.props.crowns.crown_movies.position[0] === this.props.player.position[0] && this.props.crowns.crown_movies.position[1] === this.props.player.position[1] && this.props.crowns.crown_movies.onBoard === true){
         this.props.dispatch(setCrownMovies(false));
-        alert("¡Enhorabuena!¡Has conseguido la corona de Cine!");
+        this.props.dispatch(objectiveAccomplished(objectiveMovies.id, objectiveMovies.score));
+
+        alert("¡Enhorabuena!¡Has conseguido la corona de CINE!");
       }
       if(this.props.crowns.crown_science.position[0] === this.props.player.position[0] && this.props.crowns.crown_science.position[1] === this.props.player.position[1] && this.props.crowns.crown_science.onBoard === true){
         this.props.dispatch(setCrownScience(false));
-        alert("¡Enhorabuena!¡Has conseguido la corona de Ciencia!");
+        this.props.dispatch(objectiveAccomplished(objectiveScience.id, objectiveScience.score));
+
+        alert("¡Enhorabuena!¡Has conseguido la corona de CIENCIA!");
       }
       if(this.props.crowns.crown_sports.position[0] === this.props.player.position[0] && this.props.crowns.crown_sports.position[1] === this.props.player.position[1] && this.props.crowns.crown_sports.onBoard === true){
         this.props.dispatch(setCrownSports(false));
-        alert("¡Enhorabuena!¡Has conseguido la corona de Deporte!");
+        this.props.dispatch(objectiveAccomplished(objectiveSports.id, objectiveSports.score));
+
+        alert("¡Enhorabuena!¡Has conseguido la corona de DEPORTE!");
       }
     } else {
       this.props.dispatch(setLives(this.props.lives -1));
@@ -67,9 +79,7 @@ export default class MCQuestionTrivial extends React.Component {
     this.props.onNextQuestion();
   }
 
-  countCrowns(){
-    this.props.countCrowns();
-  }
+
 
   render(){
     let choices = [];
@@ -81,7 +91,7 @@ export default class MCQuestionTrivial extends React.Component {
       <div className="question">
         <h1>{this.props.question.value}</h1>
         {choices}
-        <QuestionTrivialButtons dispatch={this.props.dispatch} I18n={this.props.I18n} onAnswerQuestion={this.onAnswerQuestion.bind(this)} onNextQuestion={this.onNextQuestion.bind(this)} answered={this.state.answered} countCrowns={this.countCrowns.bind(this)}/>
+        <QuestionTrivialButtons dispatch={this.props.dispatch} I18n={this.props.I18n} onAnswerQuestion={this.onAnswerQuestion.bind(this)} onNextQuestion={this.onNextQuestion.bind(this)} answered={this.state.answered} countCrowns={this.props.countCrowns} lives={this.props.lives}/>
       </div>
     );
   }

@@ -2,7 +2,7 @@ import React from 'react';
 import './../assets/scss/quiz.scss';
 
 import * as Utils from '../vendors/Utils.js';
-import {addObjectives, resetDice, finishApp} from './../reducers/actions';
+import {addObjectives, resetObjectives, resetDice, finishApp} from './../reducers/actions';
 
 import QuizHeader from './QuizHeader.jsx';
 import Board from './Board.jsx';
@@ -35,6 +35,18 @@ export default class Trivial extends React.Component {
     };
     trivial.questions = Utils.shuffleArray(trivial.questions);
   }
+  componentDidMount(){
+
+
+    let objectives = [];
+
+    objectives.push(new Utils.Objective({id:("Corona de HISTORIA"), progress_measure:(1 / 4), score:(1 / 4)}));
+    objectives.push(new Utils.Objective({id:("Corona de CINE"), progress_measure:(1 / 4), score:(1 / 4)}));
+    objectives.push(new Utils.Objective({id:("Corona de DEPORTES"), progress_measure:(1 / 4), score:(1 / 4)}));
+    objectives.push(new Utils.Objective({id:("Corona de CIENCIA"), progress_measure:(1 / 4), score:(1 / 4)}));
+
+    this.props.dispatch(addObjectives(objectives));
+  }
 
   countCrownsInPossession(){
     let count = 0;
@@ -63,15 +75,19 @@ export default class Trivial extends React.Component {
   }
   onResetTrivial(){
     this.setState({current_question_index:1});
-    //this.props.dispatch(resetDice());
+    this.props.dispatch(resetObjectives());
   }
   render(){
     let currentQuestion = this.state.trivial.questions[this.state.current_question_index - 1];
-    let isLastQuestion = (this.state.current_question_index === this.state.trivial.questions.length);
+
+    let objectiveHistory = this.props.tracking.objectives["Corona de HISTORIA"];
+    let objectiveMovies = this.props.tracking.objectives["Corona de CINE"];
+    let objectiveSports = this.props.tracking.objectives["Corona de DEPORTES"];
+    let objectiveScience = this.props.tracking.objectives["Corona de CIENCIA"];
+
     let onNextQuestion = this.onNextQuestion.bind(this);
     let onResetTrivial = this.onResetTrivial.bind(this);
     let currentQuestionRender = "";
-    let dieOrQuestionRender = "";
 
     if(currentQuestion.type !== "multiple_choice"){
       //console.log(currentQuestion.choices.length)
@@ -90,7 +106,7 @@ export default class Trivial extends React.Component {
       } else if(this.props.game_status === "D") {
       currentQuestionRender = (
         <div>
-          <MCQuestionTrivial question={currentQuestion} dispatch={this.props.dispatch} I18n={this.props.I18n} onNextQuestion={onNextQuestion} onResetTrivial={onResetTrivial} isLastQuestion={isLastQuestion} lives={this.props.lives} crowns={this.props.crowns} countCrowns={this.countCrownsInPossession.bind(this)} player={this.props.player}/>
+          <MCQuestionTrivial question={currentQuestion} dispatch={this.props.dispatch} I18n={this.props.I18n} objectiveHistory={objectiveHistory} objectiveMovies={objectiveMovies} objectiveSports={objectiveSports} objectiveScience={objectiveScience} onNextQuestion={onNextQuestion} onResetTrivial={onResetTrivial} lives={this.props.lives} crowns={this.props.crowns} countCrowns={this.countCrownsInPossession.bind(this)} player={this.props.player}/>
         </div>
         );
       }
