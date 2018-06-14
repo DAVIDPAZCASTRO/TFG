@@ -19,7 +19,7 @@ export default class MCQuestionTrivial extends React.Component {
   componentWillUpdate(prevProps, prevState){
     if(prevProps.question !== this.props.question){
       this.setState({selected_choice_id: -1, answered:false});
-      console.log("CHOICE_ID = " +this.state.selected_choice_id)
+      //console.log("CHOICE_ID = " +this.state.selected_choice_id)
     }
   }
 
@@ -43,19 +43,19 @@ export default class MCQuestionTrivial extends React.Component {
     if(correctAnswer){
       if(this.props.crowns.crown_history.position[0] === this.props.player.position[0] && this.props.crowns.crown_history.position[1] === this.props.player.position[1] && this.props.crowns.crown_history.onBoard === true){
         this.props.dispatch(setCrownHistory(false));
-        alert("¡Enhorabuena!¡Has conseguido la corona de Historia!");
+        alert("¡Enhorabuena!¡Has conseguido la corona de HISTORIA!");
       }
       if(this.props.crowns.crown_movies.position[0] === this.props.player.position[0] && this.props.crowns.crown_movies.position[1] === this.props.player.position[1] && this.props.crowns.crown_movies.onBoard === true){
         this.props.dispatch(setCrownMovies(false));
-        alert("¡Enhorabuena!¡Has conseguido la corona de Cine!");
+        alert("¡Enhorabuena!¡Has conseguido la corona de CINE!");
       }
       if(this.props.crowns.crown_science.position[0] === this.props.player.position[0] && this.props.crowns.crown_science.position[1] === this.props.player.position[1] && this.props.crowns.crown_science.onBoard === true){
         this.props.dispatch(setCrownScience(false));
-        alert("¡Enhorabuena!¡Has conseguido la corona de Ciencia!");
+        alert("¡Enhorabuena!¡Has conseguido la corona de CIENCIA!");
       }
       if(this.props.crowns.crown_sports.position[0] === this.props.player.position[0] && this.props.crowns.crown_sports.position[1] === this.props.player.position[1] && this.props.crowns.crown_sports.onBoard === true){
         this.props.dispatch(setCrownSports(false));
-        alert("¡Enhorabuena!¡Has conseguido la corona de Deporte!");
+        alert("¡Enhorabuena!¡Has conseguido la corona de DEPORTE!");
       }
     } else {
       this.props.dispatch(setLives(this.props.lives -1));
@@ -67,9 +67,7 @@ export default class MCQuestionTrivial extends React.Component {
     this.props.onNextQuestion();
   }
 
-  countCrowns(){
-    this.props.countCrowns();
-  }
+
 
   render(){
     let choices = [];
@@ -81,7 +79,7 @@ export default class MCQuestionTrivial extends React.Component {
       <div className="question">
         <h1>{this.props.question.value}</h1>
         {choices}
-        <QuestionTrivialButtons dispatch={this.props.dispatch} I18n={this.props.I18n} onAnswerQuestion={this.onAnswerQuestion.bind(this)} onNextQuestion={this.onNextQuestion.bind(this)} answered={this.state.answered} countCrowns={this.countCrowns.bind(this)}/>
+        <QuestionTrivialButtons dispatch={this.props.dispatch} I18n={this.props.I18n} onAnswerQuestion={this.onAnswerQuestion.bind(this)} onNextQuestion={this.onNextQuestion.bind(this)} answered={this.state.answered} countCrowns={this.props.countCrowns} lives={this.props.lives}/>
       </div>
     );
   }

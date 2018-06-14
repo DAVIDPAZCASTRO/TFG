@@ -38,16 +38,34 @@ export class App extends React.Component {
     // });
     //console.log(object)
   }
+
+  countCrownsInPossession(){
+    let count = 0;
+    if(!this.props.crowns.crown_history.onBoard){
+      count++;
+    }
+    if(!this.props.crowns.crown_movies.onBoard){
+      count++;
+    }
+    if(!this.props.crowns.crown_science.onBoard){
+      count++;
+    }
+    if(!this.props.crowns.crown_sports.onBoard){
+      count++;
+    }
+    return count;
+  }
+
   render(){
     let appHeader = "";
     let appContent = "";
     let all = "";
     //console.log(this.props.game_status);
+    appHeader = (
+      <Header user_profile={this.props.user_profile} tracking={this.props.tracking} config={GLOBAL_CONFIG} I18n={I18n} countCrowns={this.countCrownsInPossession.bind(this)}/>
+    );
+    if(((this.props.game_status !==  "E") && (this.props.game_status !==  "F"))){
 
-    if((this.props.tracking.finished !== true) || ((this.props.game_status !==  "E") || (this.props.game_status !==  "F")){
-      appHeader = (
-        <Header user_profile={this.props.user_profile} tracking={this.props.tracking} config={GLOBAL_CONFIG} I18n={I18n}/>
-      );
       if(this.props.wait_for_user_profile !== true){
         appContent = (
 
@@ -58,7 +76,7 @@ export class App extends React.Component {
       }
     } else {
       appContent = (
-        <FinishScreen dispatch={this.props.dispatch} user_profile={this.props.user_profile} tracking={this.props.tracking} quiz={SAMPLES.quiz_example} config={GLOBAL_CONFIG} I18n={I18n}/>
+        <FinishScreen dispatch={this.props.dispatch} crowns={this.props.crowns} game_status={this.props.game_status} countCrowns={this.countCrownsInPossession.bind(this)} user_profile={this.props.user_profile} tracking={this.props.tracking} quiz={SAMPLES.quiz_example} config={GLOBAL_CONFIG} I18n={I18n}/>
       );
     }
 

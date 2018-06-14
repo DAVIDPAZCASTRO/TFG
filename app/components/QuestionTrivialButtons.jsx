@@ -7,13 +7,14 @@ export default class QuestionTrivialButtons extends React.Component {
   }
 
   onClickAnswer(){
+
     this.props.onAnswerQuestion();
 
   }
 
   onClickContinue(){
 
-    this.props.onNextQuestion();
+
     //Hacer que el juego termine si se ha contestado todo bien o si se acaban las vidas
     if(this.props.lives === 0){
       alert("Has perdido todas las vidas, se acabó el juego");
@@ -22,11 +23,13 @@ export default class QuestionTrivialButtons extends React.Component {
       alert("¡Has ganado!¡Has conseguido todas las coronas!");
       this.props.dispatch(setGameStatus("F"));
     }else {
+      this.props.onNextQuestion();
       this.props.dispatch(setGameStatus("B"));
     }
   }
 
   render(){
+    console.log("las coronas que tenemos son: "+this.props.countCrowns())
     let disable_answer = (this.props.answered);
     let disable_continue = (!this.props.answered);
 

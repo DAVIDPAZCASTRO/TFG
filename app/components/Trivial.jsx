@@ -79,7 +79,7 @@ export default class Trivial extends React.Component {
     }else{
       let counter = 0;
       for (let i=0; i<currentQuestion.choices.length; i++){
-        //console.log("La respuesta a la eleccion "+i+" es "+currentQuestion.choices[i].answer)
+        console.log("La respuesta a la eleccion "+i+" es "+currentQuestion.choices[i].answer)
         if(currentQuestion.choices[i].answer === true){
           counter++
         }

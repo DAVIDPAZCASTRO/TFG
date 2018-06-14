@@ -74,7 +74,6 @@ export default class Dice extends React.Component {
     if (this.props.game_status === "C") {
       die = (
         <div className="imageDie">
-          <div>Valor del dado: {this.props.dice.number}</div>
           {imageDie}
         </div>
       );
