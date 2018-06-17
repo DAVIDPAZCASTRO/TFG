@@ -54,7 +54,7 @@ export function parseHistory(){
     hola:[],
   }];
   console.log([1,2,3,1])
-  let promise = new Promise((resolve,reject) => {
+  //let promise = new Promise((resolve,reject) => {
 
     //Load Moodle XML file
     fetch('assets/xmls/questionsXMLhistory.xml')
@@ -76,16 +76,17 @@ export function parseHistory(){
 
           //aqui no puedo llamar a this.props dispatch
           //los metodos no
-          resolve(constructMyJSON(newjson));
+          //this.props.dispatch(setJsonHistory(myJSON)).bind(this);
+          //resolve(constructMyJSON(newjson));
 
           //Guardar el objeto JSON generado en el estado utilizando Redux
       });
 
 
-    })
-  })
-  console.dir(promise)
+    });
+  //})
+  //console.dir(promise)
 
-  return promise;
+  //return promise;
 
 }

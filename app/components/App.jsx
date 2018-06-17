@@ -30,8 +30,8 @@ export class App extends React.Component {
     // console.log(this.props.jsons.jsonHistory)
   }
   componentDidMount(){
-    let promise = PQ.parseHistory();
-    console.log(promise)
+    let questionsHistory = PQ.parseHistory();
+    console.log(questionsHistory)
 
     // let object = promise.then(function(result){
     //   this.props.dispatch(setJsonHistory(result));
