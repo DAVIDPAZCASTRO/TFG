@@ -120,7 +120,7 @@ export default class Trivial extends React.Component {
             <Legend/>
           </div>
         </div>
-        <Board dispatch={this.props.dispatch} boxes={this.state.boxes} player_position={this.props.player_position} movement={this.props.movement} dice={this.props.dice} game_status={this.props.game_status} crowns={this.props.crowns}/>
+        <Board dispatch={this.props.dispatch} boxes={this.state.boxes} player_position={this.props.player_position} possible_movements={this.props.possible_movements} dice={this.props.dice} game_status={this.props.game_status} crowns={this.props.crowns}/>
         <Dice dispatch={this.props.dispatch} dice={this.props.dice} game_status={this.props.game_status}/>
         {currentQuestionRender}
       </div>
