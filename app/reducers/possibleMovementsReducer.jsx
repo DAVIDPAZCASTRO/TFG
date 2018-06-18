@@ -1,12 +1,12 @@
-function movementReducer(state = {}, action){
+function possibleMovementsReducer(state = {}, action){
   switch (action.type){
   case 'SET_POSSIBLE_MOVEMENTS':
     let newState = Object.assign({}, state);
-    newState.possible_movements = action.array;
+    newState = action.array;
     return newState;
   default:
     return state;
   }
 }
 
-export default movementReducer;
+export default possibleMovementsReducer;

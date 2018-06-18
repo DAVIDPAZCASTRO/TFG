@@ -4,8 +4,8 @@ import scormReducer from './scormReducer';
 import userProfileReducer from './userProfileReducer';
 import waitForUserProfileReducer from './waitForUserProfileReducer';
 import diceReducer from './diceReducer';
-import playerReducer from './playerReducer';
-import movementReducer from './movementReducer';
+import playerPositionReducer from './playerPositionReducer';
+import possibleMovementsReducer from './possibleMovementsReducer';
 import gameStatusReducer from './gameStatusReducer';
 import livesReducer from './livesReducer';
 import crownsReducer from './crownsReducer';
@@ -17,8 +17,8 @@ const GlobalState = combineReducers({
   user_profile:userProfileReducer,
   wait_for_user_profile:waitForUserProfileReducer,
   dice:diceReducer,
-  player:playerReducer,
-  movement:movementReducer,
+  player_position:playerPositionReducer,
+  possible_movements:possibleMovementsReducer,
   game_status:gameStatusReducer,
   lives:livesReducer,
   crowns:crownsReducer,

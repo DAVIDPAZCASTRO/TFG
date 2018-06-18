@@ -106,7 +106,7 @@ export default class Trivial extends React.Component {
       } else if(this.props.game_status === "D") {
       currentQuestionRender = (
         <div>
-          <MCQuestionTrivial question={currentQuestion} dispatch={this.props.dispatch} I18n={this.props.I18n} objectiveHistory={objectiveHistory} objectiveMovies={objectiveMovies} objectiveSports={objectiveSports} objectiveScience={objectiveScience} onNextQuestion={onNextQuestion} onResetTrivial={onResetTrivial} lives={this.props.lives} crowns={this.props.crowns} countCrowns={this.countCrownsInPossession.bind(this)} player={this.props.player}/>
+          <MCQuestionTrivial question={currentQuestion} dispatch={this.props.dispatch} I18n={this.props.I18n} objectiveHistory={objectiveHistory} objectiveMovies={objectiveMovies} objectiveSports={objectiveSports} objectiveScience={objectiveScience} onNextQuestion={onNextQuestion} onResetTrivial={onResetTrivial} lives={this.props.lives} crowns={this.props.crowns} countCrowns={this.countCrownsInPossession.bind(this)} player_position={this.props.player_position}/>
         </div>
         );
       }
@@ -120,7 +120,7 @@ export default class Trivial extends React.Component {
             <Legend/>
           </div>
         </div>
-        <Board dispatch={this.props.dispatch} boxes={this.state.boxes} player={this.props.player} movement={this.props.movement} dice={this.props.dice} game_status={this.props.game_status} crowns={this.props.crowns}/>
+        <Board dispatch={this.props.dispatch} boxes={this.state.boxes} player_position={this.props.player_position} movement={this.props.movement} dice={this.props.dice} game_status={this.props.game_status} crowns={this.props.crowns}/>
         <Dice dispatch={this.props.dispatch} dice={this.props.dice} game_status={this.props.game_status}/>
         {currentQuestionRender}
       </div>

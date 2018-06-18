@@ -46,7 +46,7 @@ export default class Box extends React.Component {
     }else{
       category += "_blank";
     }
-    if((this.props.player.playerIn === true) && (this.props.player.position[0] === this.props.rowIndex) && (this.props.player.position[1] === this.props.columnIndex)){
+    if((this.props.player_position[0] === this.props.rowIndex) && (this.props.player_position[1] === this.props.columnIndex)){
       text = (
         <img className="playerImage" src="assets/images/player.png"/>
       );

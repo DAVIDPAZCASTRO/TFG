@@ -11,18 +11,6 @@ export function rollDice(number){
   };
 }
 
-export function enableDice(item){
-  return {
-    type:'ENABLE_DICE',
-  };
-}
-
-export function disableDice(item){
-  return {
-    type:'DISABLE_DICE',
-  };
-}
-
 export function resetDice(item){
   return {
     type:'RESET_DICE',

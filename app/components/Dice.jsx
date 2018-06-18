@@ -25,7 +25,7 @@ export default class Dice extends React.Component {
     let imageUrlDie = "";
 
 
-    switch(this.props.dice.number) {
+    switch(this.props.dice) {
       case 0:
         imageUrlDie = "assets/images/die0.png";
         break;
