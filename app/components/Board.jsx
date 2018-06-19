@@ -119,13 +119,13 @@ export default class Board extends React.Component {
   }
 
   render(){
-    let pm = this.getBoxesForDistance(this.props.player.position, undefined, this.props.dice.number)
+    let pm = this.getBoxesForDistance(this.props.player_position, undefined, this.props.dice)
     //console.log(pm)
     let board = this.props.boxes.map((rowBoxes, rowIndex) => {
       let row = rowBoxes.map((box, columnIndex) => {
         let key = "" + rowIndex + columnIndex;
         return(
-          <Box dispatch={this.props.dispatch} box={box} key={key} rowIndex={rowIndex} columnIndex={columnIndex} player={this.props.player} movement={this.props.movement} dice={this.props.dice} pm={pm} game_status={this.props.game_status} crowns={this.props.crowns}/>
+          <Box dispatch={this.props.dispatch} box={box} key={key} rowIndex={rowIndex} columnIndex={columnIndex} player_position={this.props.player_position} possible_movements={this.props.possible_movements} dice={this.props.dice} pm={pm} game_status={this.props.game_status} crowns={this.props.crowns}/>
         );
       });
       return(

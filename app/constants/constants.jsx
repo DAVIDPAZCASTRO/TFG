@@ -12,20 +12,11 @@ export const INITIAL_STATE = {
     learner_preference:{},
   },
   wait_for_user_profile:false,
-  dice:{
-    number:0,
-    disabled:true,
-  },
-  player:{
-    position:[4,4],
-    playerIn:true,
-  },
-  movement:{
-    possible_movements:[
-      [4,4],
-    ],
-    number:0,
-  },
+  dice:0,
+  player_position:[4,4],
+  possible_movements:[
+    [4,4],
+  ],
   game_status:"A",
   lives:5,
   crowns:{

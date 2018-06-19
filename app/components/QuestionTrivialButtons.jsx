@@ -29,7 +29,7 @@ export default class QuestionTrivialButtons extends React.Component {
   }
 
   render(){
-    console.log("las coronas que tenemos son: "+this.props.countCrowns())
+    //console.log("las coronas que tenemos son: "+this.props.countCrowns())
     let disable_answer = (this.props.answered);
     let disable_continue = (!this.props.answered);
 

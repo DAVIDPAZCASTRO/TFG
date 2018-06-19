@@ -45,25 +45,25 @@ export default class MCQuestionTrivial extends React.Component {
 
     this.setState({answered:true});
     if(correctAnswer){
-      if(this.props.crowns.crown_history.position[0] === this.props.player.position[0] && this.props.crowns.crown_history.position[1] === this.props.player.position[1] && this.props.crowns.crown_history.onBoard === true){
+      if(this.props.crowns.crown_history.position[0] === this.props.player_position[0] && this.props.crowns.crown_history.position[1] === this.props.player_position[1] && this.props.crowns.crown_history.onBoard === true){
         this.props.dispatch(setCrownHistory(false));
         this.props.dispatch(objectiveAccomplished(objectiveHistory.id, objectiveHistory.score));
 
         alert("¡Enhorabuena!¡Has conseguido la corona de HISTORIA!");
       }
-      if(this.props.crowns.crown_movies.position[0] === this.props.player.position[0] && this.props.crowns.crown_movies.position[1] === this.props.player.position[1] && this.props.crowns.crown_movies.onBoard === true){
+      if(this.props.crowns.crown_movies.position[0] === this.props.player_position[0] && this.props.crowns.crown_movies.position[1] === this.props.player_position[1] && this.props.crowns.crown_movies.onBoard === true){
         this.props.dispatch(setCrownMovies(false));
         this.props.dispatch(objectiveAccomplished(objectiveMovies.id, objectiveMovies.score));
 
         alert("¡Enhorabuena!¡Has conseguido la corona de CINE!");
       }
-      if(this.props.crowns.crown_science.position[0] === this.props.player.position[0] && this.props.crowns.crown_science.position[1] === this.props.player.position[1] && this.props.crowns.crown_science.onBoard === true){
+      if(this.props.crowns.crown_science.position[0] === this.props.player_position[0] && this.props.crowns.crown_science.position[1] === this.props.player_position[1] && this.props.crowns.crown_science.onBoard === true){
         this.props.dispatch(setCrownScience(false));
         this.props.dispatch(objectiveAccomplished(objectiveScience.id, objectiveScience.score));
 
         alert("¡Enhorabuena!¡Has conseguido la corona de CIENCIA!");
       }
-      if(this.props.crowns.crown_sports.position[0] === this.props.player.position[0] && this.props.crowns.crown_sports.position[1] === this.props.player.position[1] && this.props.crowns.crown_sports.onBoard === true){
+      if(this.props.crowns.crown_sports.position[0] === this.props.player_position[0] && this.props.crowns.crown_sports.position[1] === this.props.player_position[1] && this.props.crowns.crown_sports.onBoard === true){
         this.props.dispatch(setCrownSports(false));
         this.props.dispatch(objectiveAccomplished(objectiveSports.id, objectiveSports.score));
 

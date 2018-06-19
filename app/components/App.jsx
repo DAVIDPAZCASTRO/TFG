@@ -30,8 +30,8 @@ export class App extends React.Component {
     // console.log(this.props.jsons.jsonHistory)
   }
   componentDidMount(){
-    let promise = PQ.parseHistory();
-    console.log(promise)
+    let questionsHistory = PQ.parseHistory();
+    console.log(questionsHistory)
 
     // let object = promise.then(function(result){
     //   this.props.dispatch(setJsonHistory(result));
@@ -69,8 +69,7 @@ export class App extends React.Component {
       if(this.props.wait_for_user_profile !== true){
         appContent = (
 
-          //<Quiz dispatch={this.props.dispatch} user_profile={this.props.user_profile} tracking={this.props.tracking} dice={this.props.dice} player={this.props.player} movement={this.props.movement} quiz={SAMPLES.quiz_example} game_status={this.props.game_status} config={GLOBAL_CONFIG} I18n={I18n}/>
-          <Trivial dispatch={this.props.dispatch} dice={this.props.dice} lives={this.props.lives} crowns={this.props.crowns} player={this.props.player} movement={this.props.movement} trivial={SAMPLES.quiz_example} game_status={this.props.game_status} config={GLOBAL_CONFIG} I18n={I18n} user_profile={this.props.user_profile} tracking={this.props.tracking}/>
+          <Trivial dispatch={this.props.dispatch} dice={this.props.dice} lives={this.props.lives} crowns={this.props.crowns} player_position={this.props.player_position} possible_movements={this.props.possible_movements} trivial={SAMPLES.quiz_example} game_status={this.props.game_status} config={GLOBAL_CONFIG} I18n={I18n} user_profile={this.props.user_profile} tracking={this.props.tracking}/>
 
         );
       }

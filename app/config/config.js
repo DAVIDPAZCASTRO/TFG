@@ -3,7 +3,7 @@ export let GLOBAL_CONFIG = {
     debug:true,
     debug_scorm_api:false,
     debug_scorm_api_window:false,
-    available_locales:["en", "es"],
+    available_locales:["es","en"],
     // locale: "es",
     adaptive:true,
     finish_screen:true,
@@ -31,7 +31,7 @@ export let GLOBAL_CONFIG = {
     debug:false,
     debug_scorm_api:false,
     debug_scorm_api_window:false,
-    available_locales:["en", "es"],
+    available_locales:["es", "en"],
     adaptive:true,
     finish_screen:true,
     scorm:{
