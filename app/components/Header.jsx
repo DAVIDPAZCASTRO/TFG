@@ -39,8 +39,8 @@ export default class Header extends React.Component {
 
     return (
       <div className="header_wrapper">
-        <div className="imgsright"><a target="_blank" href="https://github.com/agordillo/RESCORM"><img src="assets/images/crown.png"/><img src="assets/images/crown.png"/></a></div>
-        <div className="imgsleft"><a target="_blank" href="https://github.com/agordillo/RESCORM"><img src="assets/images/crown.png"/><img src="assets/images/crown.png"/></a></div>
+        <div className="imgsright"><a target="_blank" href="https://github.com/DAVIDPAZCASTRO/TFG"><img src="assets/images/crown.png"/><img src="assets/images/crown.png"/></a></div>
+        <div className="imgsleft"><a target="_blank" href="https://github.com/DAVIDPAZCASTRO/TFG"><img src="assets/images/crown.png"/><img src="assets/images/crown.png"/></a></div>
         <div className="center_screen"><h1 id="heading">{this.props.I18n.getTrans("i.title")}</h1></div>
         <div className="center_screen"><p id="tracking">{trackingEls}</p></div>
         <div className="center_screen">{loggedEl}</div>
