@@ -33,5 +33,6 @@ export let LOCALES = {
     "i.reset_question":"Resetear pregunta",
     "i.reset_quiz":"Resetear cuestionario",
     "i.score":"Puntuación",
+    "i.title":"TRIVIAL",
   },
 };
