@@ -30,16 +30,21 @@ export class App extends React.Component {
     // console.log(this.props.jsons.jsonHistory)
   }
   componentDidMount(){
+      this.parseMoodleXMLFile('assets/xmls/questionsXMLsports.xml', "sports");
     this.parseMoodleXMLFile('assets/xmls/questionsXMLhistory.xml', "history");
     this.parseMoodleXMLFile('assets/xmls/questionsXMLmovies.xml', "movies");
     this.parseMoodleXMLFile('assets/xmls/questionsXMLscience.xml', "science");
-    this.parseMoodleXMLFile('assets/xmls/questionsXMLsports.xml', "sports");
+
+    console.log("pasa")
 
     this.props.dispatch(xmlsParsed());
   }
 
   parseMoodleXMLFile(url, category){
    //Load Moodle XML file
+   if(category === "sports"){
+     console.log("ola k ase")
+   }
     fetch(url)
     .then(function(response) {
       return response.text();
@@ -68,6 +73,8 @@ export class App extends React.Component {
               this.props.dispatch(setJsonScience(myJSON));
               break;
             case "sports":
+            console.log("entraaaa")
+            console.log(myJSON)
               this.props.dispatch(setJsonSports(myJSON));
               break;
             default:
