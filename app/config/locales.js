@@ -21,7 +21,7 @@ export let LOCALES = {
     "i.answer":"Responder",
     "i.difficulty":"Dificultad",
     "i.finish_quiz":"Finalizar cuestionario",
-    "i.finish_screen_title_full":"El contenido ha terminado. Puedes cerrar esta ventana. El progreso final ha sido de#{progress_measure}% y su puntuación final fue #{score}%.",
+    "i.finish_screen_title_full":"El contenido ha terminado. Puedes cerrar esta ventana. El progreso final ha sido de #{progress_measure}% y su puntuación final fue #{score}%.",
     "i.finish_screen_title_wpm":"El contenido ha terminado. Puedes cerrar esta ventana. El progreso final ha sido de #{progress_measure}%.",
     "i.finish_screen_title_ws":"El contenido ha terminado. Puedes cerrar esta ventana. La puntuación final ha sido de #{score}%.",
     "i.finish_screen_title_simple":"El contenido ha terminado. Puedes cerrar esta ventana.",

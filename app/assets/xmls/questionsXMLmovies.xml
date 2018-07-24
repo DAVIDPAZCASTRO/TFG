@@ -7,24 +7,46 @@
   </question>
   <question type="multichoice">
     <name>
-      <text>Pregunta de historia:</text>
+      <text>Pregunta de cine:</text>
     </name>
     <questiontext>
-      <text>¿En qué año se descubrió América?</text>
+      <text>¿En qué año se estrenó la película Avatar dirigida por James Cameron?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>2009</text>
+    </answer>
+    <answer fraction="0">
+      <text>2010­</text>
+    </answer>
+    <answer fraction="0">
+      <text>2011­</text>
+    </answer>
+    <answer fraction="0">
+      <text>2012</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de cine:</text>
+    </name>
+    <questiontext>
+      <text>¿Quien es Rafiki?</text>
     </questiontext>
     <shuffleanswers>0</shuffleanswers>
     <single>true</single>
     <answer fraction="0">
-      <text>1493</text>
+      <text>El líder de la mafia rusa en la película Training Day</text>
     </answer>
     <answer fraction="0">
-      <text>1495­</text>
-    </answer>
-    <answer fraction="0">
-      <text>1494­</text>
+      <text>Un alumno que envidia a Harry Potter de la casa Hufflepuff</text>
     </answer>
     <answer fraction="100">
-      <text>1492</text>
+      <text>Un sabio mandril de la película El Rey León­</text>
+    </answer>
+    <answer fraction="0">
+      <text>El heredero del tridente y sobrino del rey Tritón en La Sirenita</text>
     </answer>
   </question>
 </quiz>

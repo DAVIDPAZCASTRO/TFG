@@ -43,4 +43,5 @@ export const INITIAL_STATE = {
     jsonMovies:0,
     jsonScience:0,
   },
+  wait_for_parse_xml:true,
 };

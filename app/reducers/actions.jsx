@@ -24,6 +24,12 @@ export function setLives(lives){
   };
 }
 
+export function xmlsParsed(){
+  return {
+    type:'XMLS_PARSED',
+  };
+}
+
 export function resetLives(item){
   return {
     type:'RESET_LIVES',

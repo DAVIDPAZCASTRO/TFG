@@ -5,7 +5,7 @@ import './../assets/scss/main.scss';
 import {GLOBAL_CONFIG} from '../config/config.js';
 import * as I18n from '../vendors/I18n.js';
 
-import {setJsonMovies, setJsonSports, setJsonHistory, setJsonScience} from './../reducers/actions';
+import {setJsonMovies, setJsonSports, setJsonHistory, setJsonScience, xmlsParsed} from './../reducers/actions';
 
 import * as PQ from '../config/parseQuestions.js';
 import * as SAMPLES from '../config/samples.js';
@@ -30,13 +30,105 @@ export class App extends React.Component {
     // console.log(this.props.jsons.jsonHistory)
   }
   componentDidMount(){
-    let questionsHistory = PQ.parseHistory();
-    console.log(questionsHistory)
+    this.parseMoodleXMLFile('assets/xmls/questionsXMLhistory.xml', "history");
+    this.parseMoodleXMLFile('assets/xmls/questionsXMLmovies.xml', "movies");
+    this.parseMoodleXMLFile('assets/xmls/questionsXMLscience.xml', "science");
+    this.parseMoodleXMLFile('assets/xmls/questionsXMLsports.xml', "sports");
 
-    // let object = promise.then(function(result){
-    //   this.props.dispatch(setJsonHistory(result));
-    // });
-    //console.log(object)
+    this.props.dispatch(xmlsParsed());
+  }
+
+  parseMoodleXMLFile(url, category){
+   //Load Moodle XML file
+    fetch(url)
+    .then(function(response) {
+      return response.text();
+    })
+    .then(function(myXML) {
+      var parseString = require('xml2js').parseString;
+      parseString(myXML, function (err, myJSON) {
+          //console.log("XML in JSON")
+
+          //Generar nuevo objeto JSON a partir del recibido
+          let newjson = Object.assign({}, myJSON);
+          var myJSON =  this.constructMyJSON(newjson, category); //construyo mi json correcto
+
+          //console.log(myJSON);
+
+          //aqui no puedo llamar a this.props dispatch
+          //los metodos no
+          switch(category) {
+            case "history":
+              this.props.dispatch(setJsonHistory(myJSON));
+              break;
+            case "movies":
+              this.props.dispatch(setJsonMovies(myJSON));
+              break;
+            case "science":
+              this.props.dispatch(setJsonScience(myJSON));
+              break;
+            case "sports":
+              this.props.dispatch(setJsonSports(myJSON));
+              break;
+            default:
+              break;
+          }
+
+          //resolve(constructMyJSON(newjson));
+
+          //Guardar el objeto JSON generado en el estado utilizando Redux
+      }.bind(this));
+    }.bind(this));
+  }
+
+  constructMyJSON(categoryJSON, c){
+    var auxJSON = {
+      "title":"Preguntas de " + c,
+      "questions":[],
+    };
+    let questions = categoryJSON.quiz.question;
+
+    //console.log(questions.length)
+    let arrayQuestions = [];
+
+    let q = {
+      "type":"multiple_choice",
+      "value":"",
+      "choices":[],
+    }
+
+    for(let i=1; i<questions.length; i++){
+      let arrayChoices = [];
+      let choices = questions[i].answer;
+      let choi = {
+        "id":"",
+        "value":"",
+        "answer":"",
+      }
+      q.type = "multiple_choice";
+      q.value = questions[i].questiontext[0].text[0];
+      for(let j=0; j<choices.length; j++){
+        choi.id = j+1;
+        choi.value = choices[j].text[0];
+        //console.log(choices[j].$.fraction)
+        if(choices[j].$.fraction === "100"){
+          choi.answer = true;
+        } else{
+          choi.answer = false;
+        }
+        let newChoi = Object.assign({}, choi);
+        arrayChoices.push(newChoi)
+      }
+      //console.log("CHOICES")
+      //console.dir(arrayChoices)
+      q.choices = arrayChoices;
+      let newQ = Object.assign({}, q);
+      arrayQuestions.push(newQ)
+    }
+
+    auxJSON.questions = arrayQuestions;
+    //console.dir(auxJSON)
+    return auxJSON;
   }
 
   countCrownsInPossession(){
@@ -60,7 +152,11 @@ export class App extends React.Component {
     let appHeader = "";
     let appContent = "";
     let all = "";
-    //console.log(this.props.game_status);
+    console.log(this.props.jsons.jsonHistory);
+    console.log(this.props.jsons.jsonMovies);
+    console.log(this.props.jsons.jsonScience);
+    console.log(this.props.jsons.jsonSports);
+    //console.log(SAMPLES.quiz_example);
     appHeader = (
       <Header user_profile={this.props.user_profile} tracking={this.props.tracking} config={GLOBAL_CONFIG} I18n={I18n} countCrowns={this.countCrownsInPossession.bind(this)}/>
     );
@@ -69,7 +165,7 @@ export class App extends React.Component {
       if(this.props.wait_for_user_profile !== true){
         appContent = (
 
-          <Trivial dispatch={this.props.dispatch} dice={this.props.dice} lives={this.props.lives} crowns={this.props.crowns} player_position={this.props.player_position} possible_movements={this.props.possible_movements} trivial={SAMPLES.quiz_example} game_status={this.props.game_status} config={GLOBAL_CONFIG} I18n={I18n} user_profile={this.props.user_profile} tracking={this.props.tracking}/>
+          <Trivial dispatch={this.props.dispatch} dice={this.props.dice} lives={this.props.lives} crowns={this.props.crowns} player_position={this.props.player_position} possible_movements={this.props.possible_movements} trivial={this.props.jsons.jsonHistory} game_status={this.props.game_status} config={GLOBAL_CONFIG} I18n={I18n} user_profile={this.props.user_profile} tracking={this.props.tracking}/>
 
         );
       }

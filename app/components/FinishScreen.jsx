@@ -49,7 +49,7 @@ export default class FinishScreen extends React.Component {
     let textCrowns = ""
     //console.log(this.props.game_status)
     if(this.props.game_status === "E"){
-      text = "Has perdido, has fallado demasiadas preguntas.¡Intentalo de nuevo!";
+      text = "Has perdido, has fallado demasiadas preguntas. ¡Intentalo de nuevo!";
       if(this.props.countCrowns()<0){
 
       }

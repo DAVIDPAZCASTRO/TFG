@@ -10,6 +10,7 @@ import gameStatusReducer from './gameStatusReducer';
 import livesReducer from './livesReducer';
 import crownsReducer from './crownsReducer';
 import jsonReducer from './jsonReducer';
+import waitForParseXMLReducer from './waitForParseXMLReducer';
 
 const GlobalState = combineReducers({
   tracking:trackingReducer,
@@ -23,6 +24,7 @@ const GlobalState = combineReducers({
   lives:livesReducer,
   crowns:crownsReducer,
   jsons:jsonReducer,
+  wait_for_parse_xml:waitForParseXMLReducer,
 });
 
 export default GlobalState;

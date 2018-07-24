@@ -50,9 +50,7 @@ function constructMyJSON(categoryJSON){
 }
 
 export function parseHistory(){
-  let result = [{
-    hola:[],
-  }];
+  let a = 7;
   console.log([1,2,3,1])
   //let promise = new Promise((resolve,reject) => {
 
@@ -73,20 +71,23 @@ export function parseHistory(){
           let newjson = Object.assign({}, myJSON);
 
           var myJSON =  constructMyJSON(newjson) //construyo mi json correcto
-
+          console.dir(myJSON)
           //aqui no puedo llamar a this.props dispatch
           //los metodos no
           //this.props.dispatch(setJsonHistory(myJSON)).bind(this);
           //resolve(constructMyJSON(newjson));
-
+          a = myJSON
+          console.log("a = " +a)
           //Guardar el objeto JSON generado en el estado utilizando Redux
       });
 
 
     });
   //})
+  console.log(a)
   //console.dir(promise)
-
-  //return promise;
+  this.props.dispatch(setJsonHistory(a))
+  console.log(this.props.jsons.jsonHistory);
+    //return promise;
 
 }
