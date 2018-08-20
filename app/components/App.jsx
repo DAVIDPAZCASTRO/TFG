@@ -21,16 +21,10 @@ export class App extends React.Component {
   constructor(props){
     super(props);
     I18n.init();
-
-    // console.dir(promisePQ)
-    // const { foo, bar } = promisePQ.then(result => result.data);
-    // console.log(foo);
-    // console.log(bar);
-    // this.props.dispatch(setJsonHistory(PQ.parseHistory()));
-    // console.log(this.props.jsons.jsonHistory)
   }
+
   componentDidMount(){
-      this.parseMoodleXMLFile('assets/xmls/questionsXMLsports.xml', "sports");
+    this.parseMoodleXMLFile('assets/xmls/questionsXMLsports.xml', "sports");
     this.parseMoodleXMLFile('assets/xmls/questionsXMLhistory.xml', "history");
     this.parseMoodleXMLFile('assets/xmls/questionsXMLmovies.xml', "movies");
     this.parseMoodleXMLFile('assets/xmls/questionsXMLscience.xml', "science");
@@ -58,24 +52,18 @@ export class App extends React.Component {
           let newjson = Object.assign({}, myJSON);
           var myJSON =  this.constructMyJSON(newjson, category); //construyo mi json correcto
 
-          //console.log(myJSON);
-
-          //aqui no puedo llamar a this.props dispatch
-          //los metodos no
           switch(category) {
             case "history":
               this.props.dispatch(setJsonHistory(myJSON));
+              break;
+            case "sports":
+              this.props.dispatch(setJsonSports(myJSON));
               break;
             case "movies":
               this.props.dispatch(setJsonMovies(myJSON));
               break;
             case "science":
               this.props.dispatch(setJsonScience(myJSON));
-              break;
-            case "sports":
-            console.log("entraaaa")
-            console.log(myJSON)
-              this.props.dispatch(setJsonSports(myJSON));
               break;
             default:
               break;
@@ -159,10 +147,11 @@ export class App extends React.Component {
     let appHeader = "";
     let appContent = "";
     let all = "";
+    console.log(this.props.jsons.jsonSports);
     console.log(this.props.jsons.jsonHistory);
     console.log(this.props.jsons.jsonMovies);
     console.log(this.props.jsons.jsonScience);
-    console.log(this.props.jsons.jsonSports);
+
     //console.log(SAMPLES.quiz_example);
     appHeader = (
       <Header user_profile={this.props.user_profile} tracking={this.props.tracking} config={GLOBAL_CONFIG} I18n={I18n} countCrowns={this.countCrownsInPossession.bind(this)}/>

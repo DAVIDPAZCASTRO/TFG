@@ -10,7 +10,7 @@ function jsonReducer(state = {}, action){
       return newState;
     case 'SET_JSON_SPORTS':
       newState.jsonSports = action.json;
-      return state;
+      return newState;
     case 'SET_JSON_SCIENCE':
       newState.jsonScience = action.json;
       return newState;
