@@ -143,8 +143,8 @@ export default class Trivial extends React.Component {
         console.log("entra en cine")
         currentQuestion = this.state.questions.jsonMovies.questions[this.state.movies_question_index - 1];
         questionCategoryText = (
-          <div className="questioncategorytext">
-            Pregunta de <a className="cine">CINE</a>
+          <div className="questioncategorytext center_screen">
+            PREGUNTA DE <a className="cine">CINE</a>
           </div>
         );
         break;
@@ -153,8 +153,8 @@ export default class Trivial extends React.Component {
         console.log("entra en deporte")
         currentQuestion = this.state.questions.jsonSports.questions[this.state.sports_question_index - 1];
         questionCategoryText = (
-          <div className="questioncategorytext">
-            Pregunta de <a className="deportes">DEPORTE</a>
+          <div className="questioncategorytext center_screen">
+            PREGUNTA DE <a className="deportes">DEPORTE</a>
           </div>
         );
         break;
@@ -163,8 +163,8 @@ export default class Trivial extends React.Component {
         console.log("entra en historia")
         currentQuestion = this.state.questions.jsonHistory.questions[this.state.history_question_index - 1];
         questionCategoryText = (
-          <div className="questioncategorytext">
-            Pregunta de <a className="historia">HISTORIA</a>
+          <div className="questioncategorytext center_screen">
+            PREGUNTA DE <a className="historia">HISTORIA</a>
           </div>
         );
         break;
@@ -173,8 +173,8 @@ export default class Trivial extends React.Component {
         console.log("entra en ciencia")
         currentQuestion = this.state.questions.jsonScience.questions[this.state.science_question_index - 1];
         questionCategoryText = (
-          <div className="questioncategorytext">
-            Pregunta de <a className="ciencia">CIENCIA</a>
+          <div className="questioncategorytext center_screen">
+            PREGUNTA DE <a className="ciencia">CIENCIA</a>
           </div>
         );
         break;
