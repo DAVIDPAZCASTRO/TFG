@@ -17,10 +17,15 @@ export default class Trivial extends React.Component {
   constructor(props){
     super(props);
     let trivial = this.props.trivial;
-    //let questions = trivial.questions;
+    let questions = this.props.questions;
     this.state = {
       trivial:trivial,
+      questions:questions,
       current_question_index:1,
+      history_question_index:1,
+      science_question_index:1,
+      sports_question_index:1,
+      movies_question_index:1,
       boxes: [
         ['1','3','2','4','3','1','4','3','2'],
         ['2','o','o','o','2','o','o','o','4'],
@@ -33,7 +38,11 @@ export default class Trivial extends React.Component {
         ['4','1','2','3','1','2','4','1','3'],
       ],
     };
-    trivial.questions = Utils.shuffleArray(trivial.questions);
+    this.state.trivial.questions = Utils.shuffleArray(trivial.questions);
+    this.state.questions.jsonHistory.questions = Utils.shuffleArray(questions.jsonHistory.questions);
+    this.state.questions.jsonSports.questions = Utils.shuffleArray(questions.jsonSports.questions);
+    this.state.questions.jsonScience.questions = Utils.shuffleArray(questions.jsonScience.questions);
+    this.state.questions.jsonMovies.questions = Utils.shuffleArray(questions.jsonMovies.questions);
   }
   componentDidMount(){
 
@@ -66,19 +75,115 @@ export default class Trivial extends React.Component {
   }
 
   onNextQuestion(){
-    let isLastQuestion = (this.state.current_question_index === this.state.trivial.questions.length);
-    if (isLastQuestion === false){
-      this.setState({current_question_index:(this.state.current_question_index + 1)});
-    } else {
-      this.setState({current_question_index: 1});
+    //se desplaza el array de la categoría en la que se encuentra el jugador, el resto de arrays no se mueven
+    let player_position_category = this.state.boxes[this.props.player_position[0]][this.props.player_position[1]];
+    console.log("categoría numero "+player_position_category)
+    switch(player_position_category) {
+      case "1":
+        //cine
+        let isLastQuestionMovies = (this.state.movies_question_index === this.state.questions.jsonMovies.questions.length);
+        if (isLastQuestionMovies === false){
+          this.setState({movies_question_index:(this.state.movies_question_index + 1)});
+        } else {
+          this.setState({movies_question_index: 1});
+        }
+        break;
+      case "2":
+        //deporte
+        let isLastQuestionSports = (this.state.sports_question_index === this.state.questions.jsonSports.questions.length);
+        if (isLastQuestionMovies === false){
+          this.setState({sports_question_index:(this.state.sports_question_index + 1)});
+        } else {
+          this.setState({sports_question_index: 1});
+        }
+        break;
+      case "3":
+        //historia
+        let isLastQuestionHistory = (this.state.history_question_index === this.state.questions.jsonHistory.questions.length);
+        if (isLastQuestionHistory === false){
+          this.setState({history_question_index:(this.state.history_question_index + 1)});
+        } else {
+          this.setState({history_question_index: 1});
+        }
+        break;
+      case "4":
+        //ciencia
+        let isLastQuestionScience = (this.state.science_question_index === this.state.questions.jsonScience.questions.length);
+        if (isLastQuestionScience === false){
+          this.setState({science_question_index:(this.state.science_question_index + 1)});
+        } else {
+          this.setState({science_question_index: 1});
+        }
+        break;
+      default:
+        let isLastQuestion = (this.state.current_question_index === this.state.trivial.questions.length);
+        if (isLastQuestion === false){
+          this.setState({current_question_index:(this.state.current_question_index + 1)});
+        } else {
+          this.setState({current_question_index: 1});
+        }
+        break;
     }
+
+
   }
   onResetTrivial(){
     this.setState({current_question_index:1});
     this.props.dispatch(resetObjectives());
   }
   render(){
-    let currentQuestion = this.state.trivial.questions[this.state.current_question_index - 1];
+
+    let player_position_category = this.state.boxes[this.props.player_position[0]][this.props.player_position[1]];
+    let currentQuestion = "";
+    let questionCategoryText = "";
+    console.log(player_position_category)
+    switch(player_position_category) {
+      case "1":
+        //cine
+        console.log("entra en cine")
+        currentQuestion = this.state.questions.jsonMovies.questions[this.state.movies_question_index - 1];
+        questionCategoryText = (
+          <div className="questioncategorytext">
+            Pregunta de <a className="cine">CINE</a>
+          </div>
+        );
+        break;
+      case "2":
+        //deporte
+        console.log("entra en deporte")
+        currentQuestion = this.state.questions.jsonSports.questions[this.state.sports_question_index - 1];
+        questionCategoryText = (
+          <div className="questioncategorytext">
+            Pregunta de <a className="deportes">DEPORTE</a>
+          </div>
+        );
+        break;
+      case "3":
+        //historia
+        console.log("entra en historia")
+        currentQuestion = this.state.questions.jsonHistory.questions[this.state.history_question_index - 1];
+        questionCategoryText = (
+          <div className="questioncategorytext">
+            Pregunta de <a className="historia">HISTORIA</a>
+          </div>
+        );
+        break;
+      case "4":
+        //ciencia
+        console.log("entra en ciencia")
+        currentQuestion = this.state.questions.jsonScience.questions[this.state.science_question_index - 1];
+        questionCategoryText = (
+          <div className="questioncategorytext">
+            Pregunta de <a className="ciencia">CIENCIA</a>
+          </div>
+        );
+        break;
+      default:
+        currentQuestion = this.state.trivial.questions[this.state.current_question_index - 1];
+        break;
+    }
+
+
 
     let objectiveHistory = this.props.tracking.objectives["Corona de HISTORIA"];
     let objectiveMovies = this.props.tracking.objectives["Corona de CINE"];
@@ -106,6 +211,7 @@ export default class Trivial extends React.Component {
       } else if(this.props.game_status === "D") {
       currentQuestionRender = (
         <div>
+          {questionCategoryText}
           <MCQuestionTrivial question={currentQuestion} dispatch={this.props.dispatch} I18n={this.props.I18n} objectiveHistory={objectiveHistory} objectiveMovies={objectiveMovies} objectiveSports={objectiveSports} objectiveScience={objectiveScience} onNextQuestion={onNextQuestion} onResetTrivial={onResetTrivial} lives={this.props.lives} crowns={this.props.crowns} countCrowns={this.countCrownsInPossession.bind(this)} player_position={this.props.player_position}/>
         </div>
         );
