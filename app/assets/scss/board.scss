@@ -1,7 +1,10 @@
 
 div.board{
-  display: table;
-  margin: 0 auto;
+  text-align:center;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 img {
@@ -9,21 +12,23 @@ img {
   vertical-align:middle;
 }
 
-button.category {
+div.category {
   width: 90px;
   height: 90px;
+  line-height: 90px;
 }
 
-button.clickable:hover{
+div.clickable:hover{
   background-color: white;
 }
 
-button.category_blank {
-
+div.category_blank {
+  width: 100px;
+  height: 100px;
   visibility: hidden;
 }
 
-button.category0 {
+div.category0 {
   border-radius: 20px;
   background-color: #cccccc;
   border: 5px solid #cccccc;
@@ -32,15 +37,17 @@ button.category0 {
   cursor: pointer;
 }
 
-button.category0Legend {
+div.category0Legend {
   width: 30px;
   height: 30px;
+  line-height: 30px;
+  text-align: center;
   border-radius: 6px;
   background-color: #cccccc;
   border: 5px solid #cccccc;
 }
 
-button.category1 {
+div.category1 {
   //MOVIES BLUE
   border-radius: 20px;
   background-color: #0e9ad1;
@@ -50,16 +57,18 @@ button.category1 {
   cursor: pointer;
 }
 
-button.category1Legend {
+div.category1Legend {
   //MOVIES BLUE
   width: 30px;
   height: 30px;
+  line-height: 30px;
+  text-align: center;
   border-radius: 6px;
   background-color: #0e9ad1;
   border: 5px solid #0e9ad1;
 }
 
-button.category2 {
+div.category2 {
   //SPORTS RED
   border-radius: 20px;
   background-color: #d10e0e;
@@ -69,17 +78,19 @@ button.category2 {
   cursor: pointer;
 }
 
-button.category2Legend {
+div.category2Legend {
   //SPORTS RED
   width: 30px;
   height: 30px;
+  line-height: 30px;
+  text-align: center;
   border-radius: 6px;
   background-color: #d10e0e;
   border: 5px solid #d10e0e;
 }
 
 
-button.category3 {
+div.category3 {
   //HISTORY YELLOW
   border-radius: 20px;
   background-color: #f6cd20;
@@ -89,16 +100,18 @@ button.category3 {
   cursor: pointer;
 }
 
-button.category3Legend {
+div.category3Legend {
   //HISTORY YELLOW
   width: 30px;
   height: 30px;
+  line-height: 30px;
+  text-align: center;
   border-radius: 6px;
   background-color: #f6cd20;
   border: 5px solid #f6cd20;
 }
 
-button.category4 {
+div.category4 {
   //SCIENCE GREEN
   border-radius: 20px;
   background-color: #8abc0d;
@@ -108,10 +121,12 @@ button.category4 {
   cursor: pointer;
 }
 
-button.category4Legend {
+div.category4Legend {
   //SCIENCE GREEN
   width: 30px;
   height: 30px;
+  line-height: 30px;
+  text-align: center;
   border-radius: 6px;
   background-color: #8abc0d;
   border: 5px solid #8abc0d;

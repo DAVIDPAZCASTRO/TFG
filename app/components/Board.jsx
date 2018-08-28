@@ -130,7 +130,9 @@ export default class Board extends React.Component {
       });
       return(
         <div key={"row" + rowIndex}>
-          {row}
+          <div className="rowcss">
+            {row}
+          </div>
         </div>
       );
     });

@@ -173,7 +173,7 @@ export default class Trivial extends React.Component {
         console.log("entra en ciencia")
         currentQuestion = this.state.questions.jsonScience.questions[this.state.science_question_index - 1];
         questionCategoryText = (
-          <div className="questioncategorytext center_screen">
+          <div className="questioncategorytext">
             PREGUNTA DE <a className="ciencia">CIENCIA</a>
           </div>
         );

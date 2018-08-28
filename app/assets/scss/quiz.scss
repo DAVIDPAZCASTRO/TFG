@@ -1,11 +1,11 @@
 div.question{
   display: table;
   margin: 0 auto;
-  padding: 20px;
+  padding-bottom: 20px;
 }
 
 div.die {
-  display: table;
+  text-align: center;
   margin: 0 auto;
 }
 hr{
@@ -16,23 +16,69 @@ div.results{
   padding: 30px;
 }
 div.legend {
-  display: inline-block;
-  padding-left: 40px;
+  width: 50%;
+  height:260px;
+  text-align: left;
+
+  padding-left: 2px;
+  border-radius: 20px;
+  border: 5px solid #cccccc;
+}
+
+div.scoreboard {
+  width: 50%;
+  height:260px;
+  line-height: 260px;
+  padding-right: 2px;
+
+  text-align: left;
+}
+div.scoreboardlives {
+  height: 123px;
+  line-height: 123px;
+  margin-bottom: 2px;
+  text-align: center;
+  border-radius: 20px;
+  border: 2px solid #cccccc;
+}
+
+div.scoreboardcrowns {
+  height: 123px;
+  line-height: 123px;
+  margin-top: 2px;
+  text-align: center;
+  border-radius: 20px;
+  border: 5px solid #cccccc;
+}
+
+div.legendRow{
+  display: inline-flex;
+}
+
+div.rowcss{
+  display:inline-flex;
 }
 
 div.scoreboardpluslegend1{
-  display: table;
-  margin: 0 auto;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 div.scoreboardpluslegend2{
   display: inline-flex;
-  padding:30px;
+  padding-top:20px;
+  padding-bottom: 15px;
+  width: 900px;
+  height: 260px;
 }
 
 div.legendText{
-    display: inline-block;
-    padding-left: 10px;
+  height:40px;
+  line-height: 40px;
+  padding-left: 10px;
 }
 div.imageDie img{
   height: 200px;
@@ -40,7 +86,7 @@ div.imageDie img{
   padding: 20px;
 }
 button.dieButton{
-  display: table;
+  text-align: center;
   margin: 0 auto;
 }
 div.quizHeader p {

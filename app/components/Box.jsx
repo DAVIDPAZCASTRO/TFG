@@ -44,7 +44,7 @@ export default class Box extends React.Component {
     if(this.props.box === "0" || this.props.box === "1" || this.props.box === "2" || this.props.box === "3" ||this.props.box === "4"){
       category += this.props.box;
     }else{
-      category += "_blank";
+      category = "category_blank";
     }
     if((this.props.player_position[0] === this.props.rowIndex) && (this.props.player_position[1] === this.props.columnIndex)){
       text = (
@@ -65,9 +65,9 @@ export default class Box extends React.Component {
       text = this.props.box;
     }
     return(
-        <button className={category} onClick={this.onClickBox.bind(this)}>
+        <div className={category} onClick={this.onClickBox.bind(this)}>
           {text}
-        </button>
+        </div>
     );
   }
 }

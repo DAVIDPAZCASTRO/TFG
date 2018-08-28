@@ -39,8 +39,8 @@ export default class Scoreboard extends React.Component {
 
     return(
       <div className="scoreboard">
-        <div>Vidas: {this.heartsRender()}</div>
-        <div>Coronas conseguidas: {this.crownsRender()}</div>
+        <div className="scoreboardlives">Vidas: {this.heartsRender()}</div>
+        <div className="scoreboardcrowns">Coronas conseguidas: {this.crownsRender()}</div>
       </div>
     );
   }

@@ -78,7 +78,6 @@ export function setJsonHistory(json){
 }
 
 export function setJsonSports(json){
-  console.log("entra en el action de sports")
   return {
     type:'SET_JSON_SPORTS',
     json:json,
