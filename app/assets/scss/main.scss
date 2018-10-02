@@ -26,25 +26,33 @@ div.questioncategorytext{
 a.historia{
   font-weight: bolder;
   color: #f6cd20;
-  text-shadow: 1px 1px #000000;
+  //text-shadow: 1px 1px #000000;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 a.cine{
   font-weight: bolder;
   color: #0e9ad1;
-  text-shadow: 1px 1px #000000;
+  //text-shadow: 1px 1px #000000;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 a.deportes{
   font-weight: bolder;
   color: #d10e0e;
-  text-shadow: 1px 1px #000000;
+  //text-shadow: 1px 1px #000000;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 a.ciencia{
   font-weight: bolder;
   color: #8abc0d;
   text-shadow: 1px 1px #000000;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 div.home_screen h1{

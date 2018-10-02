@@ -19,10 +19,9 @@ div.legend {
   width: 50%;
   height:260px;
   text-align: left;
-
-  padding-left: 2px;
-  border-radius: 20px;
-  border: 5px solid #cccccc;
+  margin-left:20px;
+  margin-top: 50px;
+  padding-left:30px;
 }
 
 div.scoreboard {
@@ -30,16 +29,21 @@ div.scoreboard {
   height:260px;
   line-height: 260px;
   padding-right: 2px;
-
-  text-align: left;
 }
 div.scoreboardlives {
   height: 123px;
   line-height: 123px;
   margin-bottom: 2px;
   text-align: center;
-  border-radius: 20px;
-  border: 2px solid #cccccc;
+}
+
+div.scoreboardlives p {
+  line-height: 1.5;
+  display: block;
+  vertical-align: middle;
+  font-size: 15px;
+  font-weight: bold;
+
 }
 
 div.scoreboardcrowns {
@@ -47,8 +51,18 @@ div.scoreboardcrowns {
   line-height: 123px;
   margin-top: 2px;
   text-align: center;
-  border-radius: 20px;
-  border: 5px solid #cccccc;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+div.scoreboardcrowns p {
+  line-height: 1.5;
+  display: block;
+  vertical-align: middle;
+  font-size: 15px;
+  font-weight: bold;
+
 }
 
 div.legendRow{
@@ -76,6 +90,7 @@ div.scoreboardpluslegend2{
 }
 
 div.legendText{
+  font-size: 110%;
   height:40px;
   line-height: 40px;
   padding-left: 10px;
@@ -174,8 +189,32 @@ div.question div.questionButtonsWrapper button[disabled]{
 }
 
 div.hearts, div.crowns {
-  display: inline-block;
-  padding: 5px;
+  display: inline-flex;
   width: 50px;
   height: 50px;
+  line-height: 50px;
+  padding:6px;
+  text-align: center;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 15px;
+  border: 3px solid black;
+
+}
+
+div.hearts img, div.crowns img{
+  height:95%;
+  width:100%;
+  text-align: center;
+}
+
+/*
+div.hearts img {
+  height:90%;
+  vertical-align:middle;
+}
+*/
+
+div.heartsrow, div.crownsrow {
+  display:inline-flex;
 }

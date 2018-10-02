@@ -16,6 +16,7 @@ div.category {
   width: 90px;
   height: 90px;
   line-height: 90px;
+  font-size: 150%;
 }
 
 div.clickable:hover{
@@ -38,13 +39,14 @@ div.category0 {
 }
 
 div.category0Legend {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   line-height: 30px;
   text-align: center;
   border-radius: 6px;
   background-color: #cccccc;
   border: 5px solid #cccccc;
+  font-size: 110%;
 }
 
 div.category1 {
@@ -59,13 +61,14 @@ div.category1 {
 
 div.category1Legend {
   //MOVIES BLUE
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   line-height: 30px;
   text-align: center;
   border-radius: 6px;
   background-color: #0e9ad1;
   border: 5px solid #0e9ad1;
+  font-size: 110%;
 }
 
 div.category2 {
@@ -80,13 +83,14 @@ div.category2 {
 
 div.category2Legend {
   //SPORTS RED
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   line-height: 30px;
   text-align: center;
   border-radius: 6px;
   background-color: #d10e0e;
   border: 5px solid #d10e0e;
+  font-size: 110%;
 }
 
 
@@ -102,13 +106,14 @@ div.category3 {
 
 div.category3Legend {
   //HISTORY YELLOW
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   line-height: 30px;
   text-align: center;
   border-radius: 6px;
   background-color: #f6cd20;
   border: 5px solid #f6cd20;
+  font-size: 110%;
 }
 
 div.category4 {
@@ -123,11 +128,12 @@ div.category4 {
 
 div.category4Legend {
   //SCIENCE GREEN
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   line-height: 30px;
   text-align: center;
   border-radius: 6px;
   background-color: #8abc0d;
   border: 5px solid #8abc0d;
+  font-size: 110%;
 }

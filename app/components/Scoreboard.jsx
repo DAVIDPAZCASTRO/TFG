@@ -9,14 +9,23 @@ export default class Scoreboard extends React.Component {
 
   heartsRender(){
     let hearts = [];
+    let numberLives = this.props.lives;
+    for (let i = 0; i< 5; i++) {
+      if (i < numberLives){
+        hearts.push(
+          <div key={i} className="hearts">
+            <img src="assets/images/heart_red.png"/>
+          </div>
+        );
+      } else {
+        hearts.push(
+          <div key={i} className="hearts">
 
-    for (let i = 0; i< this.props.lives; i++) {
-      hearts.push(
-        <div key={i} className="hearts">
-          <img src="assets/images/heart_red.png"/>
-        </div>
-      );
+          </div>
+        );
+      }
     }
+
     return hearts;
   }
 
@@ -31,6 +40,13 @@ export default class Scoreboard extends React.Component {
         </div>
       );
     }
+    for(let i = numberCrowns; i < 4; i++) {
+      crowns.push(
+        <div key={i} className="hearts">
+
+        </div>
+      );
+    }
     return crowns;
   }
 
@@ -39,8 +55,14 @@ export default class Scoreboard extends React.Component {
 
     return(
       <div className="scoreboard">
-        <div className="scoreboardlives">Vidas: {this.heartsRender()}</div>
-        <div className="scoreboardcrowns">Coronas conseguidas: {this.crownsRender()}</div>
+        <div className="scoreboardlives">
+          <p>VIDAS</p>
+          <div className="heartsrow">{this.heartsRender()}</div>
+        </div>
+        <div className="scoreboardcrowns">
+          <p>CORONAS</p>
+          <div className="crownsrow">{this.crownsRender()}</div>
+        </div>
       </div>
     );
   }

@@ -120,6 +120,13 @@ export function setGameStatus(status){
   };
 }
 
+export function setTimeLeft(time){
+  return{
+    type:'SET_TIME_LEFT',
+    time:time,
+  };
+}
+
 export function updateUserProfile(user_profile){
   return {
     type:'UPDATE_USER_PROFILE',

@@ -29,6 +29,17 @@ export default class MCQuestion extends React.Component {
     }
     this.setState({selected_choices_ids:newSelectedChoices});
   }
+
+  myTimer(){
+    
+  }
+
+  startTimer(){
+    var myVar = setInterval(myTimer,1000);
+
+
+  }
+
   onAnswerQuestion(){
     // Calculate score
     let nChoices = this.props.question.choices.length;

@@ -10,6 +10,7 @@ import gameStatusReducer from './gameStatusReducer';
 import livesReducer from './livesReducer';
 import crownsReducer from './crownsReducer';
 import jsonReducer from './jsonReducer';
+import timerReducer from './timerReducer';
 import waitForParseXMLReducer from './waitForParseXMLReducer';
 
 const GlobalState = combineReducers({
@@ -25,6 +26,7 @@ const GlobalState = combineReducers({
   crowns:crownsReducer,
   jsons:jsonReducer,
   wait_for_parse_xml:waitForParseXMLReducer,
+  time:timerReducer,
 });
 
 export default GlobalState;
