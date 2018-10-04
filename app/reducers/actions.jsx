@@ -127,6 +127,13 @@ export function setTimeLeft(time){
   };
 }
 
+export function isTimer(is_timer){
+  return{
+    type:'IS_TIMER',
+    is_timer:is_timer,
+  };
+}
+
 export function updateUserProfile(user_profile){
   return {
     type:'UPDATE_USER_PROFILE',

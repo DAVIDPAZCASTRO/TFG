@@ -26,7 +26,7 @@ const GlobalState = combineReducers({
   crowns:crownsReducer,
   jsons:jsonReducer,
   wait_for_parse_xml:waitForParseXMLReducer,
-  time:timerReducer,
+  timer:timerReducer,
 });
 
 export default GlobalState;

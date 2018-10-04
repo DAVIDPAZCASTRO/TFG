@@ -7,7 +7,7 @@ import {addObjectives, resetObjectives, resetDice, finishApp} from './../reducer
 import QuizHeader from './QuizHeader.jsx';
 import Board from './Board.jsx';
 import Legend from './Legend.jsx';
-
+import Timer from './Timer.jsx';
 import Dice from './Dice.jsx';
 import Scoreboard from './Scoreboard.jsx';
 import MCQuestionTrivial from './MCQuestionTrivial.jsx';
@@ -212,6 +212,7 @@ export default class Trivial extends React.Component {
       currentQuestionRender = (
         <div>
           {questionCategoryText}
+          <Timer timer={this.props.timer} dispatch={this.props.dispatch}/>
           <MCQuestionTrivial question={currentQuestion} dispatch={this.props.dispatch} I18n={this.props.I18n} objectiveHistory={objectiveHistory} objectiveMovies={objectiveMovies} objectiveSports={objectiveSports} objectiveScience={objectiveScience} onNextQuestion={onNextQuestion} onResetTrivial={onResetTrivial} lives={this.props.lives} crowns={this.props.crowns} countCrowns={this.countCrownsInPossession.bind(this)} player_position={this.props.player_position}/>
         </div>
         );
