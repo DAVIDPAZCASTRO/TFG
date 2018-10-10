@@ -81,7 +81,7 @@ export default class Timer extends React.Component {
     };
     this.timer = 0;
   }
-  
+
   /*
   secondsToTime(secs){
     let hours = Math.floor(secs / (60 * 60));
@@ -116,7 +116,7 @@ export default class Timer extends React.Component {
     // Remove one second, set state so a re-render happens.
     let seconds = this.state.seconds - 1;
     this.setState({
-      time: this.secondsToTime(seconds),
+      //time: this.secondsToTime(seconds),
       seconds: seconds,
     });
 
