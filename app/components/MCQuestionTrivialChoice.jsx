@@ -7,7 +7,13 @@ export default class MCQuestionTrivialChoice extends React.Component {
 
   render(){
     let questionClassName = "question_choice";
+
+
+
     let showCorrection = (this.props.answered);
+    if(this.props.clickedAnswer && !showCorrection && this.props.choice_id === this.props.selectedChoiceId){
+      questionClassName += " question_choice_clicked";
+    }
     if(showCorrection){
       if(this.props.clickedAnswer && this.props.choice_id === this.props.selectedChoiceId){
         if(this.props.choice.answer === true){

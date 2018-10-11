@@ -69,6 +69,9 @@ export default class MCQuestionTrivial extends React.Component {
 
         alert("¡Enhorabuena!¡Has conseguido la corona de DEPORTE!");
       }
+    } else if(this.state.selected_choice_id === -1){
+      this.props.dispatch(setLives(this.props.lives -1));
+      alert("No has fijado una respuesta, pierdes una vida");
     } else {
       this.props.dispatch(setLives(this.props.lives -1));
       alert("Oh, has fallado la pregunta, pierdes una vida");

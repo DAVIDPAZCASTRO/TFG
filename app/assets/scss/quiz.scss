@@ -8,6 +8,36 @@ div.die {
   text-align: center;
   margin: 0 auto;
 }
+
+div.time {
+  font-size:220%;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  border-radius: 18px;
+  border: 2.5px solid black;
+  line-height: 50px;
+  text-align: center;
+  -webkit-transition-duration: 0.3s; /* Safari */
+  transition-duration: 0.3s;
+  background-color: white;
+}
+
+div.long_time {
+
+  background-color: #99ff66;
+}
+
+div.medium_time {
+
+  background-color: #ffff4d;
+}
+
+div.short_time {
+
+  background-color: #ff8080;
+}
+
 hr{
   color:black
 }
@@ -153,12 +183,16 @@ div.question div.question_choice p {
   margin: 0px 0px 0px 0px;
 }
 
+div.question div.question_choice_clicked {
+  background: #ffff99;
+}
+
 div.question div.question_choice_correct {
-  background: #bdffbd;
+  background: #99ff99;
 }
 
 div.question div.question_choice_incorrect {
-  background: #ffc8c8;
+  background: #ffc2b3;
 }
 
 div.question div.question_choice_correct, div.question div.question_choice_incorrect {
