@@ -4,7 +4,7 @@ import './../assets/scss/main.scss';
 
 import {GLOBAL_CONFIG} from '../config/config.js';
 import * as I18n from '../vendors/I18n.js';
-bhbu
+
 import {setJsonMovies, setJsonSports, setJsonHistory, setJsonScience, xmlsParsed} from './../reducers/actions';
 
 import * as PQ from '../config/parseQuestions.js';
