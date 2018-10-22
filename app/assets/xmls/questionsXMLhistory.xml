@@ -62,13 +62,57 @@
       <text>El Greco</text>
     </answer>
     <answer fraction="100">
-      <text>Velázquez­</text>
+      <text>Diego Velázquez</text>
     </answer>
     <answer fraction="0">
-      <text>Murillo</text>
+      <text>Bartolomé Esteban Murillo</text>
     </answer>
     <answer fraction="0">
-      <text>Goya</text>
+      <text>Francisco de Goya</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de historia:</text>
+    </name>
+    <questiontext>
+      <text>Durante la Segund Guerra Mundial, ¿cuál fue la fecha del ataque japonés a Pearl Harbor?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>11 de Diciembre de 1940</text>
+    </answer>
+    <answer fraction="100">
+      <text>7 de Diciembre de 1941</text>
+    </answer>
+    <answer fraction="0">
+      <text>30 de Junio de 1943</text>
+    </answer>
+    <answer fraction="0">
+      <text>12 de Junio de 1942</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de historia:</text>
+    </name>
+    <questiontext>
+      <text>¿Quiénes se enfrentaron en la batalla de Lepanto?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>El Imperio español contra Inglaterra</text>
+    </answer>
+    <answer fraction="100">
+      <text>El Imperio Español contra ­el Imperio Otomano</text>
+    </answer>
+    <answer fraction="0">
+      <text>El Imperio Español contra Francia</text>
+    </answer>
+    <answer fraction="0">
+      <text>Inglaterra contra Francia</text>
     </answer>
   </question>
 </quiz>

@@ -49,4 +49,70 @@
       <text>El heredero del tridente y sobrino del rey Tritón en La Sirenita</text>
     </answer>
   </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de cine:</text>
+    </name>
+    <questiontext>
+      <text>¿Cuál es la primera película de Quentin Tarantino como director?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>Pulp Fiction</text>
+    </answer>
+    <answer fraction="0">
+      <text>Asesinos Natos</text>
+    </answer>
+    <answer fraction="100">
+      <text>Reservoir Dogs</text>
+    </answer>
+    <answer fraction="0">
+      <text>Malditos Bastardos</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de cine:</text>
+    </name>
+    <questiontext>
+      <text>¿De qué color es el sable de luz del maestro Jedi Mace Windu?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>Azul</text>
+    </answer>
+    <answer fraction="0">
+      <text>Verde</text>
+    </answer>
+    <answer fraction="0">
+      <text>Amarillo</text>
+    </answer>
+    <answer fraction="100">
+      <text>Violeta</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de cine:</text>
+    </name>
+    <questiontext>
+      <text>En el universo de Harry Potter, ¿quién regaló a Harry la capa de invisibilidad?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>Albus Dumbledore</text>
+    </answer>
+    <answer fraction="0">
+      <text>Remus lupin</text>
+    </answer>
+    <answer fraction="100">
+      <text>Sirius Black</text>
+    </answer>
+    <answer fraction="0">
+      <text>Severus Snape</text>
+    </answer>
+  </question>
 </quiz>

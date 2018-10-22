@@ -27,4 +27,114 @@
       <text>1988</text>
     </answer>
   </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de deportes:</text>
+    </name>
+    <questiontext>
+      <text>¿Quién ganó el Tour de Francia en 2007?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>Lance Amstrong</text>
+    </answer>
+    <answer fraction="100">
+      <text>Alberto Contador</text>
+    </answer>
+    <answer fraction="0">
+      <text>Alexander Vinokurov­</text>
+    </answer>
+    <answer fraction="0">
+      <text>Miguel Induráin</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de deportes:</text>
+    </name>
+    <questiontext>
+      <text>¿Qué arma no se utiliza en esgrima?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>Espada</text>
+    </answer>
+    <answer fraction="0">
+      <text>Florete</text>
+    </answer>
+    <answer fraction="0">
+      <text>Sable</text>
+    </answer>
+    <answer fraction="100">
+      <text>Daga</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de deportes:</text>
+    </name>
+    <questiontext>
+      <text>¿Cuánto dura un partido de baloncesto?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>30 minutos</text>
+    </answer>
+    <answer fraction="0">
+      <text>90 minutos</text>
+    </answer>
+    <answer fraction="100">
+      <text>40 minutos</text>
+    </answer>
+    <answer fraction="0">
+      <text>60 minutos</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de deportes:</text>
+    </name>
+    <questiontext>
+      <text>¿En qué país se inventó el fútbol?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>Alemania</text>
+    </answer>
+    <answer fraction="0">
+      <text>Brasil</text>
+    </answer>
+    <answer fraction="0">
+      <text>Australia</text>
+    </answer>
+    <answer fraction="100">
+      <text>Inglaterra</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de deportes:</text>
+    </name>
+    <questiontext>
+      <text>¿Cuál de los siguientes estilos de natación es el más rápido?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>Crawl</text>
+    </answer>
+    <answer fraction="0">
+      <text>Mariposa</text>
+    </answer>
+    <answer fraction="0">
+      <text>Braza­</text>
+    </answer>
+    <answer fraction="0">
+      <text>Espalda</text>
+    </answer>
+  </question>
 </quiz>

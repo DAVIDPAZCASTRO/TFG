@@ -7,24 +7,90 @@
   </question>
   <question type="multichoice">
     <name>
-      <text>Pregunta de historia:</text>
+      <text>Pregunta de ciencia:</text>
     </name>
     <questiontext>
-      <text>¿En qué año se descubrió América?</text>
+      <text>¿Quien fue el primero en decir que la Tierra orbita alrededor del sol?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>Aristarco de Samos</text>
+    </answer>
+    <answer fraction="0">
+      <text>Copérnico</text>
+    </answer>
+    <answer fraction="0">
+      <text>Kepler­</text>
+    </answer>
+    <answer fraction="0">
+      <text>Galileo</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de ciencia:</text>
+    </name>
+    <questiontext>
+      <text>¿Cuantas patas tiene una araña?</text>
     </questiontext>
     <shuffleanswers>0</shuffleanswers>
     <single>true</single>
     <answer fraction="0">
-      <text>1493</text>
+      <text>4</text>
     </answer>
     <answer fraction="0">
-      <text>1495­</text>
-    </answer>
-    <answer fraction="0">
-      <text>1494­</text>
+      <text>6</text>
     </answer>
     <answer fraction="100">
-      <text>1492</text>
+      <text>­8</text>
+    </answer>
+    <answer fraction="0">
+      <text>Depende de la especie</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de ciencia:</text>
+    </name>
+    <questiontext>
+      <text>¿A qué temperatura entra el oro(Au) en ebullición?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>547ºC</text>
+    </answer>
+    <answer fraction="0">
+      <text>1323ºC</text>
+    </answer>
+    <answer fraction="100">
+      <text>2940ºC­</text>
+    </answer>
+    <answer fraction="0">
+      <text>4100ºC</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de ciencia:</text>
+    </name>
+    <questiontext>
+      <text>¿A qué velocidad viaja la luz por el vacío?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>A 299.792.458 m/s</text>
+    </answer>
+    <answer fraction="0">
+      <text>A 299.792.458 km/s</text>
+    </answer>
+    <answer fraction="0">
+      <text>A 299.792.458 µm/s</text>
+    </answer>
+    <answer fraction="0">
+      <text>A 299.792.458 mm/s</text>
     </answer>
   </question>
 </quiz>

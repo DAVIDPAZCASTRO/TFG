@@ -43,6 +43,7 @@ export default class Trivial extends React.Component {
     this.state.questions.jsonSports.questions = Utils.shuffleArray(questions.jsonSports.questions);
     this.state.questions.jsonScience.questions = Utils.shuffleArray(questions.jsonScience.questions);
     this.state.questions.jsonMovies.questions = Utils.shuffleArray(questions.jsonMovies.questions);
+
   }
   componentDidMount(){
 
@@ -91,7 +92,7 @@ export default class Trivial extends React.Component {
       case "2":
         //deporte
         let isLastQuestionSports = (this.state.sports_question_index === this.state.questions.jsonSports.questions.length);
-        if (isLastQuestionMovies === false){
+        if (isLastQuestionSports === false){
           this.setState({sports_question_index:(this.state.sports_question_index + 1)});
         } else {
           this.setState({sports_question_index: 1});
