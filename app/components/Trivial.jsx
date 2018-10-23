@@ -51,10 +51,10 @@ export default class Trivial extends React.Component {
 
     let objectives = [];
 
-    objectives.push(new Utils.Objective({id:("Corona de HISTORIA"), progress_measure:(1 / 4), score:(1 / 4)}));
-    objectives.push(new Utils.Objective({id:("Corona de CINE"), progress_measure:(1 / 4), score:(1 / 4)}));
-    objectives.push(new Utils.Objective({id:("Corona de DEPORTES"), progress_measure:(1 / 4), score:(1 / 4)}));
-    objectives.push(new Utils.Objective({id:("Corona de CIENCIA"), progress_measure:(1 / 4), score:(1 / 4)}));
+    objectives.push(new Utils.Objective({id:("Corona de " + {(GLOBAL_CONFIG.categories[0].name).toUpperCase()}), progress_measure:(1 / 4), score:(1 / 4)}));
+    objectives.push(new Utils.Objective({id:("Corona de " + {(GLOBAL_CONFIG.categories[1].name).toUpperCase()}), progress_measure:(1 / 4), score:(1 / 4)}));
+    objectives.push(new Utils.Objective({id:("Corona de " + {(GLOBAL_CONFIG.categories[3].name).toUpperCase()}), progress_measure:(1 / 4), score:(1 / 4)}));
+    objectives.push(new Utils.Objective({id:("Corona de " + {(GLOBAL_CONFIG.categories[2].name).toUpperCase()}), progress_measure:(1 / 4), score:(1 / 4)}));
 
     this.props.dispatch(addObjectives(objectives));
   }
@@ -187,10 +187,10 @@ export default class Trivial extends React.Component {
 
 
 
-    let objectiveHistory = this.props.tracking.objectives["Corona de HISTORIA"];
-    let objectiveMovies = this.props.tracking.objectives["Corona de CINE"];
-    let objectiveSports = this.props.tracking.objectives["Corona de DEPORTES"];
-    let objectiveScience = this.props.tracking.objectives["Corona de CIENCIA"];
+    let objectiveHistory = this.props.tracking.objectives["Corona de " + {(GLOBAL_CONFIG.categories[0].name).toUpperCase()}];
+    let objectiveMovies = this.props.tracking.objectives["Corona de " + {(GLOBAL_CONFIG.categories[1].name).toUpperCase()}];
+    let objectiveSports = this.props.tracking.objectives["Corona de " + {(GLOBAL_CONFIG.categories[3].name).toUpperCase()}];
+    let objectiveScience = this.props.tracking.objectives["Corona de " + {(GLOBAL_CONFIG.categories[2].name).toUpperCase()}];
 
     let onNextQuestion = this.onNextQuestion.bind(this);
     let onResetTrivial = this.onResetTrivial.bind(this);
