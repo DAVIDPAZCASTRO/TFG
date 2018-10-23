@@ -1,4 +1,6 @@
 import React from 'react';
+import {GLOBAL_CONFIG} from '../config/config.js';
+
 
 export default class Legend extends React.Component {
   constructor(props){
@@ -6,7 +8,11 @@ export default class Legend extends React.Component {
   }
 
 
+
+
+
   render(){
+console.log((GLOBAL_CONFIG.categories[1].name).toUpperCase())
     return(
       <div className="legend">
         <div>
@@ -23,7 +29,7 @@ export default class Legend extends React.Component {
               <div className="category1Legend">
                 1
               </div>
-              <div className="legendText">Casilla de <a className="cine">CINE</a></div>
+              <div className="legendText">Casilla de <a className="cine">{(GLOBAL_CONFIG.categories[1].name).toUpperCase()}</a></div>
             </div>
           </div>
           <div>
@@ -31,7 +37,7 @@ export default class Legend extends React.Component {
               <div className="category2Legend">
                 2
               </div>
-              <div className="legendText">Casilla de <a className="deportes">DEPORTE</a></div>
+              <div className="legendText">Casilla de <a className="deportes">{(GLOBAL_CONFIG.categories[3].name).toUpperCase()}</a></div>
             </div>
           </div>
           <div>
@@ -39,7 +45,7 @@ export default class Legend extends React.Component {
               <div className="category3Legend">
                 3
               </div>
-              <div className="legendText">Casilla de <a className="historia">HISTORIA</a></div>
+              <div className="legendText">Casilla de <a className="historia">{(GLOBAL_CONFIG.categories[0].name).toUpperCase()}</a></div>
             </div>
           </div>
           <div>
@@ -47,7 +53,7 @@ export default class Legend extends React.Component {
               <div className="category4Legend">
                 4
               </div>
-              <div className="legendText">Casilla de <a className="ciencia">CIENCIA</a></div>
+              <div className="legendText">Casilla de <a className="ciencia">{(GLOBAL_CONFIG.categories[2].name).toUpperCase()}</a></div>
             </div>
           </div>
         </div>

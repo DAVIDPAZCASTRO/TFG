@@ -3,6 +3,7 @@ import './../assets/scss/quiz.scss';
 
 import * as Utils from '../vendors/Utils.js';
 import {addObjectives, resetObjectives, resetDice, finishApp} from './../reducers/actions';
+import {GLOBAL_CONFIG} from '../config/config.js';
 
 import QuizHeader from './QuizHeader.jsx';
 import Board from './Board.jsx';
@@ -145,7 +146,7 @@ export default class Trivial extends React.Component {
         currentQuestion = this.state.questions.jsonMovies.questions[this.state.movies_question_index - 1];
         questionCategoryText = (
           <div className="questioncategorytext center_screen">
-            PREGUNTA DE <a className="cine">CINE</a>
+            PREGUNTA DE <a className="cine">{(GLOBAL_CONFIG.categories[1].name).toUpperCase()}</a>
           </div>
         );
         break;
@@ -155,7 +156,7 @@ export default class Trivial extends React.Component {
         currentQuestion = this.state.questions.jsonSports.questions[this.state.sports_question_index - 1];
         questionCategoryText = (
           <div className="questioncategorytext center_screen">
-            PREGUNTA DE <a className="deportes">DEPORTE</a>
+            PREGUNTA DE <a className="deportes">{(GLOBAL_CONFIG.categories[3].name).toUpperCase()}</a>
           </div>
         );
         break;
@@ -165,7 +166,7 @@ export default class Trivial extends React.Component {
         currentQuestion = this.state.questions.jsonHistory.questions[this.state.history_question_index - 1];
         questionCategoryText = (
           <div className="questioncategorytext center_screen">
-            PREGUNTA DE <a className="historia">HISTORIA</a>
+            PREGUNTA DE <a className="historia">{(GLOBAL_CONFIG.categories[0].name).toUpperCase()}</a>
           </div>
         );
         break;
@@ -175,7 +176,7 @@ export default class Trivial extends React.Component {
         currentQuestion = this.state.questions.jsonScience.questions[this.state.science_question_index - 1];
         questionCategoryText = (
           <div className="questioncategorytext">
-            PREGUNTA DE <a className="ciencia">CIENCIA</a>
+            PREGUNTA DE <a className="ciencia">{(GLOBAL_CONFIG.categories[2].name).toUpperCase()}</a>
           </div>
         );
         break;

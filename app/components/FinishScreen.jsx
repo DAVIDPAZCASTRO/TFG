@@ -1,5 +1,7 @@
 import React from 'react';
 import './../assets/scss/finish_screen.scss';
+import {GLOBAL_CONFIG} from '../config/config.js';
+
 
 export default class FinishScreen extends React.Component {
   constructor(props){
@@ -33,10 +35,10 @@ export default class FinishScreen extends React.Component {
       auxtxt4 = (!this.props.crowns.crown_science.onBoard) ? " obtenida" : " no obtenida";
       let txt = (
         <div className=" results">
-          <p>Corona de <a className="cine">CINE</a>{auxtxt1}</p>
-          <p>Corona de <a className="deportes">DEPORTE</a>{auxtxt2}</p>
-          <p>Corona de <a className="historia">HISTORIA</a>{auxtxt3}</p>
-          <p>Corona de <a className="ciencia">CIENCIA</a>{auxtxt4}</p>
+          <p>Corona de <a className="cine">{(GLOBAL_CONFIG.categories[1].name).toUpperCase()}</a>{auxtxt1}</p>
+          <p>Corona de <a className="deportes">{(GLOBAL_CONFIG.categories[3].name).toUpperCase()}</a>{auxtxt2}</p>
+          <p>Corona de <a className="historia">{(GLOBAL_CONFIG.categories[0].name).toUpperCase()}</a>{auxtxt3}</p>
+          <p>Corona de <a className="ciencia">{(GLOBAL_CONFIG.categories[2].name).toUpperCase()}</a>{auxtxt4}</p>
 
         </div>
       );

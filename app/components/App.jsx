@@ -24,10 +24,11 @@ export class App extends React.Component {
   }
 
   componentDidMount(){
-    this.parseMoodleXMLFile('assets/xmls/questionsXMLsports.xml', "sports");
-    this.parseMoodleXMLFile('assets/xmls/questionsXMLhistory.xml', "history");
-    this.parseMoodleXMLFile('assets/xmls/questionsXMLmovies.xml', "movies");
-    this.parseMoodleXMLFile('assets/xmls/questionsXMLscience.xml', "science");
+    console.log(GLOBAL_CONFIG)
+    this.parseMoodleXMLFile(GLOBAL_CONFIG.categories[0].url, GLOBAL_CONFIG.categories[0].name);
+    this.parseMoodleXMLFile(GLOBAL_CONFIG.categories[1].url, GLOBAL_CONFIG.categories[1].name);
+    this.parseMoodleXMLFile(GLOBAL_CONFIG.categories[2].url, GLOBAL_CONFIG.categories[2].name);
+    this.parseMoodleXMLFile(GLOBAL_CONFIG.categories[3].url, GLOBAL_CONFIG.categories[3].name);
 
     console.log("pasa")
 
@@ -36,9 +37,7 @@ export class App extends React.Component {
 
   parseMoodleXMLFile(url, category){
    //Load Moodle XML file
-   if(category === "sports"){
-     console.log("ola k ase")
-   }
+
     fetch(url)
     .then(function(response) {
       return response.text();
@@ -53,17 +52,17 @@ export class App extends React.Component {
           var myJSON =  this.constructMyJSON(newjson, category); //construyo mi json correcto
 
           switch(category) {
-            case "history":
+            case GLOBAL_CONFIG.categories[0].name:
               this.props.dispatch(setJsonHistory(myJSON));
               break;
-            case "sports":
-              this.props.dispatch(setJsonSports(myJSON));
-              break;
-            case "movies":
+            case GLOBAL_CONFIG.categories[1].name:
               this.props.dispatch(setJsonMovies(myJSON));
               break;
-            case "science":
+            case GLOBAL_CONFIG.categories[2].name:
               this.props.dispatch(setJsonScience(myJSON));
+              break;
+            case GLOBAL_CONFIG.categories[3].name:
+              this.props.dispatch(setJsonSports(myJSON));
               break;
             default:
               break;
@@ -147,10 +146,10 @@ export class App extends React.Component {
     let appHeader = "";
     let appContent = "";
     let all = "";
-    console.log(this.props.jsons.jsonSports);
     console.log(this.props.jsons.jsonHistory);
     console.log(this.props.jsons.jsonMovies);
     console.log(this.props.jsons.jsonScience);
+    console.log(this.props.jsons.jsonSports);
 
     //console.log(SAMPLES.quiz_example);
     appHeader = (
