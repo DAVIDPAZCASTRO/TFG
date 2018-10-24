@@ -1,16 +1,21 @@
 import React from 'react';
 
+import {INITIAL_STATE} from '../constants/constants';
+
 export default class Scoreboard extends React.Component {
 
   constructor(props){
     super(props);
   }
 
-
+  // Maximunm number of hearts = 7
   heartsRender(){
     let hearts = [];
+    let initialLives = INITIAL_STATE.lives;
+    
+
     let numberLives = this.props.lives;
-    for (let i = 0; i< 5; i++) {
+    for (let i = 0; i< initialLives; i++) {
       if (i < numberLives){
         hearts.push(
           <div key={i} className="hearts">

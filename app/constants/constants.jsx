@@ -18,7 +18,7 @@ export const INITIAL_STATE = {
     [4,4],
   ],
   game_status:"A",
-  lives:5,
+  lives:7,
   crowns:{
     crown_history:{
       onBoard:true,
