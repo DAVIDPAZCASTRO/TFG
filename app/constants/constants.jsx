@@ -44,8 +44,8 @@ export const INITIAL_STATE = {
     jsonScience:0,
   },
   timer:{
-    time:30,
-    is_timer:false,
+    seconds:20,
+    isTimer:false,
   },
   wait_for_parse_xml:true,
 };

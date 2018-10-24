@@ -12,7 +12,6 @@ export default class Legend extends React.Component {
 
 
   render(){
-console.log((GLOBAL_CONFIG.categories[1].name).toUpperCase())
     return(
       <div className="legend">
         <div>

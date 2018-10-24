@@ -13,16 +13,16 @@ export let GLOBAL_CONFIG = {
     },
     n:3,
     categories:[{
-        name:"hria",
+        name:"historia",
         url:"./../assets/xmls/questionsXMLhistory.xml",
       },{
-        name:"cinjifgie",
+        name:"cine",
         url:"./../assets/xmls/questionsXMLmovies.xml",
       },{
-        name:"cie lnnncia",
+        name:"ciencia",
         url:"./../assets/xmls/questionsXMLscience.xml",
       },{
-        name:"depalfknortes",
+        name:"deportes",
         url:"./../assets/xmls/questionsXMLsports.xml",
       },
     ],

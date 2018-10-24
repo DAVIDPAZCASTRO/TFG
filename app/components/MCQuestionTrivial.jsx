@@ -2,7 +2,9 @@ import React from 'react';
 
 import * as Utils from '../vendors/Utils.js';
 import {objectiveAccomplished, objectiveAccomplishedThunk, setLives, setCrownHistory, setCrownMovies, setCrownScience, setCrownSports} from './../reducers/actions';
+import {GLOBAL_CONFIG} from '../config/config.js';
 
+import Timer from './Timer.jsx';
 import MCQuestionTrivialChoice from './MCQuestionTrivialChoice.jsx';
 import QuestionTrivialButtons from './QuestionTrivialButtons.jsx';
 
@@ -49,25 +51,25 @@ export default class MCQuestionTrivial extends React.Component {
         this.props.dispatch(setCrownHistory(false));
         this.props.dispatch(objectiveAccomplished(objectiveHistory.id, objectiveHistory.score));
 
-        alert("¡Enhorabuena!¡Has conseguido la corona de HISTORIA!");
+        alert("¡Enhorabuena!¡Has conseguido la corona de " + (GLOBAL_CONFIG.categories[0].name).toUpperCase() + "!");
       }
       if(this.props.crowns.crown_movies.position[0] === this.props.player_position[0] && this.props.crowns.crown_movies.position[1] === this.props.player_position[1] && this.props.crowns.crown_movies.onBoard === true){
         this.props.dispatch(setCrownMovies(false));
         this.props.dispatch(objectiveAccomplished(objectiveMovies.id, objectiveMovies.score));
 
-        alert("¡Enhorabuena!¡Has conseguido la corona de CINE!");
+        alert("¡Enhorabuena!¡Has conseguido la corona de " + (GLOBAL_CONFIG.categories[1].name).toUpperCase() + "!");
       }
       if(this.props.crowns.crown_science.position[0] === this.props.player_position[0] && this.props.crowns.crown_science.position[1] === this.props.player_position[1] && this.props.crowns.crown_science.onBoard === true){
         this.props.dispatch(setCrownScience(false));
         this.props.dispatch(objectiveAccomplished(objectiveScience.id, objectiveScience.score));
 
-        alert("¡Enhorabuena!¡Has conseguido la corona de CIENCIA!");
+        alert("¡Enhorabuena!¡Has conseguido la corona de " + (GLOBAL_CONFIG.categories[2].name).toUpperCase() + "!");
       }
       if(this.props.crowns.crown_sports.position[0] === this.props.player_position[0] && this.props.crowns.crown_sports.position[1] === this.props.player_position[1] && this.props.crowns.crown_sports.onBoard === true){
         this.props.dispatch(setCrownSports(false));
         this.props.dispatch(objectiveAccomplished(objectiveSports.id, objectiveSports.score));
 
-        alert("¡Enhorabuena!¡Has conseguido la corona de DEPORTE!");
+        alert("¡Enhorabuena!¡Has conseguido la corona de " + (GLOBAL_CONFIG.categories[3].name).toUpperCase() + "!");
       }
     } else if(this.state.selected_choice_id === -1){
       this.props.dispatch(setLives(this.props.lives -1));
@@ -92,7 +94,14 @@ export default class MCQuestionTrivial extends React.Component {
     }
     return(
       <div className="question center_screen">
-        <h1>{this.props.question.value}</h1>
+        <div className="questionplustimer">
+          <div className="questiontext">
+            <h1>{this.props.question.value}</h1>
+          </div>
+          <div className="timer">
+            <Timer timer={this.props.timer} dispatch={this.props.dispatch}/>
+          </div>
+        </div>
         {choices}
         <QuestionTrivialButtons dispatch={this.props.dispatch} I18n={this.props.I18n} onAnswerQuestion={this.onAnswerQuestion.bind(this)} onNextQuestion={this.onNextQuestion.bind(this)} answered={this.state.answered} countCrowns={this.props.countCrowns} lives={this.props.lives}/>
       </div>

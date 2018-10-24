@@ -120,17 +120,17 @@ export function setGameStatus(status){
   };
 }
 
-export function setTimeLeft(time){
+export function setSeconds(seconds){
   return{
-    type:'SET_TIME_LEFT',
-    time:time,
+    type:'SET_SECONDS',
+    seconds:seconds,
   };
 }
 
-export function isTimer(is_timer){
+export function isTimer(timer){
   return{
     type:'IS_TIMER',
-    is_timer:is_timer,
+    isTimer:timer,
   };
 }
 

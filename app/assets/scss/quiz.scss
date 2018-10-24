@@ -1,8 +1,4 @@
-div.question{
-  display: table;
-  margin: 0 auto;
-  padding-bottom: 20px;
-}
+
 
 div.die {
   text-align: center;
@@ -10,13 +6,15 @@ div.die {
 }
 
 div.time {
-  font-size:220%;
+  float:right;
+  //vertical-align: middle;
+  font-size:260%;
   font-weight: bold;
-  width: 50px;
-  height: 50px;
-  border-radius: 18px;
-  border: 2.5px solid black;
-  line-height: 50px;
+  width: 60px;
+  height: 60px;
+  border-radius: 22px;
+  border: 3px solid black;
+  line-height: 60px;
   text-align: center;
   -webkit-transition-duration: 0.3s; /* Safari */
   transition-duration: 0.3s;
@@ -140,17 +138,37 @@ div.quizHeader p {
   margin-bottom: 20px;
 }
 
+div.timer {
+  width:10%;
+}
+
+div.questiontext {
+  width:90%
+}
+
+div.question{
+  display: table;
+  margin: 0 auto;
+  padding-bottom: 20px;
+
+}
+
 div.question h1 {
-  font-size: 25px;
+  font-size: 27px;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+}
+
+div.questionplustimer {
+  display: flex;
+  width: 850px;
 }
 
 div.question div.question_choice {
   background: white;
   margin: 10px;
   padding: 2px;
-    border-radius: 25px;
+  border-radius: 25px;
 }
 
 div.question div.question_choice div.questionC1{

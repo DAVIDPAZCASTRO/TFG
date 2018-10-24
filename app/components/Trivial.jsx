@@ -50,11 +50,15 @@ export default class Trivial extends React.Component {
 
 
     let objectives = [];
+    let objective1 = "Corona de " + (GLOBAL_CONFIG.categories[0].name).toUpperCase();
+    let objective2 = "Corona de " + (GLOBAL_CONFIG.categories[1].name).toUpperCase();
+    let objective3 = "Corona de " + (GLOBAL_CONFIG.categories[2].name).toUpperCase();
+    let objective4 = "Corona de " + (GLOBAL_CONFIG.categories[3].name).toUpperCase();
 
-    objectives.push(new Utils.Objective({id:("Corona de " + {(GLOBAL_CONFIG.categories[0].name).toUpperCase()}), progress_measure:(1 / 4), score:(1 / 4)}));
-    objectives.push(new Utils.Objective({id:("Corona de " + {(GLOBAL_CONFIG.categories[1].name).toUpperCase()}), progress_measure:(1 / 4), score:(1 / 4)}));
-    objectives.push(new Utils.Objective({id:("Corona de " + {(GLOBAL_CONFIG.categories[3].name).toUpperCase()}), progress_measure:(1 / 4), score:(1 / 4)}));
-    objectives.push(new Utils.Objective({id:("Corona de " + {(GLOBAL_CONFIG.categories[2].name).toUpperCase()}), progress_measure:(1 / 4), score:(1 / 4)}));
+    objectives.push(new Utils.Objective({id:(objective1), progress_measure:(1 / 4), score:(1 / 4)}));
+    objectives.push(new Utils.Objective({id:(objective2), progress_measure:(1 / 4), score:(1 / 4)}));
+    objectives.push(new Utils.Objective({id:(objective3), progress_measure:(1 / 4), score:(1 / 4)}));
+    objectives.push(new Utils.Objective({id:(objective4), progress_measure:(1 / 4), score:(1 / 4)}));
 
     this.props.dispatch(addObjectives(objectives));
   }
@@ -187,10 +191,10 @@ export default class Trivial extends React.Component {
 
 
 
-    let objectiveHistory = this.props.tracking.objectives["Corona de " + {(GLOBAL_CONFIG.categories[0].name).toUpperCase()}];
-    let objectiveMovies = this.props.tracking.objectives["Corona de " + {(GLOBAL_CONFIG.categories[1].name).toUpperCase()}];
-    let objectiveSports = this.props.tracking.objectives["Corona de " + {(GLOBAL_CONFIG.categories[3].name).toUpperCase()}];
-    let objectiveScience = this.props.tracking.objectives["Corona de " + {(GLOBAL_CONFIG.categories[2].name).toUpperCase()}];
+    let objectiveHistory = this.props.tracking.objectives["Corona de " + (GLOBAL_CONFIG.categories[0].name).toUpperCase()];
+    let objectiveMovies = this.props.tracking.objectives["Corona de " + (GLOBAL_CONFIG.categories[1].name).toUpperCase()];
+    let objectiveSports = this.props.tracking.objectives["Corona de " + (GLOBAL_CONFIG.categories[3].name).toUpperCase()];
+    let objectiveScience = this.props.tracking.objectives["Corona de " + (GLOBAL_CONFIG.categories[2].name).toUpperCase()];
 
     let onNextQuestion = this.onNextQuestion.bind(this);
     let onResetTrivial = this.onResetTrivial.bind(this);
@@ -214,8 +218,7 @@ export default class Trivial extends React.Component {
       currentQuestionRender = (
         <div>
           {questionCategoryText}
-          <Timer timer={this.props.timer} dispatch={this.props.dispatch}/>
-          <MCQuestionTrivial question={currentQuestion} dispatch={this.props.dispatch} I18n={this.props.I18n} objectiveHistory={objectiveHistory} objectiveMovies={objectiveMovies} objectiveSports={objectiveSports} objectiveScience={objectiveScience} onNextQuestion={onNextQuestion} onResetTrivial={onResetTrivial} lives={this.props.lives} crowns={this.props.crowns} countCrowns={this.countCrownsInPossession.bind(this)} player_position={this.props.player_position}/>
+          <MCQuestionTrivial question={currentQuestion} dispatch={this.props.dispatch} I18n={this.props.I18n} timer={this.props.timer} objectiveHistory={objectiveHistory} objectiveMovies={objectiveMovies} objectiveSports={objectiveSports} objectiveScience={objectiveScience} onNextQuestion={onNextQuestion} onResetTrivial={onResetTrivial} lives={this.props.lives} crowns={this.props.crowns} countCrowns={this.countCrownsInPossession.bind(this)} player_position={this.props.player_position}/>
         </div>
         );
       }
