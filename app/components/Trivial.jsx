@@ -142,7 +142,8 @@ export default class Trivial extends React.Component {
     let player_position_category = this.state.boxes[this.props.player_position[0]][this.props.player_position[1]];
     let currentQuestion = "";
     let questionCategoryText = "";
-    console.log(player_position_category)
+    //console.log(player_position_category)
+    console.log(this.props.timer.seconds)
     switch(player_position_category) {
       case "1":
         //cine

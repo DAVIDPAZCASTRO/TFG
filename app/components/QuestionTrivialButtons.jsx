@@ -1,5 +1,5 @@
 import React from 'react';
-import {setGameStatus, finishApp} from './../reducers/actions';
+import {setGameStatus, finishApp, isTimer} from './../reducers/actions';
 
 export default class QuestionTrivialButtons extends React.Component {
   constructor(props){
@@ -7,8 +7,9 @@ export default class QuestionTrivialButtons extends React.Component {
   }
 
   onClickAnswer(){
-
+    this.props.dispatch(isTimer(false));
     this.props.onAnswerQuestion();
+
 
   }
 

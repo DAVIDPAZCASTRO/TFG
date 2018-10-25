@@ -31,8 +31,10 @@ export class App extends React.Component {
     this.parseMoodleXMLFile(GLOBAL_CONFIG.categories[3].url, GLOBAL_CONFIG.categories[3].name);
 
     console.log("pasa")
-
+    console.log("valor de waitForParseXML = " + this.props.wait_for_parse_xml);
     this.props.dispatch(xmlsParsed());
+    console.log("valor de waitForParseXML = " + this.props.wait_for_parse_xml);
+
   }
 
   parseMoodleXMLFile(url, category){
@@ -146,6 +148,8 @@ export class App extends React.Component {
     let appHeader = "";
     let appContent = "";
     let all = "";
+    console.log("valor de waitForParseXML = " + this.props.wait_for_parse_xml);
+
     console.log(this.props.jsons.jsonHistory);
     console.log(this.props.jsons.jsonMovies);
     console.log(this.props.jsons.jsonScience);
@@ -172,7 +176,7 @@ export class App extends React.Component {
 
     if(this.props.game_status === "A"){
       all = (
-        <HomeScreen dispatch={this.props.dispatch}/>
+        <HomeScreen wait_for_parse_xml={this.props.wait_for_parse_xml} dispatch={this.props.dispatch}/>
       );
     }
     else {
@@ -186,6 +190,7 @@ export class App extends React.Component {
     }
 
     return (
+
       <div id="container">
         <SCORM dispatch={this.props.dispatch} tracking={this.props.tracking} config={GLOBAL_CONFIG}/>
         {all}

@@ -4,7 +4,7 @@ function diceReducer(state = {}, action){
   switch(action.type) {
     case 'RESET_DICE':
       newState = 0;
-      return state;
+      return newState;
     case 'ROLL_DICE':
       newState = action.number;
       return newState;

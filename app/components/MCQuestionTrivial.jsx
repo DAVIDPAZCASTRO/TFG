@@ -38,45 +38,48 @@ export default class MCQuestionTrivial extends React.Component {
     let objectiveMovies = this.props.objectiveMovies;
     let objectiveSports = this.props.objectiveSports;
     let objectiveScience = this.props.objectiveScience;
+    let textAlert = "";
     if(this.state.selected_choice_id !== -1){
       let selectedChoice = this.props.question.choices[this.state.selected_choice_id];
       correctAnswer = (selectedChoice.answer === true);
     }else{
       //Blank answer, do nothing
     }
-
+    if(this.props.timer.seconds === 0){
+      textAlert = "Se ha acabado el tiempo. ";
+    }
     this.setState({answered:true});
     if(correctAnswer){
       if(this.props.crowns.crown_history.position[0] === this.props.player_position[0] && this.props.crowns.crown_history.position[1] === this.props.player_position[1] && this.props.crowns.crown_history.onBoard === true){
         this.props.dispatch(setCrownHistory(false));
         this.props.dispatch(objectiveAccomplished(objectiveHistory.id, objectiveHistory.score));
 
-        alert("¡Enhorabuena!¡Has conseguido la corona de " + (GLOBAL_CONFIG.categories[0].name).toUpperCase() + "!");
+        alert(textAlert + "¡Enhorabuena! ¡Has conseguido la corona de " + (GLOBAL_CONFIG.categories[0].name).toUpperCase() + "!");
       }
       if(this.props.crowns.crown_movies.position[0] === this.props.player_position[0] && this.props.crowns.crown_movies.position[1] === this.props.player_position[1] && this.props.crowns.crown_movies.onBoard === true){
         this.props.dispatch(setCrownMovies(false));
         this.props.dispatch(objectiveAccomplished(objectiveMovies.id, objectiveMovies.score));
 
-        alert("¡Enhorabuena!¡Has conseguido la corona de " + (GLOBAL_CONFIG.categories[1].name).toUpperCase() + "!");
+        alert(textAlert + "¡Enhorabuena! ¡Has conseguido la corona de " + (GLOBAL_CONFIG.categories[1].name).toUpperCase() + "!");
       }
       if(this.props.crowns.crown_science.position[0] === this.props.player_position[0] && this.props.crowns.crown_science.position[1] === this.props.player_position[1] && this.props.crowns.crown_science.onBoard === true){
         this.props.dispatch(setCrownScience(false));
         this.props.dispatch(objectiveAccomplished(objectiveScience.id, objectiveScience.score));
 
-        alert("¡Enhorabuena!¡Has conseguido la corona de " + (GLOBAL_CONFIG.categories[2].name).toUpperCase() + "!");
+        alert(textAlert + "¡Enhorabuena! ¡Has conseguido la corona de " + (GLOBAL_CONFIG.categories[2].name).toUpperCase() + "!");
       }
       if(this.props.crowns.crown_sports.position[0] === this.props.player_position[0] && this.props.crowns.crown_sports.position[1] === this.props.player_position[1] && this.props.crowns.crown_sports.onBoard === true){
         this.props.dispatch(setCrownSports(false));
         this.props.dispatch(objectiveAccomplished(objectiveSports.id, objectiveSports.score));
 
-        alert("¡Enhorabuena!¡Has conseguido la corona de " + (GLOBAL_CONFIG.categories[3].name).toUpperCase() + "!");
+        alert(textAlert + "¡Enhorabuena! ¡Has conseguido la corona de " + (GLOBAL_CONFIG.categories[3].name).toUpperCase() + "!");
       }
     } else if(this.state.selected_choice_id === -1){
       this.props.dispatch(setLives(this.props.lives -1));
-      alert("No has fijado una respuesta, pierdes una vida");
+      alert(textAlert + "No has fijado una respuesta, pierdes una vida");
     } else {
       this.props.dispatch(setLives(this.props.lives -1));
-      alert("Oh, has fallado la pregunta, pierdes una vida");
+      alert(textAlert + "Has fallado la pregunta, pierdes una vida");
     }
   }
 
@@ -99,7 +102,7 @@ export default class MCQuestionTrivial extends React.Component {
             <h1>{this.props.question.value}</h1>
           </div>
           <div className="timer">
-            <Timer timer={this.props.timer} dispatch={this.props.dispatch}/>
+            <Timer timer={this.props.timer} dispatch={this.props.dispatch} onAnswerQuestion={this.onAnswerQuestion.bind(this)}/>
           </div>
         </div>
         {choices}

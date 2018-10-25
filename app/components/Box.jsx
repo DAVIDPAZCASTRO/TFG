@@ -1,5 +1,5 @@
 import React from 'react';
-import {setPosition, setPossibleMovements, setGameStatus} from './../reducers/actions';
+import {setPosition, setPossibleMovements, setGameStatus, isTimer} from './../reducers/actions';
 
 
 export default class Box extends React.Component {
@@ -15,6 +15,7 @@ export default class Box extends React.Component {
         this.props.dispatch(setGameStatus("B"));
       } else {
         this.props.dispatch(setGameStatus("D"));
+        this.props.dispatch(isTimer(true));
       }
     }
   }

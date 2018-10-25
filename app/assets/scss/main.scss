@@ -97,6 +97,12 @@ div.buttonHome button {
   cursor: pointer;
 }
 
+div.buttonHome button[disabled]{
+  color: gray;
+  border: 2px solid gray;
+  cursor: default;
+}
+
 div.header_wrapper div.imgsleft img {
   width: 150px;
   height: 150px;
