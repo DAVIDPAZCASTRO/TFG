@@ -13,7 +13,7 @@ export default class Timer extends React.Component {
       class_name: "time"
     };
     this.timer = 0;
-
+    this.finishQuestion = false;
   }
 
   componentDidMount() {
@@ -25,6 +25,7 @@ export default class Timer extends React.Component {
     //console.log("entra en willunmount")
     this.props.dispatch(isTimer(false));
     this.props.dispatch(setSeconds(INITIAL_STATE.timer.seconds));
+    //this.finishQuestion = false;
 
   }
 
@@ -32,8 +33,9 @@ export default class Timer extends React.Component {
     if((this.props.timer.seconds !== 0) && (this.props.timer.isTimer)){
       this.setState({class_name: "time"});
     }
-    if(this.props.timer.seconds === 0){
+    if((this.props.timer.seconds === 0) && (!this.finishQuestion)){
       this.props.onAnswerQuestion();
+      this.finishQuestion = true;
     }
 
   }
