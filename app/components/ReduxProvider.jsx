@@ -15,23 +15,17 @@ export default class ReduxProvider extends React.Component {
     super(props);
     this.initialState = INITIAL_STATE;
 
-    let finalState = Object.assign({}, this.initialState);
-    JSON.stringify(finalState)
-
-    window.onbeforeunload = function(e) {
-      localStorage.setItem("state", finalState);
-    };
-    if(typeof localStorage.getItem("state") !== undefined){
-      // let stateSaved = JSON.parse('{ "name":"John", "age":30, "city":"New York"}');
-      let stateSaved = JSON.parse(localStorage.getItem("state"));
-      console.log("STATESAVED")
-      console.log(stateSaved)
-    }
-
     if(GLOBAL_CONFIG.adaptive === true){
       this.initialState.wait_for_user_profile = true;
     }
     this.store = this.configureStore();
+
+    window.onbeforeunload = function(e) {
+      let gState = this.store.getState()
+      let gs = JSON.stringify(gState);
+      console.log(gs)
+      localStorage.setItem("state", gs);
+    };
   }
   configureStore(){
     let composeEnhancers = compose;
@@ -50,7 +44,19 @@ export default class ReduxProvider extends React.Component {
     }
     return store;
   }
+
   render(){
+    console.log(this.store.getState())
+
+    if(typeof localStorage.getItem("state") !== undefined){
+      // let stateSaved = JSON.parse('{ "name":"John", "age":30, "city":"New York"}');
+      
+      // let a = localStorage.getItem("state");
+      // console.log(typeof a);
+
+      // let stateSaved = JSON.parse(a);
+      // console.log(this.store.getState())
+    }
     return (
             <AppContainer>
                 <Provider store={this.store}>
