@@ -14,6 +14,20 @@ export default class ReduxProvider extends React.Component {
   constructor(props){
     super(props);
     this.initialState = INITIAL_STATE;
+
+    let finalState = Object.assign({}, this.initialState);
+    JSON.stringify(finalState)
+
+    window.onbeforeunload = function(e) {
+      localStorage.setItem("state", finalState);
+    };
+    if(typeof localStorage.getItem("state") !== undefined){
+      // let stateSaved = JSON.parse('{ "name":"John", "age":30, "city":"New York"}');
+      let stateSaved = JSON.parse(localStorage.getItem("state"));
+      console.log("STATESAVED")
+      console.log(stateSaved)
+    }
+
     if(GLOBAL_CONFIG.adaptive === true){
       this.initialState.wait_for_user_profile = true;
     }
