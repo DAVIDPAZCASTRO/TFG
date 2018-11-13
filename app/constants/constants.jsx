@@ -17,7 +17,7 @@ export const INITIAL_STATE = {
   possible_movements:[
     [4,4],
   ],
-  game_status:"A",
+  game_status:"0",
   lives:5,
   crowns:{
     crown_history:{

@@ -24,15 +24,14 @@ export class App extends React.Component {
     super(props);
     I18n.init();
 
-    // Se muestra el menú de restaurar el estado de juego anterior si se dan estas condiciones
-    if((typeof this.props.previousState !== undefined) && ((JSON.parse(this.props.previousState).game_status === "B") || (JSON.parse(this.props.previousState).game_status === "C") || (JSON.parse(this.props.previousState).game_status === "D"))) {
-      this.props.dispatch(setGameStatus("0"));
-      console.log("cambia el estado a 0")
+    // No se muestra el menú de restaurar el estado de juego anterior si se dan estas condiciones
+    if ((typeof this.props.previousState === undefined) || (JSON.parse(this.props.previousState).game_status === "0") || (JSON.parse(this.props.previousState).game_status === "A") || (JSON.parse(this.props.previousState).game_status === "E") || (JSON.parse(this.props.previousState).game_status === "F")){
+      this.props.dispatch(setGameStatus("A"));
     }
   }
 
   componentDidMount(){
-    console.log(GLOBAL_CONFIG)
+    // console.log(GLOBAL_CONFIG)
     this.parseMoodleXMLFile(GLOBAL_CONFIG.categories[0].url, GLOBAL_CONFIG.categories[0].name);
     this.parseMoodleXMLFile(GLOBAL_CONFIG.categories[1].url, GLOBAL_CONFIG.categories[1].name);
     this.parseMoodleXMLFile(GLOBAL_CONFIG.categories[2].url, GLOBAL_CONFIG.categories[2].name);
