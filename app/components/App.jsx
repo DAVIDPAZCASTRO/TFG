@@ -5,7 +5,7 @@ import './../assets/scss/main.scss';
 import {GLOBAL_CONFIG} from '../config/config.js';
 import * as I18n from '../vendors/I18n.js';
 
-import {setJsonMovies, setJsonSports, setJsonHistory, setJsonScience, xmlsParsed} from './../reducers/actions';
+import {setJsonMovies, setJsonSports, setJsonHistory, setJsonScience, xmlsParsed, setGameStatus} from './../reducers/actions';
 
 import * as PQ from '../config/parseQuestions.js';
 import * as SAMPLES from '../config/samples.js';
@@ -14,13 +14,21 @@ import SCORM from './SCORM.jsx';
 import Header from './Header.jsx';
 import FinishScreen from './FinishScreen.jsx';
 import HomeScreen from './HomeScreen.jsx';
-import Quiz from './Quiz.jsx';
+// import Quiz from './Quiz.jsx';
 import Trivial from './Trivial.jsx';
+import RestoreStateMenu from './RestoreStateMenu.jsx';
+
 
 export class App extends React.Component {
   constructor(props){
     super(props);
     I18n.init();
+
+    // Se muestra el menú de restaurar el estado de juego anterior si se dan estas condiciones
+    if((typeof this.props.previousState !== undefined) && ((JSON.parse(this.props.previousState).game_status === "B") || (JSON.parse(this.props.previousState).game_status === "C") || (JSON.parse(this.props.previousState).game_status === "D"))) {
+      this.props.dispatch(setGameStatus("0"));
+      console.log("cambia el estado a 0")
+    }
   }
 
   componentDidMount(){
@@ -173,13 +181,15 @@ export class App extends React.Component {
         <FinishScreen dispatch={this.props.dispatch} crowns={this.props.crowns} game_status={this.props.game_status} countCrowns={this.countCrownsInPossession.bind(this)} user_profile={this.props.user_profile} tracking={this.props.tracking} quiz={SAMPLES.quiz_example} config={GLOBAL_CONFIG} I18n={I18n}/>
       );
     }
-
-    if(this.props.game_status === "A"){
+    if(this.props.game_status === "0") {
+      all = (
+        <RestoreStateMenu restoreState={this.props.rs}/>
+      );
+    } else if (this.props.game_status === "A"){
       all = (
         <HomeScreen wait_for_parse_xml={this.props.wait_for_parse_xml} dispatch={this.props.dispatch}/>
       );
-    }
-    else {
+    } else {
       all = (
         <div>
           {appHeader}
