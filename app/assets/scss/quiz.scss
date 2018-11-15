@@ -1,5 +1,4 @@
 
-
 div.die {
   text-align: center;
   margin: 0 auto;
@@ -22,17 +21,14 @@ div.time {
 }
 
 div.long_time {
-
   background-color: #99ff66;
 }
 
 div.medium_time {
-
   background-color: #ffff4d;
 }
 
 div.short_time {
-
   background-color: #ff8080;
 }
 
@@ -41,7 +37,8 @@ hr{
 }
 div.results{
   font-size:130%;
-  padding: 30px;
+  padding-top: 20px;
+  padding-bottom: 30px;
 }
 div.legend {
   width: 50%;
@@ -123,15 +120,14 @@ div.legendText{
   line-height: 40px;
   padding-left: 10px;
 }
+
 div.imageDie img{
   height: 200px;
   width: 200px;
   padding: 20px;
+  margin-bottom: 20px;
 }
-button.dieButton{
-  text-align: center;
-  margin: 0 auto;
-}
+
 div.quizHeader p {
   font-size: 20px;
   margin-top: 25px;
@@ -223,22 +219,29 @@ div.question div.questionButtonsWrapper {
 
 }
 
-div.question div.questionButtonsWrapper button.answerQuestion, div.question div.questionButtonsWrapper button.continueTrivial, button.dieButton {
-  padding: 10px;
+button.answerQuestion, button.continueTrivial {
+  padding: 15px;
   margin-left: 10px;
-  margin-bottom:40px;
+  margin-right: 10px;
+  margin-bottom:15px;
   color: black;
   background: white;
-  border: 2px solid black;
-  font-size: 15px;
+  border: 3px solid black;
+  font-size: 20px;
   font-weight: bold;
+  -webkit-transition-duration: 0.25s; /* Safari */
+  transition-duration: 0.25s;
   cursor: pointer;
 }
 
-div.question div.questionButtonsWrapper button[disabled]{
+button.answerQuestion[disabled], button.continueTrivial[disabled] {
   color: gray;
   border: 2px solid gray;
   cursor: default;
+}
+
+button.answerQuestion:hover:enabled, button.continueTrivial:hover:enabled {
+  border-radius: 25px;
 }
 
 div.hearts, div.crowns {
@@ -260,13 +263,6 @@ div.hearts img, div.crowns img{
   width:100%;
   text-align: center;
 }
-
-/*
-div.hearts img {
-  height:90%;
-  vertical-align:middle;
-}
-*/
 
 div.heartsrow, div.crownsrow {
   display:inline-flex;

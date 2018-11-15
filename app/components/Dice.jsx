@@ -65,7 +65,7 @@ export default class Dice extends React.Component {
             <img src="assets/images/die0.png"/>
           </div>
           <div className="center_screen">
-            <button className="dieButton" onClick={this.onClickDie.bind(this)}>Tirar el dado</button>
+            <button className="dieButton" onClick={this.onClickDie.bind(this)}>TIRAR EL DADO</button>
           </div>
         </div>
       );

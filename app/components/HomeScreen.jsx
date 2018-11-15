@@ -18,8 +18,8 @@ export default class HomeScreen extends React.Component {
           <div className="center_screen textHome">
             <p className="center_screen">¿Te atreves a jugar una partida al Trivial?</p> <li>Hay cuatro categorías distintas: <a className="historia">{(GLOBAL_CONFIG.categories[0].name).toUpperCase()}</a>, <a className="cine">{(GLOBAL_CONFIG.categories[1].name).toUpperCase()}</a>, <a className="deportes">{(GLOBAL_CONFIG.categories[3].name).toUpperCase()}</a> y <a className="ciencia">{(GLOBAL_CONFIG.categories[2].name).toUpperCase()}</a>.</li><li> Consigue la corona de cada una de las categorías para ganar.</li><li>Tienes 5 vidas. Cada vez que falles perderás una. Si te quedas sin vidas, pierdes.</li>
           </div>
-          <div className="buttonHome center_screen">
-          <button disabled={(this.props.wait_for_parse_xml)} onClick={() => {this.props.dispatch(setGameStatus("B"));}}>JUGAR</button>
+          <div className="center_screen">
+          <button className="homeButton" disabled={(this.props.wait_for_parse_xml)} onClick={() => {this.props.dispatch(setGameStatus("B"));}}>JUGAR</button>
           </div>
       </div>
     );
