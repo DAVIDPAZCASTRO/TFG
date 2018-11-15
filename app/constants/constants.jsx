@@ -13,28 +13,28 @@ export const INITIAL_STATE = {
   },
   wait_for_user_profile:false,
   dice:0,
-  player_position:[4,4],
+  player_position:[4, 4],
   possible_movements:[
-    [4,4],
+    [4, 4],
   ],
   game_status:"0",
   lives:5,
   crowns:{
     crown_history:{
       onBoard:true,
-      position:[8,8],
+      position:[8, 8],
     },
     crown_movies:{
       onBoard:true,
-      position:[0,0],
+      position:[0, 0],
     },
     crown_science:{
       onBoard:true,
-      position:[8,0],
+      position:[8, 0],
     },
     crown_sports:{
       onBoard:true,
-      position:[0,8],
+      position:[0, 8],
     },
   },
   jsons:{

@@ -1,5 +1,6 @@
 import React from 'react';
-import {setGameStatus, finishApp, isTimer} from './../reducers/actions';
+
+import {setGameStatus, isTimer} from './../reducers/actions';
 
 export default class QuestionTrivialButtons extends React.Component {
   constructor(props){
@@ -9,28 +10,24 @@ export default class QuestionTrivialButtons extends React.Component {
   onClickAnswer(){
     this.props.dispatch(isTimer(false));
     this.props.onAnswerQuestion();
-
-
   }
 
   onClickContinue(){
-
-
-    //Hacer que el juego termine si se ha contestado todo bien o si se acaban las vidas
+    // Hacer que el juego termine si se ha contestado todo bien o si se acaban las vidas
     if(this.props.lives === 0){
       alert("Has perdido todas las vidas, se acabó el juego");
       this.props.dispatch(setGameStatus("E"));
-    } else if(this.props.countCrowns() === 4) {
+    } else if(this.props.countCrowns() === 4){
       alert("¡Has ganado!¡Has conseguido todas las coronas!");
       this.props.dispatch(setGameStatus("F"));
-    }else {
+    } else {
       this.props.onNextQuestion();
       this.props.dispatch(setGameStatus("B"));
     }
   }
 
   render(){
-    //console.log("las coronas que tenemos son: "+this.props.countCrowns())
+    // console.log("las coronas que tenemos son: "+this.props.countCrowns())
     let disable_answer = (this.props.answered);
     let disable_continue = (!this.props.answered);
 

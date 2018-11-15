@@ -14,8 +14,8 @@ export default class Dice extends React.Component {
   }
 
   onRollDice(){
-    let number = Math.floor(Math.random()*6)+1;
-    //console.log(number);
+    let number = Math.floor(Math.random() * 6) + 1;
+    // console.log(number);
     this.props.dispatch(rollDice(number));
   }
 
@@ -24,31 +24,30 @@ export default class Dice extends React.Component {
     let imageDie = "";
     let imageUrlDie = "";
 
-
-    switch(this.props.dice) {
-      case 0:
-        imageUrlDie = "assets/images/die0.png";
-        break;
-      case 1:
-        imageUrlDie = "assets/images/die1.png";
-        break;
-      case 2:
-        imageUrlDie = "assets/images/die2.png";
-        break;
-      case 3:
-        imageUrlDie = "assets/images/die3.png";
-        break;
-      case 4:
-        imageUrlDie = "assets/images/die4.png";
-        break;
-      case 5:
-        imageUrlDie = "assets/images/die5.png";
-        break;
-      case 6:
-        imageUrlDie = "assets/images/die6.png";
-        break;
-      default:
-        break;
+    switch (this.props.dice){
+    case 0:
+      imageUrlDie = "assets/images/die0.png";
+      break;
+    case 1:
+      imageUrlDie = "assets/images/die1.png";
+      break;
+    case 2:
+      imageUrlDie = "assets/images/die2.png";
+      break;
+    case 3:
+      imageUrlDie = "assets/images/die3.png";
+      break;
+    case 4:
+      imageUrlDie = "assets/images/die4.png";
+      break;
+    case 5:
+      imageUrlDie = "assets/images/die5.png";
+      break;
+    case 6:
+      imageUrlDie = "assets/images/die6.png";
+      break;
+    default:
+      break;
     }
 
     if(imageUrlDie !== ""){
@@ -59,7 +58,7 @@ export default class Dice extends React.Component {
       );
     }
 
-    if (this.props.game_status === "B"){
+    if(this.props.game_status === "B"){
       die = (
         <div className="imageDie">
           <div>
@@ -71,14 +70,14 @@ export default class Dice extends React.Component {
         </div>
       );
     }
-    if (this.props.game_status === "C") {
+    if(this.props.game_status === "C"){
       die = (
         <div className="imageDie">
           {imageDie}
         </div>
       );
     }
-    return(
+    return (
       <div className="die">
         {die}
       </div>

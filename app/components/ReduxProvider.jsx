@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {createStore, compose, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
@@ -11,9 +10,9 @@ import GlobalState from './../reducers/reducers';
 import App from './App';
 
 export default class ReduxProvider extends React.Component {
+
   constructor(props){
     super(props);
-    
     // this.initialState = this.restoreState ? JSON.parse(localStorage.getItem("state")) : INITIAL_STATE;
     this.initialState = INITIAL_STATE;
 
@@ -22,18 +21,14 @@ export default class ReduxProvider extends React.Component {
     }
     this.store = this.configureStore();
 
-    window.onbeforeunload = function(e) {
-      let gState = this.store.getState()
+    window.onbeforeunload = function(e){
+      let gState = this.store.getState();
       let gs = JSON.stringify(gState);
-      console.log(gs)
+      console.log(gs);
       localStorage.setItem("state", gs);
     }.bind(this);
-
-    // console.log(JSON.parse(localStorage.getItem("state")).game_status)
-    // if((typeof localStorage.getItem("state") !== undefined) && (JSON.parse(localStorage.getItem("state")).game_status !== "D") && (JSON.parse(localStorage.getItem("state")).game_status !== "0")) {
-    //   console.log("increible, pasa por acá");
-    // }
   }
+
   configureStore(){
     let composeEnhancers = compose;
     if((process.env.NODE_ENV || 'dev') === 'dev'){
@@ -52,27 +47,25 @@ export default class ReduxProvider extends React.Component {
     return store;
   }
 
-  rs(req){
-    if(req){
-      this.initialState = JSON.parse(localStorage.getItem("state"));
-      this.store = this.configureStore();
-      this.render();
-    }
-    console.log("entra en rs")
+  rs(){
+    this.initialState = JSON.parse(localStorage.getItem("state"));
+    this.store = this.configureStore();
+    this.render();
+    console.log("entra en rs");
     console.log(this.store.getState());
   }
 
   render(){
-    console.log(this.store.getState())
+    console.log(this.store.getState());
 
     return (
-            <AppContainer>
-                <Provider store={this.store}>
-                    <div style={{height:'100%'}}>
-                        <App store={this.store} previousState={localStorage.getItem("state")} rs={this.rs.bind(this)}/>
-                    </div>
-                </Provider>
-            </AppContainer>
+      <AppContainer>
+          <Provider store={this.store}>
+              <div style={{height:'100%'}}>
+                  <App store={this.store} previousState={localStorage.getItem("state")} rs={this.rs.bind(this)}/>
+              </div>
+          </Provider>
+      </AppContainer>
     );
   }
 }

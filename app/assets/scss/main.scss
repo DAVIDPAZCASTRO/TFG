@@ -81,17 +81,15 @@ div.textHome li{
 
 }
 
-div.buttonHome{
-  display: table;
-  margin: 0 auto;
-}
-
 div.buttonHome button {
-  padding: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 18px;
+  padding-right: 18px;
   margin-left: 10px;
   color: black;
   background: white;
-  border: 2px solid black;
+  border: 3px solid black;
   font-size: 30px;
   font-weight: bold;
   cursor: pointer;
@@ -117,6 +115,24 @@ div.header_wrapper div.imgsright img {
   float: right;
   margin-top: 8px;
   margin-left: 8px;
+}
+
+button.resumeButton, button.newStartButton {
+  padding: 15px;
+  margin: 10px;
+  color: black;
+  background: white;
+  border: 3px solid black;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+div.restartTitle {
+  padding-top: 70px;
+  padding-bottom: 30px;
+  font-size: 40px;
+  font-weight: bold;
 }
 
 div.question {

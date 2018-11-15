@@ -8,15 +8,13 @@ export default class Scoreboard extends React.Component {
     super(props);
   }
 
-  // Maximunm number of hearts = 7
+  // Maximum number of hearts = 7
   heartsRender(){
     let hearts = [];
     let initialLives = INITIAL_STATE.lives;
-    
-
     let numberLives = this.props.lives;
-    for (let i = 0; i< initialLives; i++) {
-      if (i < numberLives){
+    for(let i = 0; i < initialLives; i++){
+      if(i < numberLives){
         hearts.push(
           <div key={i} className="hearts">
             <img src="assets/images/heart_red.png"/>
@@ -24,32 +22,27 @@ export default class Scoreboard extends React.Component {
         );
       } else {
         hearts.push(
-          <div key={i} className="hearts">
-
-          </div>
+          <div key={i} className="hearts"/>
         );
       }
     }
-
     return hearts;
   }
 
   crownsRender(){
     let crowns = [];
     let numberCrowns = this.props.countCrowns();
-    //console.log("Coronas en posesion "+ numberCrowns)
-    for (let i = 0; i< numberCrowns; i++) {
+    // console.log("Coronas en posesion "+ numberCrowns)
+    for(let i = 0; i < numberCrowns; i++){
       crowns.push(
         <div key={i} className="crowns">
           <img src="assets/images/crown.png"/>
         </div>
       );
     }
-    for(let i = numberCrowns; i < 4; i++) {
+    for(let i = numberCrowns; i < 4; i++){
       crowns.push(
-        <div key={i} className="hearts">
-
-        </div>
+        <div key={i} className="hearts"/>
       );
     }
     return crowns;
@@ -58,7 +51,7 @@ export default class Scoreboard extends React.Component {
   render(){
     let info = "";
 
-    return(
+    return (
       <div className="scoreboard">
         <div className="scoreboardlives">
           <p>VIDAS</p>

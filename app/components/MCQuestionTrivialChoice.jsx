@@ -8,8 +8,6 @@ export default class MCQuestionTrivialChoice extends React.Component {
   render(){
     let questionClassName = "question_choice";
 
-
-
     let showCorrection = (this.props.answered);
     if(this.props.clickedAnswer && !showCorrection && this.props.choice_id === this.props.selectedChoiceId){
       questionClassName += " question_choice_clicked";
@@ -21,7 +19,7 @@ export default class MCQuestionTrivialChoice extends React.Component {
         } else {
           questionClassName += " question_choice_incorrect";
         }
-      } else if (this.props.choice.answer === true){
+      } else if(this.props.choice.answer === true){
         questionClassName += " question_choice_correct";
       }
     }

@@ -1,18 +1,14 @@
 import React from 'react';
-import {GLOBAL_CONFIG} from '../config/config.js';
 
+import {GLOBAL_CONFIG} from '../config/config.js';
 
 export default class Legend extends React.Component {
   constructor(props){
     super(props);
   }
 
-
-
-
-
   render(){
-    return(
+    return (
       <div className="legend">
         <div>
           <div>

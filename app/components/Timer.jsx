@@ -4,34 +4,32 @@ import {setSeconds, isTimer} from './../reducers/actions';
 
 import {INITIAL_STATE} from '../constants/constants';
 
-
 export default class Timer extends React.Component {
 
-  constructor() {
-    super();
+  constructor(props){
+    super(props);
     this.state = {
-      class_name: "time"
+      class_name:"time",
     };
     this.timer = 0;
     this.finishQuestion = false;
   }
 
-  componentDidMount() {
-    //console.log(this.props.timer)
+  componentDidMount(){
+    // console.log(this.props.timer)
     this.startTimer();
 
   }
   componentWillUnmount(){
-    //console.log("entra en willunmount")
+    // console.log("entra en willunmount")
     this.props.dispatch(isTimer(false));
     this.props.dispatch(setSeconds(INITIAL_STATE.timer.seconds));
-    //this.finishQuestion = false;
 
   }
 
   finishTimeout(){
     if((this.props.timer.seconds !== 0) && (this.props.timer.isTimer)){
-      this.setState({class_name: "time"});
+      this.setState({class_name:"time"});
     }
     if((this.props.timer.seconds === 0) && (!this.finishQuestion)){
       this.props.onAnswerQuestion();
@@ -40,16 +38,16 @@ export default class Timer extends React.Component {
 
   }
 
-  startTimer() {
+  startTimer(){
     // console.log("ENTRA EN STARTTIMER")
     // console.log(this.props.timer)
-    if (this.timer === 0 && this.props.timer.seconds > 0) {
+    if(this.timer === 0 && this.props.timer.seconds > 0){
       this.timer = setInterval(this.countDown.bind(this), 1000);
     }
 
   }
 
-  countDown() {
+  countDown(){
     // Remove one second, set state so a re-render happens.
     // console.log("ENTRAMOS EN COUNTDOWN")
     // console.log(this.props.timer.seconds)
@@ -60,7 +58,7 @@ export default class Timer extends React.Component {
       let color;
       if(seconds >= 15){
         color = "time long_time";
-      } else if(seconds >= 5) {
+      } else if(seconds >= 5){
         color = "time medium_time";
       } else if(seconds >= 0){
         color = "time short_time";
@@ -69,12 +67,12 @@ export default class Timer extends React.Component {
       }
       this.props.dispatch(setSeconds(seconds));
       this.setState({
-        class_name: color,
+        class_name:color,
       });
 
       let to = setTimeout(this.finishTimeout.bind(this), 700);
 
-      if (seconds === 0) {
+      if(seconds === 0){
         clearInterval(this.timer);
         this.timer = 0;
         this.props.dispatch(isTimer(false));
@@ -89,10 +87,10 @@ export default class Timer extends React.Component {
     // console.log("SALIMOS DE COUNTDOWN")
   }
 
-  render() {
+  render(){
     // console.log(this.props.timer)
 
-    return(
+    return (
       <div className={this.state.class_name}>
         <div>{this.props.timer.seconds}</div>
       </div>
@@ -100,70 +98,3 @@ export default class Timer extends React.Component {
 
   }
 }
-
-
-// export default class Timer extends React.Component {
-//
-//   constructor() {
-//     super();
-//     this.state = {
-//       seconds: 25,
-//       class_name: "time"
-//     };
-//     this.timer = 0;
-//
-//   }
-//
-//   componentDidMount() {
-//     this.startTimer();
-//   }
-//
-//   finishTimeout(){
-//     if(this.state.seconds != 0){
-//       this.setState({class_name: "time"});
-//     }
-//
-//   }
-//
-//   startTimer() {
-//     if (this.timer == 0 && this.state.seconds > 0) {
-//       this.timer = setInterval(this.countDown.bind(this), 1000);
-//     }
-//   }
-//
-//   countDown() {
-//     // Remove one second, set state so a re-render happens.
-//     let seconds = this.state.seconds - 1;
-//     let color;
-//     if(seconds >= 15){
-//       color = "time long_time";
-//     } else if(seconds >= 5) {
-//       color = "time medium_time";
-//     } else if(seconds >= 0){
-//       color = "time short_time";
-//     } else {
-//       color = "time";
-//     }
-//
-//     this.setState({
-//       seconds: seconds,
-//       class_name: color,
-//     });
-//
-//     let to = setTimeout(this.finishTimeout.bind(this), 700);
-//
-//     // Check if we're at zero.
-//     if (seconds == 0) {
-//       clearInterval(this.timer);
-//     }
-//   }
-//
-//   render() {
-//
-//     return(
-//       <div className={this.state.class_name}>
-//         <div>{this.state.seconds}</div>
-//       </div>
-//     );
-//   }
-// }

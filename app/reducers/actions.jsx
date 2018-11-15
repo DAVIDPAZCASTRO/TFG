@@ -7,7 +7,7 @@ export function scormConnected(scorm){
 export function rollDice(number){
   return {
     type:'ROLL_DICE',
-    number: number,
+    number:number,
   };
 }
 
@@ -98,8 +98,8 @@ export function setJsonMovies(json){
   };
 }
 
-export function setPosition(x,y){
-  return{
+export function setPosition(x, y){
+  return {
     type:'SET_POSITION',
     x:x,
     y:y,
@@ -107,28 +107,28 @@ export function setPosition(x,y){
 }
 
 export function setPossibleMovements(array){
-  return{
+  return {
     type:'SET_POSSIBLE_MOVEMENTS',
     array:array,
   };
 }
 
 export function setGameStatus(status){
-  return{
+  return {
     type:'SET_GAME_STATUS',
     status:status,
   };
 }
 
 export function setSeconds(seconds){
-  return{
+  return {
     type:'SET_SECONDS',
     seconds:seconds,
   };
 }
 
 export function isTimer(timer){
-  return{
+  return {
     type:'IS_TIMER',
     isTimer:timer,
   };
