@@ -214,12 +214,12 @@ export default class Trivial extends React.Component {
     let objectiveSports = this.props.tracking.objectives["Corona de " + (GLOBAL_CONFIG.categories[3].name).toUpperCase()];
     let objectiveScience = this.props.tracking.objectives["Corona de " + (GLOBAL_CONFIG.categories[2].name).toUpperCase()];
 
-    let objectives = [];
-    for(let i = 0; i < 4; i++){
-      for(let j = 0; j < 5; j++){
-        objectives.push(this.props.tracking.objectives["Pregunta " + i + j]);
-      }
-    }
+    // let objectives = [];
+    // for(let i = 0; i < 4; i++){
+    //   for(let j = 0; j < 5; j++){
+    //     objectives.push(this.props.tracking.objectives["Pregunta " + i + j]);
+    //   }
+    // }
 
     let onNextQuestion = this.onNextQuestion.bind(this);
     let onResetTrivial = this.onResetTrivial.bind(this);
