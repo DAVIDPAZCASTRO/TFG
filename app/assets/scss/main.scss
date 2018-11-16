@@ -139,7 +139,7 @@ button.resumeButton, button.newStartButton {
   cursor: pointer;
 }
 
-button.resumeButton:hover, button.newStartButton:hover, button.dieButton:hover, button.homeButton:hover {
+button.resumeButton:hover, button.newStartButton:hover, button.dieButton:hover, button.homeButton:hover:enabled {
   border-radius: 30px;
 }
 

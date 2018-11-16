@@ -50,10 +50,52 @@ export default class Trivial extends React.Component {
     let objective3 = "Corona de " + (GLOBAL_CONFIG.categories[2].name).toUpperCase();
     let objective4 = "Corona de " + (GLOBAL_CONFIG.categories[3].name).toUpperCase();
 
+    // let objective11 = "Pregunta 11";
+    // let objective12 = "Pregunta 12";
+    // let objective13 = "Pregunta 13";
+    // let objective14 = "Pregunta 14";
+    // let objective1corona = "Pregunta 15";
+    // let objective21 = "Pregunta 21";
+    // let objective22 = "Pregunta 22";
+    // let objective23 = "Pregunta 23";
+    // let objective24 = "Pregunta 24";
+    // let objective2corona = "Pregunta 25";
+    // let objective31 = "Pregunta 31";
+    // let objective32 = "Pregunta 32";
+    // let objective33 = "Pregunta 33";
+    // let objective34 = "Pregunta 34";
+    // let objective3corona = "Pregunta 35";
+    // let objective41 = "Pregunta 41";
+    // let objective42 = "Pregunta 42";
+    // let objective43 = "Pregunta 43";
+    // let objective44 = "Pregunta 44";
+    // let objective4corona = "Pregunta 45";
+
     objectives.push(new Utils.Objective({id:(objective1), progress_measure:(1 / 4), score:(1 / 4)}));
     objectives.push(new Utils.Objective({id:(objective2), progress_measure:(1 / 4), score:(1 / 4)}));
     objectives.push(new Utils.Objective({id:(objective3), progress_measure:(1 / 4), score:(1 / 4)}));
     objectives.push(new Utils.Objective({id:(objective4), progress_measure:(1 / 4), score:(1 / 4)}));
+
+    // objectives.push(new Utils.Objective({id:(objective11), progress_measure:(1 / 20), score:(1 / 20)}));
+    // objectives.push(new Utils.Objective({id:(objective12), progress_measure:(1 / 20), score:(1 / 20)}));
+    // objectives.push(new Utils.Objective({id:(objective13), progress_measure:(1 / 20), score:(1 / 20)}));
+    // objectives.push(new Utils.Objective({id:(objective14), progress_measure:(1 / 20), score:(1 / 20)}));
+    // objectives.push(new Utils.Objective({id:(objective1corona), progress_measure:(1 / 20), score:(1 / 20)}));
+    // objectives.push(new Utils.Objective({id:(objective21), progress_measure:(1 / 20), score:(1 / 20)}));
+    // objectives.push(new Utils.Objective({id:(objective22), progress_measure:(1 / 20), score:(1 / 20)}));
+    // objectives.push(new Utils.Objective({id:(objective23), progress_measure:(1 / 20), score:(1 / 20)}));
+    // objectives.push(new Utils.Objective({id:(objective24), progress_measure:(1 / 20), score:(1 / 20)}));
+    // objectives.push(new Utils.Objective({id:(objective2corona), progress_measure:(1 / 20), score:(1 / 20)}));
+    // objectives.push(new Utils.Objective({id:(objective31), progress_measure:(1 / 20), score:(1 / 20)}));
+    // objectives.push(new Utils.Objective({id:(objective32), progress_measure:(1 / 20), score:(1 / 20)}));
+    // objectives.push(new Utils.Objective({id:(objective33), progress_measure:(1 / 20), score:(1 / 20)}));
+    // objectives.push(new Utils.Objective({id:(objective34), progress_measure:(1 / 20), score:(1 / 20)}));
+    // objectives.push(new Utils.Objective({id:(objective3corona), progress_measure:(1 / 20), score:(1 / 20)}));
+    // objectives.push(new Utils.Objective({id:(objective41), progress_measure:(1 / 20), score:(1 / 20)}));
+    // objectives.push(new Utils.Objective({id:(objective42), progress_measure:(1 / 20), score:(1 / 20)}));
+    // objectives.push(new Utils.Objective({id:(objective43), progress_measure:(1 / 20), score:(1 / 20)}));
+    // objectives.push(new Utils.Objective({id:(objective44), progress_measure:(1 / 20), score:(1 / 20)}));
+    // objectives.push(new Utils.Objective({id:(objective4corona), progress_measure:(1 / 20), score:(1 / 20)}));
 
     this.props.dispatch(addObjectives(objectives));
   }
@@ -171,6 +213,13 @@ export default class Trivial extends React.Component {
     let objectiveMovies = this.props.tracking.objectives["Corona de " + (GLOBAL_CONFIG.categories[1].name).toUpperCase()];
     let objectiveSports = this.props.tracking.objectives["Corona de " + (GLOBAL_CONFIG.categories[3].name).toUpperCase()];
     let objectiveScience = this.props.tracking.objectives["Corona de " + (GLOBAL_CONFIG.categories[2].name).toUpperCase()];
+
+    let objectives = [];
+    for(let i = 0; i < 4; i++){
+      for(let j = 0; j < 5; j++){
+        objectives.push(this.props.tracking.objectives["Pregunta " + i + j]);
+      }
+    }
 
     let onNextQuestion = this.onNextQuestion.bind(this);
     let onResetTrivial = this.onResetTrivial.bind(this);
