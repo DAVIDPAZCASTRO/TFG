@@ -8,6 +8,8 @@ function livesReducer(state = {}, action){
   case 'RESET_LIVES':
     newState = 5;
     return newState;
+  case 'IMPORT_STATE':
+    return action.state.lives;
   default:
     return state;
   }

@@ -5,6 +5,8 @@ function userProfileReducer(state = {}, action){
       action.user_profile.learner_preference = {};
     }
     return action.user_profile;
+  case 'IMPORT_STATE':
+    return action.state.user_profile;
   default:
     return state;
   }

@@ -24,7 +24,7 @@ export default class MCQuestionTrivialChoice extends React.Component {
       }
     }
     return (
-      <div className={questionClassName}>
+      <div className={questionClassName} onClick={() => this.props.handleChange(this.props.choice_id)}>
         <div className="questionC1">
           <input type="radio" name="trivial_choices" checked={this.props.checked} onChange={() => this.props.handleChange(this.props.choice_id)} disabled={this.props.answered}/>
         </div>

@@ -8,6 +8,8 @@ function diceReducer(state = {}, action){
   case 'ROLL_DICE':
     newState = action.number;
     return newState;
+  case 'IMPORT_STATE':
+    return action.state.dice;
   default:
     return state;
   }

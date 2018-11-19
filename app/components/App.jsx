@@ -23,7 +23,7 @@ export class App extends React.Component {
     I18n.init();
 
     // No se muestra el menú de restaurar el estado de juego anterior si se dan estas condiciones
-    if((typeof this.props.previousState === undefined) || (JSON.parse(this.props.previousState).game_status === "0") || (JSON.parse(this.props.previousState).game_status === "A") || (JSON.parse(this.props.previousState).game_status === "E") || (JSON.parse(this.props.previousState).game_status === "F")){
+    if((typeof localStorage.getItem("state") === undefined) || (JSON.parse(localStorage.getItem("state")).game_status === "0") || (JSON.parse(localStorage.getItem("state")).game_status === "A") || (JSON.parse(localStorage.getItem("state")).game_status === "E") || (JSON.parse(localStorage.getItem("state")).game_status === "F")){
       this.props.dispatch(setGameStatus("A"));
     }
   }
@@ -168,7 +168,7 @@ export class App extends React.Component {
       if(this.props.wait_for_user_profile !== true){
         appContent = (
 
-          <Trivial dispatch={this.props.dispatch} dice={this.props.dice} lives={this.props.lives} crowns={this.props.crowns} player_position={this.props.player_position} possible_movements={this.props.possible_movements} trivial={SAMPLES.quiz_example} timer={this.props.timer} questions={this.props.jsons} countCrowns={this.countCrownsInPossession.bind(this)} game_status={this.props.game_status} config={GLOBAL_CONFIG} I18n={I18n} user_profile={this.props.user_profile} tracking={this.props.tracking}/>
+          <Trivial dispatch={this.props.dispatch} dice={this.props.dice} lives={this.props.lives} crowns={this.props.crowns} player_position={this.props.player_position} possible_movements={this.props.possible_movements} trivial={SAMPLES.quiz_example} timer={this.props.timer} questions={this.props.jsons} answered={this.props.answered} countCrowns={this.countCrownsInPossession.bind(this)} game_status={this.props.game_status} config={GLOBAL_CONFIG} I18n={I18n} user_profile={this.props.user_profile} tracking={this.props.tracking}/>
 
         );
       }
@@ -179,7 +179,7 @@ export class App extends React.Component {
     }
     if(this.props.game_status === "0"){
       all = (
-        <RestoreStateMenu restoreState={this.props.rs} dispatch={this.props.dispatch}/>
+        <RestoreStateMenu dispatch={this.props.dispatch}/>
       );
     } else if(this.props.game_status === "A"){
       all = (

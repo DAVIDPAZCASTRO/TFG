@@ -62,7 +62,7 @@ export default class ReduxProvider extends React.Component {
       <AppContainer>
           <Provider store={this.store}>
               <div style={{height:'100%'}}>
-                  <App store={this.store} previousState={localStorage.getItem("state")} rs={this.rs.bind(this)}/>
+                  <App store={this.store}/>
               </div>
           </Provider>
       </AppContainer>

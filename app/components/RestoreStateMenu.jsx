@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {setGameStatus} from './../reducers/actions';
+import {setGameStatus, importState} from './../reducers/actions';
 
 export default class RestoreStateMenu extends React.Component {
 
@@ -9,7 +9,7 @@ export default class RestoreStateMenu extends React.Component {
   }
 
   handleContinue(){
-    this.props.restoreState();
+    this.props.dispatch(importState(JSON.parse(localStorage.getItem("state"))));
   }
 
   handleNewStart(){

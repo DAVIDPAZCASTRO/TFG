@@ -127,6 +127,13 @@ export function setSeconds(seconds){
   };
 }
 
+export function setAnswered(answ){
+  return {
+    type:'SET_ANSWERED',
+    answered:answ,
+  };
+}
+
 export function isTimer(timer){
   return {
     type:'IS_TIMER',
@@ -189,5 +196,12 @@ export function finishApp(finished = true){
   return {
     type:'FINISH_APP',
     finished:finished,
+  };
+}
+
+export function importState(state){
+  return {
+    type:'IMPORT_STATE',
+    state:state,
   };
 }

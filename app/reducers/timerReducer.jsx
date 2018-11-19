@@ -1,3 +1,6 @@
+import {GLOBAL_CONFIG} from '../config/config.js';
+import {INITIAL_STATE} from '../constants/constants';
+
 function timerReducer(state = {}, action){
   let newState;
   newState = Object.assign({}, state);
@@ -7,10 +10,15 @@ function timerReducer(state = {}, action){
     return newState;
   case 'IS_TIMER':
     newState.isTimer = action.isTimer;
-    // console.log("newstate timer");
-    // console.log(newState);
-    // console.log(newState.isTimer);
     return newState;
+  case 'IMPORT_STATE':
+    let newTimer = action.state.timer;
+    if(typeof GLOBAL_CONFIG.timer === "number"){
+      newTimer.seconds = GLOBAL_CONFIG.timer;
+    } else {
+      newTimer.seconds = INITIAL_STATE.timer.seconds;
+    }
+    return newTimer;
   default:
     return state;
   }

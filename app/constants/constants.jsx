@@ -48,4 +48,5 @@ export const INITIAL_STATE = {
     isTimer:false,
   },
   wait_for_parse_xml:true,
+  answered:false,
 };

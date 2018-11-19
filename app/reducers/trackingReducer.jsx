@@ -70,6 +70,8 @@ function trackingReducer(state = {}, action){
       newState.finished = action.finished;
     }
     return newState;
+  case 'IMPORT_STATE':
+    return action.state.tracking;
   default:
     return state;
   }

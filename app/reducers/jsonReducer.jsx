@@ -14,6 +14,8 @@ function jsonReducer(state = {}, action){
   case 'SET_JSON_SCIENCE':
     newState.jsonScience = action.json;
     return newState;
+  case 'IMPORT_STATE':
+    return action.state.jsons;
   default:
     return state;
   }

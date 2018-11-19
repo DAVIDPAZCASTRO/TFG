@@ -13,13 +13,15 @@ export default class Timer extends React.Component {
     };
     this.timer = 0;
     this.finishQuestion = false;
+    console.log("finishQuestion es " + this.finishQuestion);
+    this.startTimer();
   }
 
   componentDidMount(){
     // console.log(this.props.timer)
-    this.startTimer();
-
+    //this.startTimer();
   }
+
   componentWillUnmount(){
     // console.log("entra en willunmount")
     this.props.dispatch(isTimer(false));
@@ -41,7 +43,7 @@ export default class Timer extends React.Component {
   startTimer(){
     // console.log("ENTRA EN STARTTIMER")
     // console.log(this.props.timer)
-    if(this.timer === 0 && this.props.timer.seconds > 0){
+    if(this.props.timer.seconds > 0){
       this.timer = setInterval(this.countDown.bind(this), 1000);
     }
 
@@ -70,13 +72,18 @@ export default class Timer extends React.Component {
         class_name:color,
       });
 
-      let to = setTimeout(this.finishTimeout.bind(this), 700);
+      setTimeout(function(){
+        if(seconds > 0){
+          this.setState({class_name:"time"});
+        }
+      }.bind(this), 700);
 
       if(seconds === 0){
         clearInterval(this.timer);
         this.timer = 0;
+        this.finishQuestion = true;
         this.props.dispatch(isTimer(false));
-
+        this.props.onAnswerQuestion();
       }
     } else {
 

@@ -14,6 +14,8 @@ function crownsReducer(state = {}, action){
   case 'SET_CROWN_SPORTS':
     newState.crown_sports.onBoard = action.onBoard;
     return newState;
+  case 'IMPORT_STATE':
+    return action.state.crowns;
   default:
     return state;
   }

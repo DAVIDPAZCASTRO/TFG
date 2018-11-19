@@ -12,6 +12,7 @@ import crownsReducer from './crownsReducer';
 import jsonReducer from './jsonReducer';
 import timerReducer from './timerReducer';
 import waitForParseXMLReducer from './waitForParseXMLReducer';
+import answeredReducer from './answeredReducer';
 
 const GlobalState = combineReducers({
   tracking:trackingReducer,
@@ -27,6 +28,7 @@ const GlobalState = combineReducers({
   jsons:jsonReducer,
   wait_for_parse_xml:waitForParseXMLReducer,
   timer:timerReducer,
+  answered:answeredReducer,
 });
 
 export default GlobalState;
