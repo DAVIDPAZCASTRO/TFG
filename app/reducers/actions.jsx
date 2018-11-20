@@ -24,6 +24,13 @@ export function setLives(lives){
   };
 }
 
+export function setSelectedChoice(choice){
+  return {
+    type:'SET_SELECTED_CHOICE',
+    choice:choice,
+  };
+}
+
 export function xmlsParsed(){
   return {
     type:'XMLS_PARSED',

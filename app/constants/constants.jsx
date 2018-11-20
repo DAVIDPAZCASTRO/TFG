@@ -49,4 +49,5 @@ export const INITIAL_STATE = {
   },
   wait_for_parse_xml:true,
   answered:false,
+  selected_choice:-1,
 };

@@ -250,7 +250,7 @@ export default class Trivial extends React.Component {
         currentQuestionRender = (
           <div>
             {questionCategoryText}
-            <MCQuestionTrivial question={currentQuestion} dispatch={this.props.dispatch} I18n={this.props.I18n} timer={this.props.timer} answered={this.props.answered} objectiveHistory={objectiveHistory} objectiveMovies={objectiveMovies} objectiveSports={objectiveSports} objectiveScience={objectiveScience} onNextQuestion={onNextQuestion} onResetTrivial={onResetTrivial} lives={this.props.lives} crowns={this.props.crowns} countCrowns={this.props.countCrowns} player_position={this.props.player_position}/>
+            <MCQuestionTrivial question={currentQuestion} dispatch={this.props.dispatch} I18n={this.props.I18n} timer={this.props.timer} answered={this.props.answered} objectiveHistory={objectiveHistory} objectiveMovies={objectiveMovies} objectiveSports={objectiveSports} objectiveScience={objectiveScience} onNextQuestion={onNextQuestion} selected_choice={this.props.selected_choice} onResetTrivial={onResetTrivial} lives={this.props.lives} crowns={this.props.crowns} countCrowns={this.props.countCrowns} player_position={this.props.player_position}/>
           </div>
         );
       }

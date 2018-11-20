@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {setGameStatus, isTimer} from './../reducers/actions';
+import {setGameStatus, isTimer, setSelectedChoice} from './../reducers/actions';
 
 export default class QuestionTrivialButtons extends React.Component {
   constructor(props){
@@ -24,6 +24,7 @@ export default class QuestionTrivialButtons extends React.Component {
       this.props.onNextQuestion();
       this.props.dispatch(setGameStatus("B"));
     }
+    this.props.dispatch(setSelectedChoice(-1));
   }
 
   render(){

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as Utils from '../vendors/Utils.js';
-import {objectiveAccomplished, objectiveAccomplishedThunk, setLives, setCrownHistory, setCrownMovies, setCrownScience, setCrownSports, setAnswered} from './../reducers/actions';
+import {objectiveAccomplished, objectiveAccomplishedThunk, setLives, setCrownHistory, setCrownMovies, setCrownScience, setCrownSports, setAnswered, setSelectedChoice} from './../reducers/actions';
 import {GLOBAL_CONFIG} from '../config/config.js';
 
 import Timer from './Timer.jsx';
@@ -12,17 +12,15 @@ export default class MCQuestionTrivial extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {
-      selected_choice_id:-1,
-    };
+    // this.props.dispatch(setSelectedChoice(-1));
     this.props.dispatch(setAnswered(!this.props.timer.isTimer));
   }
 
   componentWillUpdate(prevProps, prevState){
     if(prevProps.question !== this.props.question){
       this.setState({selected_choice_id:-1});
+      // this.props.dispatch(setSelectedChoice(-1));
       this.props.dispatch(setAnswered(false));
-      // console.log("CHOICE_ID = " +this.state.selected_choice_id)
     }
   }
 
@@ -30,9 +28,10 @@ export default class MCQuestionTrivial extends React.Component {
     if(this.props.answered === true){
       return;
     }
-    let newSelectedChoiceId = Object.assign([], this.state.selected_choice_id);
-    if(choice_id !== this.state.selected_choice_id){
-      this.setState({selected_choice_id:choice_id});
+    if(choice_id !== this.props.selected_choice){
+      // this.setState({selected_choice_id:choice_id});
+      this.props.dispatch(setSelectedChoice(choice_id));
+      console.log(choice_id);
     }
   }
 
@@ -49,8 +48,8 @@ export default class MCQuestionTrivial extends React.Component {
     let objectiveSports = this.props.objectiveSports;
     let objectiveScience = this.props.objectiveScience;
     let textAlert = "";
-    if(this.state.selected_choice_id !== -1){
-      let selectedChoice = this.props.question.choices[this.state.selected_choice_id];
+    if(this.props.selected_choice !== -1){
+      let selectedChoice = this.props.question.choices[this.props.selected_choice];
       correctAnswer = (selectedChoice.answer === true);
     } else {
       // Blank answer, do nothing
@@ -84,7 +83,7 @@ export default class MCQuestionTrivial extends React.Component {
 
         this.showAlert(textAlert + "¡Enhorabuena! ¡Has conseguido la corona de " + (GLOBAL_CONFIG.categories[3].name).toUpperCase() + "!");
       }
-    } else if(this.state.selected_choice_id === -1){
+    } else if(this.props.selected_choice === -1){
       this.props.dispatch(setLives(this.props.lives - 1));
       this.showAlert(textAlert + "No has fijado una respuesta, pierdes una vida");
     } else {
@@ -98,10 +97,11 @@ export default class MCQuestionTrivial extends React.Component {
   }
 
   render(){
+    console.log("Selected_choice = " + this.props.selected_choice)
     let choices = [];
-    let clickedAnswer = (this.state.selected_choice_id !== -1);
+    let clickedAnswer = (this.props.selected_choice !== -1);
     for(let i = 0; i < this.props.question.choices.length; i++){
-      choices.push(<MCQuestionTrivialChoice key={"MyQuestion_" + "question_choice_" + i} checked={this.state.selected_choice_id === i} choice={this.props.question.choices[i]} choice_id={i} selectedChoiceId={this.state.selected_choice_id} clickedAnswer={clickedAnswer} handleChange={this.handleChoiceChange.bind(this)} answered={this.props.answered}/>);
+      choices.push(<MCQuestionTrivialChoice key={"MyQuestion_" + "question_choice_" + i} checked={this.props.selected_choice === i} choice={this.props.question.choices[i]} choice_id={i} selectedChoiceId={this.props.selected_choice} clickedAnswer={clickedAnswer} handleChange={this.handleChoiceChange.bind(this)} answered={this.props.answered}/>);
     }
     return (
       <div className="question center_screen">

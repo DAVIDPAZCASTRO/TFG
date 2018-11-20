@@ -13,6 +13,7 @@ import jsonReducer from './jsonReducer';
 import timerReducer from './timerReducer';
 import waitForParseXMLReducer from './waitForParseXMLReducer';
 import answeredReducer from './answeredReducer';
+import selectedChoiceReducer from './selectedChoiceReducer';
 
 const GlobalState = combineReducers({
   tracking:trackingReducer,
@@ -29,6 +30,7 @@ const GlobalState = combineReducers({
   wait_for_parse_xml:waitForParseXMLReducer,
   timer:timerReducer,
   answered:answeredReducer,
+  selected_choice:selectedChoiceReducer,
 });
 
 export default GlobalState;
