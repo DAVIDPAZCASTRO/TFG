@@ -18,7 +18,7 @@ export default class MCQuestionTrivial extends React.Component {
 
   componentWillUpdate(prevProps, prevState){
     if(prevProps.question !== this.props.question){
-      this.setState({selected_choice_id:-1});
+      // this.setState({selected_choice_id:-1});
       // this.props.dispatch(setSelectedChoice(-1));
       this.props.dispatch(setAnswered(false));
     }
