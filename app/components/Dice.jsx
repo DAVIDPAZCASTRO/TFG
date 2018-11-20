@@ -73,7 +73,7 @@ export default class Dice extends React.Component {
     if(this.props.game_status === "C"){
       die = (
         <div className="imageDie">
-          <div className="textDie">Selecciona la casilla a la que desea moverse</div>
+          <div className="textDie">Selecciona la casilla a la que deseas moverte</div>
           {imageDie}
         </div>
       );

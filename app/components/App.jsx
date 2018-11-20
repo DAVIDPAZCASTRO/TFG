@@ -152,12 +152,12 @@ export class App extends React.Component {
     let appHeader = "";
     let appContent = "";
     let all = "";
-    console.log("valor de waitForParseXML = " + this.props.wait_for_parse_xml);
+    // console.log("valor de waitForParseXML = " + this.props.wait_for_parse_xml);
 
-    console.log(this.props.jsons.jsonHistory);
-    console.log(this.props.jsons.jsonMovies);
-    console.log(this.props.jsons.jsonScience);
-    console.log(this.props.jsons.jsonSports);
+    // console.log(this.props.jsons.jsonHistory);
+    // console.log(this.props.jsons.jsonMovies);
+    // console.log(this.props.jsons.jsonScience);
+    // console.log(this.props.jsons.jsonSports);
 
     // console.log(SAMPLES.quiz_example);
     appHeader = (

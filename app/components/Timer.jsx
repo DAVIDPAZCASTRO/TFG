@@ -13,7 +13,6 @@ export default class Timer extends React.Component {
     };
     this.timer = 0;
     this.finishQuestion = false;
-    console.log("finishQuestion es " + this.finishQuestion);
     this.startTimer();
   }
 

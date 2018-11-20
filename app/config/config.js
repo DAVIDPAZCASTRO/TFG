@@ -1,9 +1,10 @@
 export let GLOBAL_CONFIG = {
   dev:{
+    // Se puede especificar el tiempo para responder (> 0, etiqueta timer:) y el número de vidas ((> 0) y (<= 7), etiqueta lives:).
     debug:true,
     debug_scorm_api:false,
     debug_scorm_api_window:false,
-    available_locales:["es","en"],
+    available_locales:["es", "en"],
     // locale: "es",
     adaptive:true,
     finish_screen:true,
@@ -13,21 +14,22 @@ export let GLOBAL_CONFIG = {
     },
     n:3,
     categories:[{
-        name:"historia",
-        url:"./../assets/xmls/questionsXMLhistory.xml",
-      },{
-        name:"cine",
-        url:"./../assets/xmls/questionsXMLmovies.xml",
-      },{
-        name:"ciencia",
-        url:"./../assets/xmls/questionsXMLscience.xml",
-      },{
-        name:"deportes",
-        url:"./../assets/xmls/questionsXMLsports.xml",
-      },
+      name:"historia",
+      url:"./../assets/xmls/questionsXMLhistory.xml",
+    }, {
+      name:"cine",
+      url:"./../assets/xmls/questionsXMLmovies.xml",
+    }, {
+      name:"ciencia",
+      url:"./../assets/xmls/questionsXMLscience.xml",
+    }, {
+      name:"deportes",
+      url:"./../assets/xmls/questionsXMLsports.xml",
+    },
     ],
   },
   production:{
+    // Se puede especificar el tiempo para responder (> 0) y el número de vidas ((> 0) y (<= 7)).
     debug:false,
     debug_scorm_api:false,
     debug_scorm_api_window:false,
@@ -40,18 +42,18 @@ export let GLOBAL_CONFIG = {
     },
     n:undefined,
     categories:[{
-        name:"historia",
-        url:"./../assets/xmls/questionsXMLhistory.xml",
-      },{
-        name:"cine",
-        url:"./../assets/xmls/questionsXMLmovies.xml",
-      },{
-        name:"ciencia",
-        url:"./../assets/xmls/questionsXMLscience.xml",
-      },{
-        name:"deportes",
-        url:"./../assets/xmls/questionsXMLsports.xml",
-      },
+      name:"historia",
+      url:"./../assets/xmls/questionsXMLhistory.xml",
+    }, {
+      name:"cine",
+      url:"./../assets/xmls/questionsXMLmovies.xml",
+    }, {
+      name:"ciencia",
+      url:"./../assets/xmls/questionsXMLscience.xml",
+    }, {
+      name:"deportes",
+      url:"./../assets/xmls/questionsXMLsports.xml",
+    },
     ],
   },
 };

@@ -31,7 +31,7 @@ export default class MCQuestionTrivial extends React.Component {
     if(choice_id !== this.props.selected_choice){
       // this.setState({selected_choice_id:choice_id});
       this.props.dispatch(setSelectedChoice(choice_id));
-      console.log(choice_id);
+      // console.log(choice_id);
     }
   }
 
@@ -97,7 +97,7 @@ export default class MCQuestionTrivial extends React.Component {
   }
 
   render(){
-    console.log("Selected_choice = " + this.props.selected_choice)
+    // console.log("Selected_choice = " + this.props.selected_choice)
     let choices = [];
     let clickedAnswer = (this.props.selected_choice !== -1);
     for(let i = 0; i < this.props.question.choices.length; i++){

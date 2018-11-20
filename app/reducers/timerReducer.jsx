@@ -13,11 +13,11 @@ function timerReducer(state = {}, action){
     return newState;
   case 'IMPORT_STATE':
     let newTimer = action.state.timer;
-    if(typeof GLOBAL_CONFIG.timer === "number"){
-      newTimer.seconds = GLOBAL_CONFIG.timer;
-    } else {
-      newTimer.seconds = INITIAL_STATE.timer.seconds;
-    }
+    // if(typeof GLOBAL_CONFIG.timer === "number"){
+    //   newTimer.seconds = GLOBAL_CONFIG.timer;
+    // } else {
+    //   newTimer.seconds = INITIAL_STATE.timer.seconds;
+    // }
     return newTimer;
   default:
     return state;
