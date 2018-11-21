@@ -18,7 +18,7 @@ export default class Timer extends React.Component {
 
   componentDidMount(){
     // console.log(this.props.timer)
-    //this.startTimer();
+    // this.startTimer();
   }
 
   componentWillUnmount(){

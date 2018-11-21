@@ -168,7 +168,7 @@ export class App extends React.Component {
       if(this.props.wait_for_user_profile !== true){
         appContent = (
 
-          <Trivial dispatch={this.props.dispatch} dice={this.props.dice} lives={this.props.lives} crowns={this.props.crowns} player_position={this.props.player_position} possible_movements={this.props.possible_movements} trivial={SAMPLES.quiz_example} timer={this.props.timer} selected_choice={this.props.selected_choice} questions={this.props.jsons} answered={this.props.answered} countCrowns={this.countCrownsInPossession.bind(this)} game_status={this.props.game_status} config={GLOBAL_CONFIG} I18n={I18n} user_profile={this.props.user_profile} tracking={this.props.tracking}/>
+          <Trivial dispatch={this.props.dispatch} dice={this.props.dice} lives={this.props.lives} crowns={this.props.crowns} player_position={this.props.player_position} possible_movements={this.props.possible_movements} trivial={SAMPLES.quiz_example} timer={this.props.timer} selected_choice={this.props.selected_choice} questions={this.props.jsons} answered={this.props.answered} countCrowns={this.countCrownsInPossession.bind(this)} game_status={this.props.game_status} config={GLOBAL_CONFIG} I18n={I18n} user_profile={this.props.user_profile} tracking={this.props.tracking} objectives_pointer={this.props.objectives_pointer}/>
 
         );
       }

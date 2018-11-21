@@ -31,6 +31,13 @@ export function setSelectedChoice(choice){
   };
 }
 
+export function setObjectivesPointer(pointer){
+  return {
+    type:'SET_OBJECTIVES_POINTER',
+    objectives_pointer:pointer,
+  };
+}
+
 export function xmlsParsed(){
   return {
     type:'XMLS_PARSED',
@@ -168,7 +175,7 @@ export function resetObjectives(objectives){
   };
 }
 
-export function objectiveAccomplished(objectiveId, accomplishedScore = null){
+export function objectiveAccomplished(objectiveId, accomplishedScore = 0){
   return {
     type:'OBJECTIVE_ACCOMPLISHED',
     objective_id:objectiveId,

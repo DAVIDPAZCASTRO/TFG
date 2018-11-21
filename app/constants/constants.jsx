@@ -1,7 +1,7 @@
 export const INITIAL_STATE = {
   tracking:{
     progress_measure:0,
-    score:null,
+    score:0,
     objectives:{},
     finished:false,
   },
@@ -12,12 +12,19 @@ export const INITIAL_STATE = {
     learner_preference:{},
   },
   wait_for_user_profile:false,
-  dice:0,
+  wait_for_parse_xml:true,
+  jsons:{
+    jsonHistory:0,
+    jsonSports:0,
+    jsonMovies:0,
+    jsonScience:0,
+  },
   player_position:[4, 4],
   possible_movements:[
     [4, 4],
   ],
   game_status:"0",
+  dice:0,
   lives:5,
   crowns:{
     crown_history:{
@@ -37,17 +44,11 @@ export const INITIAL_STATE = {
       position:[0, 8],
     },
   },
-  jsons:{
-    jsonHistory:0,
-    jsonSports:0,
-    jsonMovies:0,
-    jsonScience:0,
-  },
   timer:{
     seconds:20,
     isTimer:false,
   },
-  wait_for_parse_xml:true,
   answered:false,
   selected_choice:-1,
+  objectives_pointer:[0, 0],
 };

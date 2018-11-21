@@ -14,23 +14,25 @@ import timerReducer from './timerReducer';
 import waitForParseXMLReducer from './waitForParseXMLReducer';
 import answeredReducer from './answeredReducer';
 import selectedChoiceReducer from './selectedChoiceReducer';
+import objectivesPointerReducer from './objectivesPointerReducer';
 
 const GlobalState = combineReducers({
   tracking:trackingReducer,
   scorm:scormReducer,
   user_profile:userProfileReducer,
   wait_for_user_profile:waitForUserProfileReducer,
-  dice:diceReducer,
+  wait_for_parse_xml:waitForParseXMLReducer,
+  jsons:jsonReducer,
   player_position:playerPositionReducer,
   possible_movements:possibleMovementsReducer,
   game_status:gameStatusReducer,
+  dice:diceReducer,
   lives:livesReducer,
   crowns:crownsReducer,
-  jsons:jsonReducer,
-  wait_for_parse_xml:waitForParseXMLReducer,
   timer:timerReducer,
   answered:answeredReducer,
   selected_choice:selectedChoiceReducer,
+  objectives_pointer:objectivesPointerReducer,
 });
 
 export default GlobalState;

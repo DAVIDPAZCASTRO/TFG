@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as Utils from '../vendors/Utils.js';
-import {objectiveAccomplished, objectiveAccomplishedThunk, setLives, setCrownHistory, setCrownMovies, setCrownScience, setCrownSports, setAnswered, setSelectedChoice} from './../reducers/actions';
+import {objectiveAccomplished, objectiveAccomplishedThunk, setLives, setCrownHistory, setCrownMovies, setCrownScience, setCrownSports, setAnswered, setSelectedChoice, setObjectivesPointer} from './../reducers/actions';
 import {GLOBAL_CONFIG} from '../config/config.js';
 
 import Timer from './Timer.jsx';
@@ -47,6 +47,7 @@ export default class MCQuestionTrivial extends React.Component {
     let objectiveMovies = this.props.objectiveMovies;
     let objectiveSports = this.props.objectiveSports;
     let objectiveScience = this.props.objectiveScience;
+    let objectivesArray = this.props.objectivesArray;
     let textAlert = "";
     if(this.props.selected_choice !== -1){
       let selectedChoice = this.props.question.choices[this.props.selected_choice];
@@ -60,34 +61,82 @@ export default class MCQuestionTrivial extends React.Component {
     this.props.dispatch(setAnswered(true));
     if(correctAnswer){
       if(this.props.crowns.crown_history.position[0] === this.props.player_position[0] && this.props.crowns.crown_history.position[1] === this.props.player_position[1] && this.props.crowns.crown_history.onBoard === true){
+        // this.props.dispatch(setCrownHistory(false));
+        // this.props.dispatch(objectiveAccomplished(objectiveHistory.id, objectiveHistory.score));
+
+        // Modificamos los objetivos para que se completen totalmente si conseguimos la siguiente corona (antes de modificar el número de coronas que poseemos).
+        for(let x = 0; x < 5; x++){
+          console.log("El número de coronas es de " + this.props.countCrowns());
+          console.log(objectivesArray[this.props.countCrowns()][x]);
+          this.props.dispatch(objectiveAccomplished(objectivesArray[this.props.countCrowns()][x].id, objectivesArray[this.props.countCrowns()][x].score));
+        }
         this.props.dispatch(setCrownHistory(false));
-        this.props.dispatch(objectiveAccomplished(objectiveHistory.id, objectiveHistory.score));
+        console.log("El número de coronas es de " + this.props.countCrowns());
+        this.props.dispatch(setObjectivesPointer([this.props.countCrowns(), 0]));
 
         this.showAlert(textAlert + "¡Enhorabuena! ¡Has conseguido la corona de " + (GLOBAL_CONFIG.categories[0].name).toUpperCase() + "!");
-      }
-      if(this.props.crowns.crown_movies.position[0] === this.props.player_position[0] && this.props.crowns.crown_movies.position[1] === this.props.player_position[1] && this.props.crowns.crown_movies.onBoard === true){
+      } else if(this.props.crowns.crown_movies.position[0] === this.props.player_position[0] && this.props.crowns.crown_movies.position[1] === this.props.player_position[1] && this.props.crowns.crown_movies.onBoard === true){
+        // this.props.dispatch(setCrownMovies(false));
+        // this.props.dispatch(objectiveAccomplished(objectiveMovies.id, objectiveMovies.score));
+
+        // Modificamos los objetivos para que se completen totalmente si conseguimos la siguiente corona (antes de modificar el número de coronas que poseemos).
+        for(let x = 0; x < 5; x++){
+          console.log("El número de coronas es de " + this.props.countCrowns());
+          console.log(objectivesArray[this.props.countCrowns()][x]);
+          this.props.dispatch(objectiveAccomplished(objectivesArray[this.props.countCrowns()][x].id, objectivesArray[this.props.countCrowns()][x].score));
+        }
         this.props.dispatch(setCrownMovies(false));
-        this.props.dispatch(objectiveAccomplished(objectiveMovies.id, objectiveMovies.score));
+        console.log("El número de coronas es de " + this.props.countCrowns());
+        this.props.dispatch(setObjectivesPointer([this.props.countCrowns(), 0]));
 
         this.showAlert(textAlert + "¡Enhorabuena! ¡Has conseguido la corona de " + (GLOBAL_CONFIG.categories[1].name).toUpperCase() + "!");
-      }
-      if(this.props.crowns.crown_science.position[0] === this.props.player_position[0] && this.props.crowns.crown_science.position[1] === this.props.player_position[1] && this.props.crowns.crown_science.onBoard === true){
+      } else if(this.props.crowns.crown_science.position[0] === this.props.player_position[0] && this.props.crowns.crown_science.position[1] === this.props.player_position[1] && this.props.crowns.crown_science.onBoard === true){
+        // this.props.dispatch(setCrownScience(false));
+        // this.props.dispatch(objectiveAccomplished(objectiveScience.id, objectiveScience.score));
+
+        // Modificamos los objetivos para que se completen totalmente si conseguimos la siguiente corona (antes de modificar el número de coronas que poseemos).
+        for(let x = 0; x < 5; x++){
+          console.log("El número de coronas es de " + this.props.countCrowns());
+          console.log(objectivesArray[this.props.countCrowns()][x]);
+          this.props.dispatch(objectiveAccomplished(objectivesArray[this.props.countCrowns()][x].id, objectivesArray[this.props.countCrowns()][x].score));
+        }
         this.props.dispatch(setCrownScience(false));
-        this.props.dispatch(objectiveAccomplished(objectiveScience.id, objectiveScience.score));
+        console.log("El número de coronas es de " + this.props.countCrowns());
+        this.props.dispatch(setObjectivesPointer([this.props.countCrowns(), 0]));
 
         this.showAlert(textAlert + "¡Enhorabuena! ¡Has conseguido la corona de " + (GLOBAL_CONFIG.categories[2].name).toUpperCase() + "!");
-      }
-      if(this.props.crowns.crown_sports.position[0] === this.props.player_position[0] && this.props.crowns.crown_sports.position[1] === this.props.player_position[1] && this.props.crowns.crown_sports.onBoard === true){
+      } else if(this.props.crowns.crown_sports.position[0] === this.props.player_position[0] && this.props.crowns.crown_sports.position[1] === this.props.player_position[1] && this.props.crowns.crown_sports.onBoard === true){
+        // this.props.dispatch(setCrownSports(false));
+        // this.props.dispatch(objectiveAccomplished(objectiveSports.id, objectiveSports.score));
+
+        // Modificamos los objetivos para que se completen totalmente si conseguimos la siguiente corona (antes de modificar el número de coronas que poseemos).
+        for(let x = 0; x < 5; x++){
+          console.log("El número de coronas es de " + this.props.countCrowns());
+          console.log(objectivesArray[this.props.countCrowns()][x]);
+          this.props.dispatch(objectiveAccomplished(objectivesArray[this.props.countCrowns()][x].id, objectivesArray[this.props.countCrowns()][x].score));
+        }
         this.props.dispatch(setCrownSports(false));
-        this.props.dispatch(objectiveAccomplished(objectiveSports.id, objectiveSports.score));
+        console.log("El número de coronas es de " + this.props.countCrowns());
+        this.props.dispatch(setObjectivesPointer([this.props.countCrowns(), 0]));
 
         this.showAlert(textAlert + "¡Enhorabuena! ¡Has conseguido la corona de " + (GLOBAL_CONFIG.categories[3].name).toUpperCase() + "!");
+      } else if(this.props.objectives_pointer[1] < 4){
+        this.props.dispatch(objectiveAccomplished(objectivesArray[this.props.countCrowns()][this.props.objectives_pointer[1]].id, objectivesArray[this.props.countCrowns()][this.props.objectives_pointer[1]].score));
+        this.props.dispatch(setObjectivesPointer([this.props.objectives_pointer[0], this.props.objectives_pointer[1] + 1]));
       }
     } else if(this.props.selected_choice === -1){
       this.props.dispatch(setLives(this.props.lives - 1));
+      if(this.props.objectives_pointer[1] < 4){
+        this.props.dispatch(objectiveAccomplished(objectivesArray[this.props.countCrowns()][this.props.objectives_pointer[1]].id, 0));
+        this.props.dispatch(setObjectivesPointer([this.props.objectives_pointer[0], this.props.objectives_pointer[1] + 1]));
+      }
       this.showAlert(textAlert + "No has fijado una respuesta, pierdes una vida");
     } else {
       this.props.dispatch(setLives(this.props.lives - 1));
+      if(this.props.objectives_pointer[1] < 4){
+        this.props.dispatch(objectiveAccomplished(objectivesArray[this.props.countCrowns()][this.props.objectives_pointer[1]].id, 0));
+        this.props.dispatch(setObjectivesPointer([this.props.objectives_pointer[0], this.props.objectives_pointer[1] + 1]));
+      }
       this.showAlert(textAlert + "Has fallado la pregunta, pierdes una vida");
     }
   }
@@ -97,6 +146,8 @@ export default class MCQuestionTrivial extends React.Component {
   }
 
   render(){
+    console.log(this.props.objectivesArray);
+    console.log(this.props.objectives_pointer);
     // console.log("Selected_choice = " + this.props.selected_choice)
     let choices = [];
     let clickedAnswer = (this.props.selected_choice !== -1);
