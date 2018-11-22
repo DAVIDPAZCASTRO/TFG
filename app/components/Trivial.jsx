@@ -1,5 +1,5 @@
 import React from 'react';
-import './../assets/scss/quiz.scss';
+import './../assets/scss/trivial.scss';
 
 import * as Utils from '../vendors/Utils.js';
 import {addObjectives, resetObjectives} from './../reducers/actions';
@@ -110,7 +110,7 @@ export default class Trivial extends React.Component {
   onNextQuestion(){
     // se desplaza el array de la categoría en la que se encuentra el jugador, el resto de arrays no se mueven
     let player_position_category = this.state.boxes[this.props.player_position[0]][this.props.player_position[1]];
-    console.log("categoría numero " + player_position_category);
+    // console.log("categoría numero " + player_position_category);
     switch (player_position_category){
     case "1":
       // cine
@@ -170,7 +170,7 @@ export default class Trivial extends React.Component {
     let currentQuestion = "";
     let questionCategoryText = "";
     // console.log(player_position_category)
-    console.log(this.props.timer.seconds);
+    // console.log(this.props.timer.seconds);
     switch (player_position_category){
     case "1":
       // cine

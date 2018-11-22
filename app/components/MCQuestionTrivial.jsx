@@ -66,12 +66,12 @@ export default class MCQuestionTrivial extends React.Component {
 
         // Modificamos los objetivos para que se completen totalmente si conseguimos la siguiente corona (antes de modificar el número de coronas que poseemos).
         for(let x = 0; x < 5; x++){
-          console.log("El número de coronas es de " + this.props.countCrowns());
-          console.log(objectivesArray[this.props.countCrowns()][x]);
+          // console.log("El número de coronas es de " + this.props.countCrowns());
+          // console.log(objectivesArray[this.props.countCrowns()][x]);
           this.props.dispatch(objectiveAccomplished(objectivesArray[this.props.countCrowns()][x].id, objectivesArray[this.props.countCrowns()][x].score));
         }
         this.props.dispatch(setCrownHistory(false));
-        console.log("El número de coronas es de " + this.props.countCrowns());
+        // console.log("El número de coronas es de " + this.props.countCrowns());
         this.props.dispatch(setObjectivesPointer([this.props.countCrowns(), 0]));
 
         this.showAlert(textAlert + "¡Enhorabuena! ¡Has conseguido la corona de " + (GLOBAL_CONFIG.categories[0].name).toUpperCase() + "!");
@@ -81,12 +81,12 @@ export default class MCQuestionTrivial extends React.Component {
 
         // Modificamos los objetivos para que se completen totalmente si conseguimos la siguiente corona (antes de modificar el número de coronas que poseemos).
         for(let x = 0; x < 5; x++){
-          console.log("El número de coronas es de " + this.props.countCrowns());
-          console.log(objectivesArray[this.props.countCrowns()][x]);
+          // console.log("El número de coronas es de " + this.props.countCrowns());
+          // console.log(objectivesArray[this.props.countCrowns()][x]);
           this.props.dispatch(objectiveAccomplished(objectivesArray[this.props.countCrowns()][x].id, objectivesArray[this.props.countCrowns()][x].score));
         }
         this.props.dispatch(setCrownMovies(false));
-        console.log("El número de coronas es de " + this.props.countCrowns());
+        // console.log("El número de coronas es de " + this.props.countCrowns());
         this.props.dispatch(setObjectivesPointer([this.props.countCrowns(), 0]));
 
         this.showAlert(textAlert + "¡Enhorabuena! ¡Has conseguido la corona de " + (GLOBAL_CONFIG.categories[1].name).toUpperCase() + "!");
@@ -96,12 +96,12 @@ export default class MCQuestionTrivial extends React.Component {
 
         // Modificamos los objetivos para que se completen totalmente si conseguimos la siguiente corona (antes de modificar el número de coronas que poseemos).
         for(let x = 0; x < 5; x++){
-          console.log("El número de coronas es de " + this.props.countCrowns());
-          console.log(objectivesArray[this.props.countCrowns()][x]);
+          // console.log("El número de coronas es de " + this.props.countCrowns());
+          // console.log(objectivesArray[this.props.countCrowns()][x]);
           this.props.dispatch(objectiveAccomplished(objectivesArray[this.props.countCrowns()][x].id, objectivesArray[this.props.countCrowns()][x].score));
         }
         this.props.dispatch(setCrownScience(false));
-        console.log("El número de coronas es de " + this.props.countCrowns());
+        // console.log("El número de coronas es de " + this.props.countCrowns());
         this.props.dispatch(setObjectivesPointer([this.props.countCrowns(), 0]));
 
         this.showAlert(textAlert + "¡Enhorabuena! ¡Has conseguido la corona de " + (GLOBAL_CONFIG.categories[2].name).toUpperCase() + "!");
@@ -111,12 +111,12 @@ export default class MCQuestionTrivial extends React.Component {
 
         // Modificamos los objetivos para que se completen totalmente si conseguimos la siguiente corona (antes de modificar el número de coronas que poseemos).
         for(let x = 0; x < 5; x++){
-          console.log("El número de coronas es de " + this.props.countCrowns());
-          console.log(objectivesArray[this.props.countCrowns()][x]);
+          // console.log("El número de coronas es de " + this.props.countCrowns());
+          // console.log(objectivesArray[this.props.countCrowns()][x]);
           this.props.dispatch(objectiveAccomplished(objectivesArray[this.props.countCrowns()][x].id, objectivesArray[this.props.countCrowns()][x].score));
         }
         this.props.dispatch(setCrownSports(false));
-        console.log("El número de coronas es de " + this.props.countCrowns());
+        // console.log("El número de coronas es de " + this.props.countCrowns());
         this.props.dispatch(setObjectivesPointer([this.props.countCrowns(), 0]));
 
         this.showAlert(textAlert + "¡Enhorabuena! ¡Has conseguido la corona de " + (GLOBAL_CONFIG.categories[3].name).toUpperCase() + "!");
@@ -146,8 +146,8 @@ export default class MCQuestionTrivial extends React.Component {
   }
 
   render(){
-    console.log(this.props.objectivesArray);
-    console.log(this.props.objectives_pointer);
+    // console.log(this.props.objectivesArray);
+    // console.log(this.props.objectives_pointer);
     // console.log("Selected_choice = " + this.props.selected_choice)
     let choices = [];
     let clickedAnswer = (this.props.selected_choice !== -1);

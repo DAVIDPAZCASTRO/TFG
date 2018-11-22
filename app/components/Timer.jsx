@@ -101,6 +101,5 @@ export default class Timer extends React.Component {
         <div>{this.props.timer.seconds}</div>
       </div>
     );
-
   }
 }

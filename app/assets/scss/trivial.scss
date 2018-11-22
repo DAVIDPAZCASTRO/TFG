@@ -135,8 +135,13 @@ div.quizHeader p {
   margin-bottom: 20px;
 }
 
+div.timer_cover {
+  vertical-align: middle;
+}
+
 div.timer {
   width:10%;
+  // display: inline-block;
 }
 
 div.questiontext {

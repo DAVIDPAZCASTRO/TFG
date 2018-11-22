@@ -13,9 +13,23 @@ body {
   text-align: center;
 }
 
+.vertical_middle{
+  vertical-align: middle;
+}
+
 h1.pregunta{
   font-size: 130%;
 }
+
+button:focus {
+  outline:0;
+}
+
+button:hover:enabled {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
 
 div.questioncategorytext{
   font-size: 32px;

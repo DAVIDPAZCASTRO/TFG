@@ -3,7 +3,6 @@ function answeredReducer(state = {}, action){
   switch (action.type){
   case 'SET_ANSWERED':
     newState = action.answered;
-    console.log("Answered es: " + newState);
     return newState;
   case 'IMPORT_STATE':
     return action.state.answered;

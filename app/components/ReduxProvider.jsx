@@ -13,7 +13,6 @@ export default class ReduxProvider extends React.Component {
 
   constructor(props){
     super(props);
-    // this.initialState = this.restoreState ? JSON.parse(localStorage.getItem("state")) : INITIAL_STATE;
     this.initialState = INITIAL_STATE;
 
     if(GLOBAL_CONFIG.adaptive === true){
@@ -55,16 +54,8 @@ export default class ReduxProvider extends React.Component {
     return store;
   }
 
-  rs(){
-    this.initialState = JSON.parse(localStorage.getItem("state"));
-    this.store = this.configureStore();
-    this.render();
-    console.log("entra en rs");
-    console.log(this.store.getState());
-  }
-
   render(){
-    console.log(this.store.getState());
+    // console.log(this.store.getState());
 
     return (
       <AppContainer>
