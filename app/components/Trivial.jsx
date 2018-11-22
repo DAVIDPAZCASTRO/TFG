@@ -165,7 +165,7 @@ export default class Trivial extends React.Component {
   }
 
   render(){
-
+    console.log(this.props.tracking);
     let player_position_category = this.state.boxes[this.props.player_position[0]][this.props.player_position[1]];
     let currentQuestion = "";
     let questionCategoryText = "";
