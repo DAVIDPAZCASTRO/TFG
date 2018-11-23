@@ -57,7 +57,7 @@ export class App extends React.Component {
         // Generar nuevo objeto JSON a partir del recibido
         let newjson = Object.assign({}, myJSON);
 
-        var myJSON = this.constructMyJSON(newjson, category);
+        myJSON = this.constructMyJSON(newjson, category);
 
         switch (category){
         case GLOBAL_CONFIG.categories[0].name:

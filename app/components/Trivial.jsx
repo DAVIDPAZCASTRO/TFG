@@ -52,10 +52,10 @@ export default class Trivial extends React.Component {
     // this.setState({questions:quest});
 
     let objectives = [];
-    let objective1 = "Corona de " + (GLOBAL_CONFIG.categories[0].name).toUpperCase();
-    let objective2 = "Corona de " + (GLOBAL_CONFIG.categories[1].name).toUpperCase();
-    let objective3 = "Corona de " + (GLOBAL_CONFIG.categories[2].name).toUpperCase();
-    let objective4 = "Corona de " + (GLOBAL_CONFIG.categories[3].name).toUpperCase();
+    // let objective1 = "Corona de " + (GLOBAL_CONFIG.categories[0].name).toUpperCase();
+    // let objective2 = "Corona de " + (GLOBAL_CONFIG.categories[1].name).toUpperCase();
+    // let objective3 = "Corona de " + (GLOBAL_CONFIG.categories[2].name).toUpperCase();
+    // let objective4 = "Corona de " + (GLOBAL_CONFIG.categories[3].name).toUpperCase();
 
     let objective11 = "Pregunta 11";
     let objective12 = "Pregunta 12";
@@ -104,7 +104,10 @@ export default class Trivial extends React.Component {
     objectives.push(new Utils.Objective({id:(objective44), progress_measure:(1 / 20), score:(1 / 20)}));
     objectives.push(new Utils.Objective({id:(objective4corona), progress_measure:(1 / 20), score:(1 / 20)}));
 
-    this.props.dispatch(addObjectives(objectives));
+    if(Object.keys(this.props.tracking.objectives).length === 0 && this.props.tracking.objectives.constructor === Object){
+      this.props.dispatch(addObjectives(objectives));
+    }
+
   }
 
   onNextQuestion(){

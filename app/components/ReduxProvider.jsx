@@ -30,6 +30,8 @@ export default class ReduxProvider extends React.Component {
 
     window.onbeforeunload = function(e){
       let gState = this.store.getState();
+      console.log("ESTADO QUE SE VA A GUARDAR");
+      console.log(gState);
       let gs = JSON.stringify(gState);
       console.log(gs);
       localStorage.setItem("state", gs);

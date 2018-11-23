@@ -140,8 +140,14 @@ div.timer_cover {
 }
 
 div.timer {
-  width:10%;
-  // display: inline-block;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  // left: 0;
+  // right: 0;
+  width: 10%;
+  height: 30%;
+  margin: auto;
 }
 
 div.questiontext {
@@ -179,6 +185,11 @@ div.question div.question_choice {
   margin: 10px;
   padding: 2px;
   border-radius: 25px;
+  cursor: pointer;
+}
+
+div.question div.question_choice [disabled] {
+  cursor: default;
 }
 
 div.question div.question_choice div.questionC1{

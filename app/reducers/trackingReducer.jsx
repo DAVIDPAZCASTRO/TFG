@@ -71,6 +71,10 @@ function trackingReducer(state = {}, action){
     }
     return newState;
   case 'IMPORT_STATE':
+    console.log("ESTADO A INTRODUCIR");
+    console.log(action.state);
+    console.log("TRACKING QUE SE VA A PASAR");
+    console.log(action.state.tracking);
     return action.state.tracking;
   default:
     return state;
