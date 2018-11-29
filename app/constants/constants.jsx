@@ -14,10 +14,10 @@ export const INITIAL_STATE = {
   wait_for_user_profile:false,
   wait_for_parse_xml:true,
   jsons:{
-    jsonHistory:0,
-    jsonSports:0,
-    jsonMovies:0,
-    jsonScience:0,
+    jsonYellow:0,
+    jsonRed:0,
+    jsonBlue:0,
+    jsonGreen:0,
   },
   player_position:[4, 4],
   possible_movements:[

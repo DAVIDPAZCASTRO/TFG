@@ -37,18 +37,18 @@ export default class Trivial extends React.Component {
       ],
     };
     this.state.trivial.questions = Utils.shuffleArray(trivial.questions);
-    // this.state.questions.jsonHistory.questions = Utils.shuffleArray(questions.jsonHistory.questions);
-    // this.state.questions.jsonSports.questions = Utils.shuffleArray(questions.jsonSports.questions);
-    // this.state.questions.jsonScience.questions = Utils.shuffleArray(questions.jsonScience.questions);
-    // this.state.questions.jsonMovies.questions = Utils.shuffleArray(questions.jsonMovies.questions);
+    // this.state.questions.jsonYellow.questions = Utils.shuffleArray(questions.jsonYellow.questions);
+    // this.state.questions.jsonRed.questions = Utils.shuffleArray(questions.jsonRed.questions);
+    // this.state.questions.jsonGreen.questions = Utils.shuffleArray(questions.jsonGreen.questions);
+    // this.state.questions.jsonBlue.questions = Utils.shuffleArray(questions.jsonBlue.questions);
 
   }
   componentDidMount(){
     // let quest = Object.assign({}, this.state.questions);
-    // quest.jsonHistory.questions = Utils.shuffleArray(quest.jsonHistory.questions);
-    // quest.jsonSports.questions = Utils.shuffleArray(quest.jsonSports.questions);
-    // quest.jsonScience.questions = Utils.shuffleArray(quest.jsonScience.questions);
-    // quest.jsonMovies.questions = Utils.shuffleArray(quest.jsonMovies.questions);
+    // quest.jsonYellow.questions = Utils.shuffleArray(quest.jsonYellow.questions);
+    // quest.jsonRed.questions = Utils.shuffleArray(quest.jsonRed.questions);
+    // quest.jsonGreen.questions = Utils.shuffleArray(quest.jsonGreen.questions);
+    // quest.jsonBlue.questions = Utils.shuffleArray(quest.jsonBlue.questions);
     // this.setState({questions:quest});
 
     let objectives = [];
@@ -117,7 +117,7 @@ export default class Trivial extends React.Component {
     switch (player_position_category){
     case "1":
       // cine
-      let isLastQuestionMovies = (this.state.movies_question_index === this.state.questions.jsonMovies.questions.length - 1);
+      let isLastQuestionMovies = (this.state.movies_question_index === this.state.questions.jsonBlue.questions.length - 1);
       if(isLastQuestionMovies === false){
         this.setState({movies_question_index:(this.state.movies_question_index + 1)});
       } else {
@@ -126,7 +126,7 @@ export default class Trivial extends React.Component {
       break;
     case "2":
       // deporte
-      let isLastQuestionSports = (this.state.sports_question_index === this.state.questions.jsonSports.questions.length - 1);
+      let isLastQuestionSports = (this.state.sports_question_index === this.state.questions.jsonRed.questions.length - 1);
       if(isLastQuestionSports === false){
         this.setState({sports_question_index:(this.state.sports_question_index + 1)});
       } else {
@@ -135,7 +135,7 @@ export default class Trivial extends React.Component {
       break;
     case "3":
       // historia
-      let isLastQuestionHistory = (this.state.history_question_index === this.state.questions.jsonHistory.questions.length - 1);
+      let isLastQuestionHistory = (this.state.history_question_index === this.state.questions.jsonYellow.questions.length - 1);
       if(isLastQuestionHistory === false){
         this.setState({history_question_index:(this.state.history_question_index + 1)});
       } else {
@@ -144,7 +144,7 @@ export default class Trivial extends React.Component {
       break;
     case "4":
       // ciencia
-      let isLastQuestionScience = (this.state.science_question_index === this.state.questions.jsonScience.questions.length - 1);
+      let isLastQuestionScience = (this.state.science_question_index === this.state.questions.jsonGreen.questions.length - 1);
       if(isLastQuestionScience === false){
         this.setState({science_question_index:(this.state.science_question_index + 1)});
       } else {
@@ -178,7 +178,7 @@ export default class Trivial extends React.Component {
     case "1":
       // cine
       // console.log("entra en cine")
-      currentQuestion = this.state.questions.jsonMovies.questions[this.state.movies_question_index];
+      currentQuestion = this.state.questions.jsonBlue.questions[this.state.movies_question_index];
       questionCategoryText = (
         <div className="questioncategorytext center_screen">
           PREGUNTA DE <a className="cine">{(GLOBAL_CONFIG.categories[1].name).toUpperCase()}</a>
@@ -188,7 +188,7 @@ export default class Trivial extends React.Component {
     case "2":
       // deporte
       // console.log("entra en deporte")
-      currentQuestion = this.state.questions.jsonSports.questions[this.state.sports_question_index];
+      currentQuestion = this.state.questions.jsonRed.questions[this.state.sports_question_index];
       questionCategoryText = (
         <div className="questioncategorytext center_screen">
           PREGUNTA DE <a className="deportes">{(GLOBAL_CONFIG.categories[3].name).toUpperCase()}</a>
@@ -198,7 +198,7 @@ export default class Trivial extends React.Component {
     case "3":
       // historia
       // console.log("entra en historia")
-      currentQuestion = this.state.questions.jsonHistory.questions[this.state.history_question_index];
+      currentQuestion = this.state.questions.jsonYellow.questions[this.state.history_question_index];
       questionCategoryText = (
         <div className="questioncategorytext center_screen">
           PREGUNTA DE <a className="historia">{(GLOBAL_CONFIG.categories[0].name).toUpperCase()}</a>
@@ -208,7 +208,7 @@ export default class Trivial extends React.Component {
     case "4":
       // ciencia
       // console.log("entra en ciencia")
-      currentQuestion = this.state.questions.jsonScience.questions[this.state.science_question_index];
+      currentQuestion = this.state.questions.jsonGreen.questions[this.state.science_question_index];
       questionCategoryText = (
         <div className="questioncategorytext center_screen">
           PREGUNTA DE <a className="ciencia">{(GLOBAL_CONFIG.categories[2].name).toUpperCase()}</a>

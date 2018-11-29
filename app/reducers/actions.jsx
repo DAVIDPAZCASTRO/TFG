@@ -84,30 +84,30 @@ export function resetCrowns(item){
   };
 }
 
-export function setJsonHistory(json){
+export function setJsonYellow(json){
   return {
-    type:'SET_JSON_HISTORY',
+    type:'SET_JSON_YELLOW',
     json:json,
   };
 }
 
-export function setJsonSports(json){
+export function setJsonRed(json){
   return {
-    type:'SET_JSON_SPORTS',
+    type:'SET_JSON_RED',
     json:json,
   };
 }
 
-export function setJsonScience(json){
+export function setJsonGreen(json){
   return {
-    type:'SET_JSON_SCIENCE',
+    type:'SET_JSON_GREEN',
     json:json,
   };
 }
 
-export function setJsonMovies(json){
+export function setJsonBlue(json){
   return {
-    type:'SET_JSON_MOVIES',
+    type:'SET_JSON_BLUE',
     json:json,
   };
 }

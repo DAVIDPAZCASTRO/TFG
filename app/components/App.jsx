@@ -5,7 +5,7 @@ import './../assets/scss/main.scss';
 import {GLOBAL_CONFIG} from '../config/config.js';
 import * as I18n from '../vendors/I18n.js';
 
-import {setJsonMovies, setJsonSports, setJsonHistory, setJsonScience, xmlsParsed, setGameStatus} from './../reducers/actions';
+import {setJsonBlue, setJsonRed, setJsonYellow, setJsonGreen, xmlsParsed, setGameStatus} from './../reducers/actions';
 
 import * as SAMPLES from '../config/samples.js';
 
@@ -61,16 +61,16 @@ export class App extends React.Component {
 
         switch (category){
         case GLOBAL_CONFIG.categories[0].name:
-          this.props.dispatch(setJsonHistory(myJSON));
+          this.props.dispatch(setJsonYellow(myJSON));
           break;
         case GLOBAL_CONFIG.categories[1].name:
-          this.props.dispatch(setJsonMovies(myJSON));
+          this.props.dispatch(setJsonBlue(myJSON));
           break;
         case GLOBAL_CONFIG.categories[2].name:
-          this.props.dispatch(setJsonScience(myJSON));
+          this.props.dispatch(setJsonGreen(myJSON));
           break;
         case GLOBAL_CONFIG.categories[3].name:
-          this.props.dispatch(setJsonSports(myJSON));
+          this.props.dispatch(setJsonRed(myJSON));
           break;
         default:
           break;
@@ -154,10 +154,10 @@ export class App extends React.Component {
     let all = "";
     // console.log("valor de waitForParseXML = " + this.props.wait_for_parse_xml);
 
-    // console.log(this.props.jsons.jsonHistory);
-    // console.log(this.props.jsons.jsonMovies);
-    // console.log(this.props.jsons.jsonScience);
-    // console.log(this.props.jsons.jsonSports);
+    // console.log(this.props.jsons.jsonYellow);
+    // console.log(this.props.jsons.jsonBlue);
+    // console.log(this.props.jsons.jsonGreen);
+    // console.log(this.props.jsons.jsonRed);
 
     // console.log(SAMPLES.quiz_example);
     appHeader = (

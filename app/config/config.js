@@ -15,16 +15,16 @@ export let GLOBAL_CONFIG = {
     n:3,
     categories:[{
       name:"historia",
-      url:"./../assets/xmls/questionsXMLhistory.xml",
+      url:"assets/xmls/questionsXMLyellow.xml",
     }, {
       name:"cine",
-      url:"./../assets/xmls/questionsXMLmovies.xml",
+      url:"assets/xmls/questionsXMLblue.xml",
     }, {
       name:"ciencia",
-      url:"./../assets/xmls/questionsXMLscience.xml",
+      url:"assets/xmls/questionsXMLgreen.xml",
     }, {
       name:"deportes",
-      url:"./../assets/xmls/questionsXMLsports.xml",
+      url:"assets/xmls/questionsXMLred.xml",
     },
     ],
   },
@@ -43,16 +43,16 @@ export let GLOBAL_CONFIG = {
     n:undefined,
     categories:[{
       name:"historia",
-      url:"./../assets/xmls/questionsXMLhistory.xml",
+      url:"assets/xmls/questionsXMLyellow.xml",
     }, {
       name:"cine",
-      url:"./../assets/xmls/questionsXMLmovies.xml",
+      url:"assets/xmls/questionsXMLblue.xml",
     }, {
       name:"ciencia",
-      url:"./../assets/xmls/questionsXMLscience.xml",
+      url:"assets/xmls/questionsXMLgreen.xml",
     }, {
       name:"deportes",
-      url:"./../assets/xmls/questionsXMLsports.xml",
+      url:"assets/xmls/questionsXMLred.xml",
     },
     ],
   },
