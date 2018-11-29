@@ -10,9 +10,6 @@ export default class Dice extends React.Component {
   onClickDie(){
     this.onRollDice();
     this.props.dispatch(setGameStatus("C"));
-    setTimeout(function(){
-      scrollTo(0, 460);
-    }, 20);
   }
 
   onRollDice(){

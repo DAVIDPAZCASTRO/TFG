@@ -54,6 +54,9 @@ export class App extends React.Component {
       parseString(myXML, function(err, myJSON){
         // console.log("XML in JSON")
 
+        if(err){
+          console.log(err);
+        }
         // Generar nuevo objeto JSON a partir del recibido
         let newjson = Object.assign({}, myJSON);
 

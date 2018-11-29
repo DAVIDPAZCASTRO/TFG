@@ -15,9 +15,6 @@ export default class Box extends React.Component {
       } else {
         this.props.dispatch(setGameStatus("D"));
         this.props.dispatch(isTimer(true));
-        setTimeout(function(){
-          scrollTo(0, 1900);
-        }, 20);
       }
     }
   }
