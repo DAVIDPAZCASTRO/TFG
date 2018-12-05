@@ -91,7 +91,7 @@ export class App extends React.Component {
     };
     let questions = categoryJSON.quiz.question;
 
-    // console.log(questions.length)
+    console.log(questions);
     let arrayQuestions = [];
 
     let q = {
@@ -109,10 +109,10 @@ export class App extends React.Component {
         "answer":"",
       };
       q.type = "multiple_choice";
-      q.value = questions[i].questiontext[0].text[0];
+      q.value = this.processString(questions[i].questiontext[0].text[0]);
       for(let j = 0; j < choices.length; j++){
         choi.id = j + 1;
-        choi.value = choices[j].text[0];
+        choi.value = this.processString(choices[j].text[0]);
         // console.log(choices[j].$.fraction)
         if(choices[j].$.fraction === "100"){
           choi.answer = true;
@@ -132,6 +132,24 @@ export class App extends React.Component {
     auxJSON.questions = arrayQuestions;
     // console.dir(auxJSON)
     return auxJSON;
+  }
+
+  processString(str){
+    console.log("entra aquiiiii");
+    if(str.indexOf("<![CDATA") === 0){
+      let regex = str.match(/<!\[CDATA\[([\w¿?<>\/\sáéíóúÁÉÍÓÚ]+)]]>/i);
+      console.log("entraaaaaaaaaaaaa");
+      if((regex !== null) && (typeof regex[1] === 'string')){
+        console.log("entra aquiiiii tambien");
+        let htmlString = regex[1];
+        let parser = new DOMParser();
+        let stringParseada = parser.parseFromString(htmlString, "text/xml").children[0].innerHTML;
+        return stringParseada;
+      }
+    }
+    let parser = new DOMParser();
+    let stringParseada = parser.parseFromString(str, "text/xml").children[0].innerHTML;
+    return stringParseada;
   }
 
   countCrownsInPossession(){

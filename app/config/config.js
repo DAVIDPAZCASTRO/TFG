@@ -15,7 +15,7 @@ export let GLOBAL_CONFIG = {
     n:3,
     categories:[{
       name:"historia",
-      url:"assets/xmls/questionsXMLyellow.xml",
+      url:"assets/xmls/test_MoodleXML.xml",
     }, {
       name:"cine",
       url:"assets/xmls/questionsXMLblue.xml",
@@ -43,7 +43,7 @@ export let GLOBAL_CONFIG = {
     n:undefined,
     categories:[{
       name:"historia",
-      url:"assets/xmls/questionsXMLyellow.xml",
+      url:"assets/xmls/test_MoodleXML.xml",
     }, {
       name:"cine",
       url:"assets/xmls/questionsXMLblue.xml",
