@@ -18,10 +18,10 @@
       <text>1493</text>
     </answer>
     <answer fraction="0">
-      <text>1495­</text>
+      <text>1495</text>
     </answer>
     <answer fraction="0">
-      <text>1494­</text>
+      <text>1494</text>
     </answer>
     <answer fraction="100">
       <text>1492</text>
@@ -113,6 +113,50 @@
     </answer>
     <answer fraction="0">
       <text>Inglaterra contra Francia</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de historia:</text>
+    </name>
+    <questiontext>
+      <text>¿Qué civilización prehispánica adoró al Dios Kukulkán?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>Inca</text>
+    </answer>
+    <answer fraction="100">
+      <text>Maya</text>
+    </answer>
+    <answer fraction="0">
+      <text>Azteca</text>
+    </answer>
+    <answer fraction="0">
+      <text>Egipcia</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de historia:</text>
+    </name>
+    <questiontext>
+      <text>¿Con cuántas colonias inglesas se formaron los Estados Unidos?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>12</text>
+    </answer>
+    <answer fraction="0">
+      <text>17</text>
+    </answer>
+    <answer fraction="100">
+      <text>13</text>
+    </answer>
+    <answer fraction="0">
+      <text>14</text>
     </answer>
   </question>
 </quiz>

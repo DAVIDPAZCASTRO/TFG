@@ -137,4 +137,48 @@
       <text>Espalda</text>
     </answer>
   </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de deportes:</text>
+    </name>
+    <questiontext>
+      <text>¿Quién es el deportista mejor pagado de la historia, según Forbes?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>Michael Schumacher</text>
+    </answer>
+    <answer fraction="100">
+      <text>Michael Jordan</text>
+    </answer>
+    <answer fraction="0">
+      <text>Leo Messi</text>
+    </answer>
+    <answer fraction="0">
+      <text>Cristiano Ronaldo</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de deportes:</text>
+    </name>
+    <questiontext>
+      <text>¿Cuántos jugadores componen un equipo de rugby?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>10</text>
+    </answer>
+    <answer fraction="0">
+      <text>12</text>
+    </answer>
+    <answer fraction="0">
+      <text>14</text>
+    </answer>
+    <answer fraction="100">
+      <text>15</text>
+    </answer>
+  </question>
 </quiz>

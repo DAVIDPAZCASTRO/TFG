@@ -93,4 +93,48 @@
       <text>A 299.792.458 mm/s</text>
     </answer>
   </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de ciencia:</text>
+    </name>
+    <questiontext>
+      <text>¿Quiénes inventaron el número 0?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>Los indios</text>
+    </answer>
+    <answer fraction="0">
+      <text>Los árabes</text>
+    </answer>
+    <answer fraction="0">
+      <text>Los romanos</text>
+    </answer>
+    <answer fraction="0">
+      <text>Los egipcios</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de ciencia:</text>
+    </name>
+    <questiontext>
+      <text>¿De qué está compuesta la lluvia ácida?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>De ácido sulfúrico y ácido clorhídrico</text>
+    </answer>
+    <answer fraction="0">
+      <text>De ácido sulfúrico  y ácido úrico</text>
+    </answer>
+    <answer fraction="0">
+      <text>De ácido nítrico y ácido clorhídrico</text>
+    </answer>
+    <answer fraction="100">
+      <text>De ácido sulfúrico y ácido nítrico</text>
+    </answer>
+  </question>
 </quiz>

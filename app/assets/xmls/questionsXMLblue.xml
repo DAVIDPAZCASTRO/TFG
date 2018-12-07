@@ -102,17 +102,61 @@
     </questiontext>
     <shuffleanswers>0</shuffleanswers>
     <single>true</single>
-    <answer fraction="0">
+    <answer fraction="100">
       <text>Albus Dumbledore</text>
     </answer>
     <answer fraction="0">
       <text>Remus lupin</text>
     </answer>
-    <answer fraction="100">
+    <answer fraction="0">
       <text>Sirius Black</text>
     </answer>
     <answer fraction="0">
       <text>Severus Snape</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de cine:</text>
+    </name>
+    <questiontext>
+      <text>¿Cómo se llama el personaje que interpreta Al Pacino en "Scarface"?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>Thomas Morales</text>
+    </answer>
+    <answer fraction="100">
+      <text>Tony Montana</text>
+    </answer>
+    <answer fraction="0">
+      <text>Michael Corleone</text>
+    </answer>
+    <answer fraction="0">
+      <text>John Rivera</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de ciencia:</text>
+    </name>
+    <questiontext>
+      <text>¿Qué animal es la mascota de Jazmín en Aladdin?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>Elefante</text>
+    </answer>
+    <answer fraction="0">
+      <text>Mono</text>
+    </answer>
+    <answer fraction="100">
+      <text>Tigre</text>
+    </answer>
+    <answer fraction="0">
+      <text>Loro</text>
     </answer>
   </question>
 </quiz>
