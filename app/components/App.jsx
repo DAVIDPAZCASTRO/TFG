@@ -147,9 +147,12 @@ export class App extends React.Component {
         return stringParseada;
       }
     }
-    let parser = new DOMParser();
-    let stringParseada = parser.parseFromString(str, "text/xml").children[0].innerHTML;
-    return stringParseada;
+    if(str.indexOf("<") === 0){
+      let parser = new DOMParser();
+      let stringParseada = parser.parseFromString(str, "text/xml").children[0].innerHTML;
+      return stringParseada;
+    }
+    return str;
   }
 
   countCrownsInPossession(){
