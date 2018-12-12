@@ -44,6 +44,34 @@ export function xmlsParsed(){
   };
 }
 
+export function setQuestionIndexYellow(questionIndex){
+  return {
+    type:'SET_QUESTION_INDEX_YELLOW',
+    questionIndex:questionIndex,
+  };
+}
+
+export function setQuestionIndexBlue(questionIndex){
+  return {
+    type:'SET_QUESTION_INDEX_BLUE',
+    questionIndex:questionIndex,
+  };
+}
+
+export function setQuestionIndexRed(questionIndex){
+  return {
+    type:'SET_QUESTION_INDEX_RED',
+    questionIndex:questionIndex,
+  };
+}
+
+export function setQuestionIndexGreen(questionIndex){
+  return {
+    type:'SET_QUESTION_INDEX_GREEN',
+    questionIndex:questionIndex,
+  };
+}
+
 export function resetLives(item){
   return {
     type:'RESET_LIVES',

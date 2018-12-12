@@ -13,6 +13,7 @@ import jsonReducer from './jsonReducer';
 import timerReducer from './timerReducer';
 import waitForParseXMLReducer from './waitForParseXMLReducer';
 import answeredReducer from './answeredReducer';
+import questionIndexReducer from './questionIndexReducer';
 import selectedChoiceReducer from './selectedChoiceReducer';
 import objectivesPointerReducer from './objectivesPointerReducer';
 
@@ -31,6 +32,7 @@ const GlobalState = combineReducers({
   crowns:crownsReducer,
   timer:timerReducer,
   answered:answeredReducer,
+  question_index:questionIndexReducer,
   selected_choice:selectedChoiceReducer,
   objectives_pointer:objectivesPointerReducer,
 });

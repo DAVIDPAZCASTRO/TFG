@@ -3,21 +3,21 @@ function questionIndexReducer(state = {}, action){
   newState = Object.assign({}, state);
   switch (action.type){
   case 'SET_QUESTION_INDEX_YELLOW':
-    newState.questionIndexYellow = action.json;
+    newState.questionIndexYellow = action.questionIndex;
     return newState;
   case 'SET_QUESTION_INDEX_BLUE':
-    newState.questionIndexBlue = action.json;
+    newState.questionIndexBlue = action.questionIndex;
     return newState;
   case 'SET_QUESTION_INDEX_RED':
-    newState.questionIndexRed = action.json;
+    newState.questionIndexRed = action.questionIndex;
     return newState;
   case 'SET_QUESTION_INDEX_GREEN':
-    newState.questionIndexGreen = action.json;
+    newState.questionIndexGreen = action.questionIndex;
     return newState;
   case 'IMPORT_STATE':
-    return action.state.questionIndex;
+    return action.state.question_index;
   default:
     return state;
   }
 }
-export default Reducer;
+export default questionIndexReducer;

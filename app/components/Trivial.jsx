@@ -2,7 +2,7 @@ import React from 'react';
 import './../assets/scss/trivial.scss';
 
 import * as Utils from '../vendors/Utils.js';
-import {addObjectives, resetObjectives} from './../reducers/actions';
+import {addObjectives, resetObjectives, setQuestionIndexRed, setQuestionIndexBlue, setQuestionIndexGreen, setQuestionIndexYellow} from './../reducers/actions';
 import {GLOBAL_CONFIG} from '../config/config.js';
 
 import Board from './Board.jsx';
@@ -20,10 +20,6 @@ export default class Trivial extends React.Component {
       trivial:trivial,
       questions:questions,
       current_question_index:1,
-      history_question_index:0,
-      science_question_index:0,
-      sports_question_index:0,
-      movies_question_index:0,
       boxes:[
         ['1', '3', '2', '4', '3', '1', '4', '3', '2'],
         ['2', 'o', 'o', 'o', '2', 'o', 'o', 'o', '4'],
@@ -37,11 +33,6 @@ export default class Trivial extends React.Component {
       ],
     };
     this.state.trivial.questions = Utils.shuffleArray(trivial.questions);
-    // this.state.questions.jsonYellow.questions = Utils.shuffleArray(questions.jsonYellow.questions);
-    // this.state.questions.jsonRed.questions = Utils.shuffleArray(questions.jsonRed.questions);
-    // this.state.questions.jsonGreen.questions = Utils.shuffleArray(questions.jsonGreen.questions);
-    // this.state.questions.jsonBlue.questions = Utils.shuffleArray(questions.jsonBlue.questions);
-
   }
   componentDidMount(){
     // let quest = Object.assign({}, this.state.questions);
@@ -52,10 +43,6 @@ export default class Trivial extends React.Component {
     // this.setState({questions:quest});
 
     let objectives = [];
-    // let objective1 = "Corona de " + (GLOBAL_CONFIG.categories[0].name).toUpperCase();
-    // let objective2 = "Corona de " + (GLOBAL_CONFIG.categories[1].name).toUpperCase();
-    // let objective3 = "Corona de " + (GLOBAL_CONFIG.categories[2].name).toUpperCase();
-    // let objective4 = "Corona de " + (GLOBAL_CONFIG.categories[3].name).toUpperCase();
 
     let objective11 = "Pregunta 11";
     let objective12 = "Pregunta 12";
@@ -77,11 +64,6 @@ export default class Trivial extends React.Component {
     let objective43 = "Pregunta 43";
     let objective44 = "Pregunta 44";
     let objective4corona = "Pregunta 45";
-
-    // objectives.push(new Utils.Objective({id:(objective1), progress_measure:(1 / 4), score:(1 / 4)}));
-    // objectives.push(new Utils.Objective({id:(objective2), progress_measure:(1 / 4), score:(1 / 4)}));
-    // objectives.push(new Utils.Objective({id:(objective3), progress_measure:(1 / 4), score:(1 / 4)}));
-    // objectives.push(new Utils.Objective({id:(objective4), progress_measure:(1 / 4), score:(1 / 4)}));
 
     objectives.push(new Utils.Objective({id:(objective11), progress_measure:(1 / 20), score:(1 / 20)}));
     objectives.push(new Utils.Objective({id:(objective12), progress_measure:(1 / 20), score:(1 / 20)}));
@@ -117,38 +99,39 @@ export default class Trivial extends React.Component {
     switch (player_position_category){
     case "1":
       // cine
-      let isLastQuestionMovies = (this.state.movies_question_index === this.state.questions.jsonBlue.questions.length - 1);
-      if(isLastQuestionMovies === false){
-        this.setState({movies_question_index:(this.state.movies_question_index + 1)});
+      let isLastQuestionBlue = (this.props.question_index.questionIndexBlue === this.state.questions.jsonBlue.questions.length - 1);
+      if(isLastQuestionBlue === false){
+        this.props.dispatch(setQuestionIndexBlue(this.props.question_index.questionIndexBlue + 1));
       } else {
-        this.setState({movies_question_index:0});
+        this.props.dispatch(setQuestionIndexBlue(0));
       }
       break;
     case "2":
       // deporte
-      let isLastQuestionSports = (this.state.sports_question_index === this.state.questions.jsonRed.questions.length - 1);
-      if(isLastQuestionSports === false){
-        this.setState({sports_question_index:(this.state.sports_question_index + 1)});
+      let isLastQuestionRed = (this.props.question_index.questionIndexRed === this.state.questions.jsonRed.questions.length - 1);
+      if(isLastQuestionRed === false){
+        this.props.dispatch(setQuestionIndexRed(this.props.question_index.questionIndexRed + 1));
       } else {
-        this.setState({sports_question_index:0});
+        this.props.dispatch(setQuestionIndexRed(0));
       }
       break;
     case "3":
       // historia
-      let isLastQuestionHistory = (this.state.history_question_index === this.state.questions.jsonYellow.questions.length - 1);
-      if(isLastQuestionHistory === false){
-        this.setState({history_question_index:(this.state.history_question_index + 1)});
+      let isLastQuestionYellow = (this.props.question_index.questionIndexYellow === this.state.questions.jsonYellow.questions.length - 1);
+      if(isLastQuestionYellow === false){
+        this.props.dispatch(setQuestionIndexYellow(this.props.question_index.questionIndexYellow + 1));
       } else {
         this.setState({history_question_index:0});
+        this.props.dispatch(setQuestionIndexYellow(0));
       }
       break;
     case "4":
       // ciencia
-      let isLastQuestionScience = (this.state.science_question_index === this.state.questions.jsonGreen.questions.length - 1);
-      if(isLastQuestionScience === false){
-        this.setState({science_question_index:(this.state.science_question_index + 1)});
+      let isLastQuestionGreen = (this.props.question_index.questionIndexGreen === this.state.questions.jsonGreen.questions.length - 1);
+      if(isLastQuestionGreen === false){
+        this.props.dispatch(setQuestionIndexGreen(this.props.question_index.questionIndexGreen + 1));
       } else {
-        this.setState({science_question_index:0});
+        this.props.dispatch(setQuestionIndexGreen(0));
       }
       break;
     default:
@@ -172,13 +155,11 @@ export default class Trivial extends React.Component {
     let player_position_category = this.state.boxes[this.props.player_position[0]][this.props.player_position[1]];
     let currentQuestion = "";
     let questionCategoryText = "";
-    // console.log(player_position_category)
-    // console.log(this.props.timer.seconds);
+
     switch (player_position_category){
     case "1":
       // cine
-      // console.log("entra en cine")
-      currentQuestion = this.state.questions.jsonBlue.questions[this.state.movies_question_index];
+      currentQuestion = this.state.questions.jsonBlue.questions[this.props.question_index.questionIndexBlue];
       questionCategoryText = (
         <div className="questioncategorytext center_screen">
           PREGUNTA DE <a className="cine">{(GLOBAL_CONFIG.categories[1].name).toUpperCase()}</a>
@@ -187,8 +168,7 @@ export default class Trivial extends React.Component {
       break;
     case "2":
       // deporte
-      // console.log("entra en deporte")
-      currentQuestion = this.state.questions.jsonRed.questions[this.state.sports_question_index];
+      currentQuestion = this.state.questions.jsonRed.questions[this.props.question_index.questionIndexRed];
       questionCategoryText = (
         <div className="questioncategorytext center_screen">
           PREGUNTA DE <a className="deportes">{(GLOBAL_CONFIG.categories[3].name).toUpperCase()}</a>
@@ -197,8 +177,7 @@ export default class Trivial extends React.Component {
       break;
     case "3":
       // historia
-      // console.log("entra en historia")
-      currentQuestion = this.state.questions.jsonYellow.questions[this.state.history_question_index];
+      currentQuestion = this.state.questions.jsonYellow.questions[this.props.question_index.questionIndexYellow];
       questionCategoryText = (
         <div className="questioncategorytext center_screen">
           PREGUNTA DE <a className="historia">{(GLOBAL_CONFIG.categories[0].name).toUpperCase()}</a>
@@ -207,8 +186,7 @@ export default class Trivial extends React.Component {
       break;
     case "4":
       // ciencia
-      // console.log("entra en ciencia")
-      currentQuestion = this.state.questions.jsonGreen.questions[this.state.science_question_index];
+      currentQuestion = this.state.questions.jsonGreen.questions[this.props.question_index.questionIndexGreen];
       questionCategoryText = (
         <div className="questioncategorytext center_screen">
           PREGUNTA DE <a className="ciencia">{(GLOBAL_CONFIG.categories[2].name).toUpperCase()}</a>
@@ -220,15 +198,6 @@ export default class Trivial extends React.Component {
       break;
     }
 
-    let objectiveHistory;
-    let objectiveMovies;
-    let objectiveSports;
-    let objectiveScience;
-
-    // objectiveHistory = this.props.tracking.objectives["Corona de " + (GLOBAL_CONFIG.categories[0].name).toUpperCase()];
-    // objectiveMovies = this.props.tracking.objectives["Corona de " + (GLOBAL_CONFIG.categories[1].name).toUpperCase()];
-    // objectiveSports = this.props.tracking.objectives["Corona de " + (GLOBAL_CONFIG.categories[3].name).toUpperCase()];
-    // objectiveScience = this.props.tracking.objectives["Corona de " + (GLOBAL_CONFIG.categories[2].name).toUpperCase()];
 
     let objectivesArray = [];
     for(let i = 1; i < 5; i++){
@@ -245,7 +214,6 @@ export default class Trivial extends React.Component {
     let currentQuestionRender = "";
 
     if(currentQuestion.type !== "multiple_choice"){
-      // console.log(currentQuestion.choices.length)
       currentQuestionRender = "Tipo de pregunta no soportada: solo se soportan las preguntas del tipo 'multiple_choice'";
     } else {
       let counter = 0;
@@ -262,7 +230,7 @@ export default class Trivial extends React.Component {
         currentQuestionRender = (
           <div>
             {questionCategoryText}
-            <MCQuestionTrivial question={currentQuestion} dispatch={this.props.dispatch} I18n={this.props.I18n} timer={this.props.timer} answered={this.props.answered} objectivesArray={objectivesArray} objectiveHistory={objectiveHistory} objectiveMovies={objectiveMovies} objectiveSports={objectiveSports} objectiveScience={objectiveScience} onNextQuestion={onNextQuestion} selected_choice={this.props.selected_choice} onResetTrivial={onResetTrivial} lives={this.props.lives} crowns={this.props.crowns} countCrowns={this.props.countCrowns} player_position={this.props.player_position} objectives_pointer={this.props.objectives_pointer}/>
+            <MCQuestionTrivial question={currentQuestion} dispatch={this.props.dispatch} I18n={this.props.I18n} timer={this.props.timer} answered={this.props.answered} objectivesArray={objectivesArray} onNextQuestion={onNextQuestion} selected_choice={this.props.selected_choice} onResetTrivial={onResetTrivial} lives={this.props.lives} crowns={this.props.crowns} countCrowns={this.props.countCrowns} player_position={this.props.player_position} objectives_pointer={this.props.objectives_pointer}/>
           </div>
         );
       }
