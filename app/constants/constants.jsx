@@ -49,6 +49,12 @@ export const INITIAL_STATE = {
     isTimer:false,
   },
   answered:false,
+  question_index:{
+    questionIndexYellow:-1,
+    questionIndexRed:-1,
+    questionIndexBlue:-1,
+    questionIndexGreen:-1,
+  },
   selected_choice:-1,
   objectives_pointer:[0, 0],
 };
