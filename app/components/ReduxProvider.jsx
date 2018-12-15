@@ -19,10 +19,12 @@ export default class ReduxProvider extends React.Component {
       this.initialState.wait_for_user_profile = true;
     }
     if(typeof GLOBAL_CONFIG.timer === 'number'){
-      this.initialState.timer.seconds = GLOBAL_CONFIG.timer;
+      if ((Number.isInteger(GLOBAL_CONFIG.lives)) && (GLOBAL_CONFIG.lives > 0)){
+        this.initialState.timer.seconds = GLOBAL_CONFIG.timer;
+      }
     }
     if(typeof GLOBAL_CONFIG.lives === 'number'){
-      if((GLOBAL_CONFIG.lives > 0) && (GLOBAL_CONFIG.lives <= 7)){
+      if((Number.isInteger(GLOBAL_CONFIG.lives)) && (GLOBAL_CONFIG.lives > 4) && (GLOBAL_CONFIG.lives <= 7)){
         this.initialState.lives = GLOBAL_CONFIG.lives;
       }
     }
