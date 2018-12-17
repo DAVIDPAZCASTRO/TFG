@@ -28,16 +28,16 @@ export default class FinishScreen extends React.Component {
     let auxtxt2 = "";
     let auxtxt3 = "";
     let auxtxt4 = "";
-    auxtxt1 = (!this.props.crowns.crown_movies.onBoard) ? " obtenida" : " no obtenida";
-    auxtxt2 = (!this.props.crowns.crown_sports.onBoard) ? " obtenida" : " no obtenida";
-    auxtxt3 = (!this.props.crowns.crown_history.onBoard) ? " obtenida" : " no obtenida";
-    auxtxt4 = (!this.props.crowns.crown_science.onBoard) ? " obtenida" : " no obtenida";
+    auxtxt1 = (!this.props.crowns.crown_blue.onBoard) ? " obtenida" : " no obtenida";
+    auxtxt2 = (!this.props.crowns.crown_red.onBoard) ? " obtenida" : " no obtenida";
+    auxtxt3 = (!this.props.crowns.crown_yellow.onBoard) ? " obtenida" : " no obtenida";
+    auxtxt4 = (!this.props.crowns.crown_green.onBoard) ? " obtenida" : " no obtenida";
     let txt = (
       <div className=" results">
-        <p>Corona de <a className="cine">{(GLOBAL_CONFIG.categories[1].name).toUpperCase()}</a>{auxtxt1}</p>
-        <p>Corona de <a className="deportes">{(GLOBAL_CONFIG.categories[3].name).toUpperCase()}</a>{auxtxt2}</p>
-        <p>Corona de <a className="historia">{(GLOBAL_CONFIG.categories[0].name).toUpperCase()}</a>{auxtxt3}</p>
-        <p>Corona de <a className="ciencia">{(GLOBAL_CONFIG.categories[2].name).toUpperCase()}</a>{auxtxt4}</p>
+        <p>Corona de <a className="cine blue">{(GLOBAL_CONFIG.categories[1].name).toUpperCase()}</a>{auxtxt1}</p>
+        <p>Corona de <a className="deportes red">{(GLOBAL_CONFIG.categories[3].name).toUpperCase()}</a>{auxtxt2}</p>
+        <p>Corona de <a className="historia yellow">{(GLOBAL_CONFIG.categories[0].name).toUpperCase()}</a>{auxtxt3}</p>
+        <p>Corona de <a className="ciencia green">{(GLOBAL_CONFIG.categories[2].name).toUpperCase()}</a>{auxtxt4}</p>
       </div>
     );
     return txt;

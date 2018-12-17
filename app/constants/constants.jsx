@@ -27,19 +27,19 @@ export const INITIAL_STATE = {
   dice:0,
   lives:5,
   crowns:{
-    crown_history:{
+    crown_yellow:{
       onBoard:true,
       position:[8, 8],
     },
-    crown_movies:{
+    crown_blue:{
       onBoard:true,
       position:[0, 0],
     },
-    crown_science:{
+    crown_green:{
       onBoard:true,
       position:[8, 0],
     },
-    crown_sports:{
+    crown_red:{
       onBoard:true,
       position:[0, 8],
     },

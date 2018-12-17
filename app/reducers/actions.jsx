@@ -78,30 +78,30 @@ export function resetLives(item){
   };
 }
 
-export function setCrownHistory(onBoard){
+export function setCrownYellow(onBoard){
   return {
-    type:'SET_CROWN_HISTORY',
+    type:'SET_CROWN_YELLOW',
     onBoard:onBoard,
   };
 }
 
-export function setCrownMovies(onBoard){
+export function setCrownBlue(onBoard){
   return {
-    type:'SET_CROWN_MOVIES',
+    type:'SET_CROWN_BLUE',
     onBoard:onBoard,
   };
 }
 
-export function setCrownScience(onBoard){
+export function setCrownGreen(onBoard){
   return {
-    type:'SET_CROWN_SCIENCE',
+    type:'SET_CROWN_GREEN',
     onBoard:onBoard,
   };
 }
 
-export function setCrownSports(onBoard){
+export function setCrownRed(onBoard){
   return {
-    type:'SET_CROWN_SPORTS',
+    type:'SET_CROWN_RED',
     onBoard:onBoard,
   };
 }

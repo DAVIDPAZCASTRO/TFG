@@ -121,7 +121,6 @@ export default class Trivial extends React.Component {
       if(isLastQuestionYellow === false){
         this.props.dispatch(setQuestionIndexYellow(this.props.question_index.questionIndexYellow + 1));
       } else {
-        this.setState({history_question_index:0});
         this.props.dispatch(setQuestionIndexYellow(0));
       }
       break;
@@ -162,7 +161,7 @@ export default class Trivial extends React.Component {
       currentQuestion = this.state.questions.jsonBlue.questions[this.props.question_index.questionIndexBlue];
       questionCategoryText = (
         <div className="questioncategorytext center_screen">
-          PREGUNTA DE <a className="cine">{(GLOBAL_CONFIG.categories[1].name).toUpperCase()}</a>
+          PREGUNTA DE <a className="cine blue">{(GLOBAL_CONFIG.categories[1].name).toUpperCase()}</a>
         </div>
       );
       break;
@@ -171,7 +170,7 @@ export default class Trivial extends React.Component {
       currentQuestion = this.state.questions.jsonRed.questions[this.props.question_index.questionIndexRed];
       questionCategoryText = (
         <div className="questioncategorytext center_screen">
-          PREGUNTA DE <a className="deportes">{(GLOBAL_CONFIG.categories[3].name).toUpperCase()}</a>
+          PREGUNTA DE <a className="deportes red">{(GLOBAL_CONFIG.categories[3].name).toUpperCase()}</a>
         </div>
       );
       break;
@@ -180,7 +179,7 @@ export default class Trivial extends React.Component {
       currentQuestion = this.state.questions.jsonYellow.questions[this.props.question_index.questionIndexYellow];
       questionCategoryText = (
         <div className="questioncategorytext center_screen">
-          PREGUNTA DE <a className="historia">{(GLOBAL_CONFIG.categories[0].name).toUpperCase()}</a>
+          PREGUNTA DE <a className="historia yellow">{(GLOBAL_CONFIG.categories[0].name).toUpperCase()}</a>
         </div>
       );
       break;
@@ -189,7 +188,7 @@ export default class Trivial extends React.Component {
       currentQuestion = this.state.questions.jsonGreen.questions[this.props.question_index.questionIndexGreen];
       questionCategoryText = (
         <div className="questioncategorytext center_screen">
-          PREGUNTA DE <a className="ciencia">{(GLOBAL_CONFIG.categories[2].name).toUpperCase()}</a>
+          PREGUNTA DE <a className="ciencia green">{(GLOBAL_CONFIG.categories[2].name).toUpperCase()}</a>
         </div>
       );
       break;

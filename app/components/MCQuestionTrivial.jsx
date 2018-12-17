@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as Utils from '../vendors/Utils.js';
-import {objectiveAccomplished, objectiveAccomplishedThunk, setLives, setCrownHistory, setCrownMovies, setCrownScience, setCrownSports, setAnswered, setSelectedChoice, setObjectivesPointer} from './../reducers/actions';
+import {objectiveAccomplished, objectiveAccomplishedThunk, setLives, setCrownYellow, setCrownBlue, setCrownGreen, setCrownRed, setAnswered, setSelectedChoice, setObjectivesPointer} from './../reducers/actions';
 import {GLOBAL_CONFIG} from '../config/config.js';
 
 import Timer from './Timer.jsx';
@@ -43,10 +43,6 @@ export default class MCQuestionTrivial extends React.Component {
 
   onAnswerQuestion(){
     let correctAnswer = false;
-    let objectiveHistory = this.props.objectiveHistory;
-    let objectiveMovies = this.props.objectiveMovies;
-    let objectiveSports = this.props.objectiveSports;
-    let objectiveScience = this.props.objectiveScience;
     let objectivesArray = this.props.objectivesArray;
     let textAlert = "";
     if(this.props.selected_choice !== -1){
@@ -60,8 +56,8 @@ export default class MCQuestionTrivial extends React.Component {
     }
     this.props.dispatch(setAnswered(true));
     if(correctAnswer){
-      if(this.props.crowns.crown_history.position[0] === this.props.player_position[0] && this.props.crowns.crown_history.position[1] === this.props.player_position[1] && this.props.crowns.crown_history.onBoard === true){
-        // this.props.dispatch(setCrownHistory(false));
+      if(this.props.crowns.crown_yellow.position[0] === this.props.player_position[0] && this.props.crowns.crown_yellow.position[1] === this.props.player_position[1] && this.props.crowns.crown_yellow.onBoard === true){
+        // this.props.dispatch(setCrownYellow(false));
         // this.props.dispatch(objectiveAccomplished(objectiveHistory.id, objectiveHistory.score));
 
         // Modificamos los objetivos para que se completen totalmente si conseguimos la siguiente corona (antes de modificar el número de coronas que poseemos).
@@ -70,13 +66,13 @@ export default class MCQuestionTrivial extends React.Component {
           // console.log(objectivesArray[this.props.countCrowns()][x]);
           this.props.dispatch(objectiveAccomplished(objectivesArray[this.props.countCrowns()][x].id, objectivesArray[this.props.countCrowns()][x].score));
         }
-        this.props.dispatch(setCrownHistory(false));
+        this.props.dispatch(setCrownYellow(false));
         // console.log("El número de coronas es de " + this.props.countCrowns());
         this.props.dispatch(setObjectivesPointer([this.props.countCrowns(), 0]));
 
         this.showAlert(textAlert + "¡Enhorabuena! ¡Has conseguido la corona de " + (GLOBAL_CONFIG.categories[0].name).toUpperCase() + "!");
-      } else if(this.props.crowns.crown_movies.position[0] === this.props.player_position[0] && this.props.crowns.crown_movies.position[1] === this.props.player_position[1] && this.props.crowns.crown_movies.onBoard === true){
-        // this.props.dispatch(setCrownMovies(false));
+      } else if(this.props.crowns.crown_blue.position[0] === this.props.player_position[0] && this.props.crowns.crown_blue.position[1] === this.props.player_position[1] && this.props.crowns.crown_blue.onBoard === true){
+        // this.props.dispatch(setCrownBlue(false));
         // this.props.dispatch(objectiveAccomplished(objectiveMovies.id, objectiveMovies.score));
 
         // Modificamos los objetivos para que se completen totalmente si conseguimos la siguiente corona (antes de modificar el número de coronas que poseemos).
@@ -85,13 +81,13 @@ export default class MCQuestionTrivial extends React.Component {
           // console.log(objectivesArray[this.props.countCrowns()][x]);
           this.props.dispatch(objectiveAccomplished(objectivesArray[this.props.countCrowns()][x].id, objectivesArray[this.props.countCrowns()][x].score));
         }
-        this.props.dispatch(setCrownMovies(false));
+        this.props.dispatch(setCrownBlue(false));
         // console.log("El número de coronas es de " + this.props.countCrowns());
         this.props.dispatch(setObjectivesPointer([this.props.countCrowns(), 0]));
 
         this.showAlert(textAlert + "¡Enhorabuena! ¡Has conseguido la corona de " + (GLOBAL_CONFIG.categories[1].name).toUpperCase() + "!");
-      } else if(this.props.crowns.crown_science.position[0] === this.props.player_position[0] && this.props.crowns.crown_science.position[1] === this.props.player_position[1] && this.props.crowns.crown_science.onBoard === true){
-        // this.props.dispatch(setCrownScience(false));
+      } else if(this.props.crowns.crown_green.position[0] === this.props.player_position[0] && this.props.crowns.crown_green.position[1] === this.props.player_position[1] && this.props.crowns.crown_green.onBoard === true){
+        // this.props.dispatch(setCrownGreen(false));
         // this.props.dispatch(objectiveAccomplished(objectiveScience.id, objectiveScience.score));
 
         // Modificamos los objetivos para que se completen totalmente si conseguimos la siguiente corona (antes de modificar el número de coronas que poseemos).
@@ -100,13 +96,13 @@ export default class MCQuestionTrivial extends React.Component {
           // console.log(objectivesArray[this.props.countCrowns()][x]);
           this.props.dispatch(objectiveAccomplished(objectivesArray[this.props.countCrowns()][x].id, objectivesArray[this.props.countCrowns()][x].score));
         }
-        this.props.dispatch(setCrownScience(false));
+        this.props.dispatch(setCrownGreen(false));
         // console.log("El número de coronas es de " + this.props.countCrowns());
         this.props.dispatch(setObjectivesPointer([this.props.countCrowns(), 0]));
 
         this.showAlert(textAlert + "¡Enhorabuena! ¡Has conseguido la corona de " + (GLOBAL_CONFIG.categories[2].name).toUpperCase() + "!");
-      } else if(this.props.crowns.crown_sports.position[0] === this.props.player_position[0] && this.props.crowns.crown_sports.position[1] === this.props.player_position[1] && this.props.crowns.crown_sports.onBoard === true){
-        // this.props.dispatch(setCrownSports(false));
+      } else if(this.props.crowns.crown_red.position[0] === this.props.player_position[0] && this.props.crowns.crown_red.position[1] === this.props.player_position[1] && this.props.crowns.crown_red.onBoard === true){
+        // this.props.dispatch(setCrownRed(false));
         // this.props.dispatch(objectiveAccomplished(objectiveSports.id, objectiveSports.score));
 
         // Modificamos los objetivos para que se completen totalmente si conseguimos la siguiente corona (antes de modificar el número de coronas que poseemos).
@@ -115,7 +111,7 @@ export default class MCQuestionTrivial extends React.Component {
           // console.log(objectivesArray[this.props.countCrowns()][x]);
           this.props.dispatch(objectiveAccomplished(objectivesArray[this.props.countCrowns()][x].id, objectivesArray[this.props.countCrowns()][x].score));
         }
-        this.props.dispatch(setCrownSports(false));
+        this.props.dispatch(setCrownRed(false));
         // console.log("El número de coronas es de " + this.props.countCrowns());
         this.props.dispatch(setObjectivesPointer([this.props.countCrowns(), 0]));
 
