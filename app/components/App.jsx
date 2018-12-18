@@ -168,16 +168,16 @@ export class App extends React.Component {
 
   countCrownsInPossession(){
     let count = 0;
-    if(!this.props.crowns.crown_history.onBoard){
+    if(!this.props.crowns.crown_yellow.onBoard){
       count++;
     }
-    if(!this.props.crowns.crown_movies.onBoard){
+    if(!this.props.crowns.crown_blue.onBoard){
       count++;
     }
-    if(!this.props.crowns.crown_science.onBoard){
+    if(!this.props.crowns.crown_green.onBoard){
       count++;
     }
-    if(!this.props.crowns.crown_sports.onBoard){
+    if(!this.props.crowns.crown_red.onBoard){
       count++;
     }
     return count;
