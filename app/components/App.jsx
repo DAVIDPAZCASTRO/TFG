@@ -91,7 +91,7 @@ export class App extends React.Component {
     };
     let questions = categoryJSON.quiz.question;
 
-    console.log(questions);
+    console.log("JSON DEL XML2JSON", questions);
     let arrayQuestions = [];
 
     let q = {
@@ -101,32 +101,44 @@ export class App extends React.Component {
     };
 
     for(let i = 1; i < questions.length; i++){
-      let arrayChoices = [];
-      let choices = questions[i].answer;
-      let choi = {
-        "id":"",
-        "value":"",
-        "answer":"",
-      };
-      q.type = "multiple_choice";
-      q.value = this.processString(questions[i].questiontext[0].text[0]);
-      for(let j = 0; j < choices.length; j++){
-        choi.id = j + 1;
-        choi.value = this.processString(choices[j].text[0]);
-        // console.log(choices[j].$.fraction)
-        if(choices[j].$.fraction === "100"){
-          choi.answer = true;
-        } else {
-          choi.answer = false;
+
+      if(questions[i].$.type === "multichoice"){
+        let choices = questions[i].answer;
+        let contador = 0;
+        for(let j = 0; j < choices.length; j++){
+          if(choices[j].$.fraction === "100"){
+            contador++;
+          }
         }
-        let newChoi = Object.assign({}, choi);
-        arrayChoices.push(newChoi);
+        if(contador === 1){
+
+          let arrayChoices = [];
+          let choi = {
+            "id":"",
+            "value":"",
+            "answer":"",
+          };
+          q.type = "multiple_choice";
+          q.value = this.processString(questions[i].questiontext[0].text[0]);
+          for(let j = 0; j < choices.length; j++){
+            choi.id = j + 1;
+            choi.value = this.processString(choices[j].text[0]);
+            // console.log(choices[j].$.fraction)
+            if(choices[j].$.fraction === "100"){
+              choi.answer = true;
+            } else {
+              choi.answer = false;
+            }
+            let newChoi = Object.assign({}, choi);
+            arrayChoices.push(newChoi);
+          }
+          // console.log("CHOICES")
+          // console.dir(arrayChoices)
+          q.choices = arrayChoices;
+          let newQ = Object.assign({}, q);
+          arrayQuestions.push(newQ);
+        }
       }
-      // console.log("CHOICES")
-      // console.dir(arrayChoices)
-      q.choices = arrayChoices;
-      let newQ = Object.assign({}, q);
-      arrayQuestions.push(newQ);
     }
 
     auxJSON.questions = arrayQuestions;
@@ -135,10 +147,9 @@ export class App extends React.Component {
   }
 
   processString(str){
-    console.log("entra aquiiiii");
     if(str.indexOf("<![CDATA") === 0){
       let regex = str.match(/<!\[CDATA\[([\w¿?<>\/\sáéíóúÁÉÍÓÚ]+)]]>/i);
-      console.log("entraaaaaaaaaaaaa");
+      console.log("regex haciendose");
       if((regex !== null) && (typeof regex[1] === 'string')){
         console.log("entra aquiiiii tambien");
         let htmlString = regex[1];
