@@ -23,7 +23,7 @@ export class App extends React.Component {
     I18n.init();
 
     // No se muestra el menú de restaurar el estado de juego anterior si se dan estas condiciones
-    if((typeof localStorage.getItem("state") === undefined) || (JSON.parse(localStorage.getItem("state")).game_status === "0") || (JSON.parse(localStorage.getItem("state")).game_status === "A") || (JSON.parse(localStorage.getItem("state")).game_status === "E") || (JSON.parse(localStorage.getItem("state")).game_status === "F")){
+    if((typeof localStorage.getItem("state") === undefined) || (localStorage.getItem("state") === null) || (JSON.parse(localStorage.getItem("state")).game_status === "0") || (JSON.parse(localStorage.getItem("state")).game_status === "A") || (JSON.parse(localStorage.getItem("state")).game_status === "E") || (JSON.parse(localStorage.getItem("state")).game_status === "F")){
       this.props.dispatch(setGameStatus("A"));
     }
   }
