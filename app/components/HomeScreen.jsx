@@ -11,8 +11,8 @@ export default class HomeScreen extends React.Component {
 
   render(){
     return (
-      <div>
-          <div className="center_screen home_screen">
+      <div className="home_screen">
+          <div className="center_screen">
             <h1 className="home_title">TRIVIAL</h1>
           </div>
           <div className="center_screen textHome">

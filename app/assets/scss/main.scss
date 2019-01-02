@@ -78,6 +78,11 @@ a.green{
   // -webkit-text-stroke-color: black;
 }
 
+div.home_screen, div.trivial{
+  margin: 30px;
+}
+
+
 div.home_screen h1{
   // font-family: "Gill Sans", Helvetica, sans-serif;
   font-family: verdana;
@@ -160,7 +165,7 @@ button.resumeButton:hover, button.newStartButton:hover, button.dieButton:hover, 
 
 button.dieButton  {
   padding: 15px;
-  margin-bottom: 35px;
+  margin-bottom: 20px;
   color: black;
   background: white;
   border: 3px solid black;

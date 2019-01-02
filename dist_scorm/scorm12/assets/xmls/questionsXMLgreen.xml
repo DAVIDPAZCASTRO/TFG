@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category">
+    <category>
+      <text>Moodle QUIZ XML export</text>
+    </category>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de ciencia:</text>
+    </name>
+    <questiontext>
+      <text>¿Quien fue el primero en decir que la Tierra orbita alrededor del sol?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>Aristarco de Samos</text>
+    </answer>
+    <answer fraction="0">
+      <text>Copérnico</text>
+    </answer>
+    <answer fraction="0">
+      <text>Kepler­</text>
+    </answer>
+    <answer fraction="0">
+      <text>Galileo</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de ciencia:</text>
+    </name>
+    <questiontext>
+      <text>¿Cuantas patas tiene una araña?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>4</text>
+    </answer>
+    <answer fraction="0">
+      <text>6</text>
+    </answer>
+    <answer fraction="100">
+      <text>­8</text>
+    </answer>
+    <answer fraction="0">
+      <text>Depende de la especie</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de ciencia:</text>
+    </name>
+    <questiontext>
+      <text>¿A qué temperatura entra el oro(Au) en ebullición?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>547ºC</text>
+    </answer>
+    <answer fraction="0">
+      <text>1323ºC</text>
+    </answer>
+    <answer fraction="100">
+      <text>2940ºC­</text>
+    </answer>
+    <answer fraction="0">
+      <text>4100ºC</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de ciencia:</text>
+    </name>
+    <questiontext>
+      <text>¿A qué velocidad viaja la luz por el vacío?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>A 299.792.458 m/s</text>
+    </answer>
+    <answer fraction="0">
+      <text>A 299.792.458 km/s</text>
+    </answer>
+    <answer fraction="0">
+      <text>A 299.792.458 µm/s</text>
+    </answer>
+    <answer fraction="0">
+      <text>A 299.792.458 mm/s</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de ciencia:</text>
+    </name>
+    <questiontext>
+      <text>¿Quiénes inventaron el número 0?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>Los indios</text>
+    </answer>
+    <answer fraction="0">
+      <text>Los árabes</text>
+    </answer>
+    <answer fraction="0">
+      <text>Los romanos</text>
+    </answer>
+    <answer fraction="0">
+      <text>Los egipcios</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de ciencia:</text>
+    </name>
+    <questiontext>
+      <text>¿De qué está compuesta la lluvia ácida?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>De ácido sulfúrico y ácido clorhídrico</text>
+    </answer>
+    <answer fraction="0">
+      <text>De ácido sulfúrico  y ácido úrico</text>
+    </answer>
+    <answer fraction="0">
+      <text>De ácido nítrico y ácido clorhídrico</text>
+    </answer>
+    <answer fraction="100">
+      <text>De ácido sulfúrico y ácido nítrico</text>
+    </answer>
+  </question>
+</quiz>

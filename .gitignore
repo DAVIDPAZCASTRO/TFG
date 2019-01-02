@@ -25,6 +25,10 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 
+# Dists
+dist
+dist_scorm
+
 # NodeJS modules folder
 node_modules
 

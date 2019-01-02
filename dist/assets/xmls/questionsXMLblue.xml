@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category">
+    <category>
+      <text>Moodle QUIZ XML export</text>
+    </category>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de cine:</text>
+    </name>
+    <questiontext>
+      <text>¿En qué año se estrenó la película Avatar dirigida por James Cameron?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>2009</text>
+    </answer>
+    <answer fraction="0">
+      <text>2010­</text>
+    </answer>
+    <answer fraction="0">
+      <text>2011­</text>
+    </answer>
+    <answer fraction="0">
+      <text>2012</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de cine:</text>
+    </name>
+    <questiontext>
+      <text>¿Quien es Rafiki?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>El líder de la mafia rusa en la película Training Day</text>
+    </answer>
+    <answer fraction="0">
+      <text>Un alumno de la casa Hufflepuff que envidia a Harry Potter</text>
+    </answer>
+    <answer fraction="100">
+      <text>Un sabio mandril de la película de Disney El Rey Leon</text>
+    </answer>
+    <answer fraction="0">
+      <text>El heredero del tridente y sobrino del rey Tritón en La Sirenita</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de cine:</text>
+    </name>
+    <questiontext>
+      <text>¿Cuál es la primera película de Quentin Tarantino como director?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>Pulp Fiction</text>
+    </answer>
+    <answer fraction="0">
+      <text>Asesinos Natos</text>
+    </answer>
+    <answer fraction="100">
+      <text>Reservoir Dogs</text>
+    </answer>
+    <answer fraction="0">
+      <text>Malditos Bastardos</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de cine:</text>
+    </name>
+    <questiontext>
+      <text>¿De qué color es el sable de luz del maestro Jedi Mace Windu?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>Azul</text>
+    </answer>
+    <answer fraction="0">
+      <text>Verde</text>
+    </answer>
+    <answer fraction="0">
+      <text>Amarillo</text>
+    </answer>
+    <answer fraction="100">
+      <text>Violeta</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de cine:</text>
+    </name>
+    <questiontext>
+      <text>En el universo de Harry Potter, ¿quién regaló a Harry la capa de invisibilidad?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>Albus Dumbledore</text>
+    </answer>
+    <answer fraction="0">
+      <text>Remus lupin</text>
+    </answer>
+    <answer fraction="0">
+      <text>Sirius Black</text>
+    </answer>
+    <answer fraction="0">
+      <text>Severus Snape</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de cine:</text>
+    </name>
+    <questiontext>
+      <text>¿Cómo se llama el personaje que interpreta Al Pacino en "Scarface"?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>Thomas Morales</text>
+    </answer>
+    <answer fraction="100">
+      <text>Tony Montana</text>
+    </answer>
+    <answer fraction="0">
+      <text>Michael Corleone</text>
+    </answer>
+    <answer fraction="0">
+      <text>John Rivera</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Pregunta de ciencia:</text>
+    </name>
+    <questiontext>
+      <text>¿Qué animal es la mascota de Jazmín en Aladdin?</text>
+    </questiontext>
+    <shuffleanswers>0</shuffleanswers>
+    <single>true</single>
+    <answer fraction="0">
+      <text>Elefante</text>
+    </answer>
+    <answer fraction="0">
+      <text>Mono</text>
+    </answer>
+    <answer fraction="100">
+      <text>Tigre</text>
+    </answer>
+    <answer fraction="0">
+      <text>Loro</text>
+    </answer>
+  </question>
+</quiz>
