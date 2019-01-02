@@ -78,8 +78,13 @@ a.green{
   // -webkit-text-stroke-color: black;
 }
 
-div.home_screen, div.trivial{
+div.home_screen{
   margin: 30px;
+}
+
+div.trivial{
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 
