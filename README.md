@@ -1,6 +1,6 @@
-# RESCORM
+# TRIVIAL
 
-RESCORM is a boilerplate for creating SCORM-compliant React applications.
+Based on RESCORM. RESCORM is a boilerplate for creating SCORM-compliant React applications.
 
 
 # Features
